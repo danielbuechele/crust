@@ -1,0 +1,14 @@
+schema:
+  - ${NEXT_PUBLIC_STOREFRONT_API}:
+      headers:
+        X-Shopify-Storefront-Access-Token: ${NEXT_PUBLIC_STOREFRONT_ACCESS_TOKEN}
+documents: "./app/**/*.{tsx,ts}"
+generates:
+  ./utils/storefront.tsx:
+    documents:
+      - "app/**/*.tsx"
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+    config:
+      withHooks: true
