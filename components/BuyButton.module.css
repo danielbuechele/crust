@@ -1,0 +1,28 @@
+.button {
+  border: 0;
+  border-radius: 999em;
+  background-color: #fc4c02;
+  color: white;
+  height: 40px;
+  padding-left: 20px;
+  padding-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  min-width: 128px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 999em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover .icon,
+.button:focus .icon {
+  background-color: #fe7b44;
+}

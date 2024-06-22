@@ -1,0 +1,33 @@
+.group {
+  width: 100%;
+  border-radius: 999em;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  height: 40px;
+  bottom: 100px;
+  padding: 4px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.36);
+  position: relative;
+  display: flex;
+  flex-basis: 0;
+}
+
+.item {
+  flex-grow: 1;
+  flex-basis: 0;
+  border: 0;
+  background: none;
+  border-radius: 999em;
+  cursor: pointer;
+}
+
+.active {
+  background-color: white;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 999em;
+  transition: 0.2s all;
+  z-index: -1;
+  pointer-events: none;
+}

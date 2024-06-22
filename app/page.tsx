@@ -2,6 +2,15 @@ import { gql } from "@apollo/client";
 import styles from "./page.module.css";
 import { getClient } from "./ApolloClient";
 import { ShopQuery } from "@/utils/storefront";
+import Logo from "@/components/Logo";
+import localFont from "next/font/local";
+import clsx from "clsx";
+import BuyButton from "@/components/BuyButton";
+import Image from "next/image";
+import ToggleGroup from "@/components/ToggleGroup";
+
+const ppRegular = localFont({ src: "../public/PPEditorialNew-Regular.woff2" });
+const ppItalic = localFont({ src: "../public/PPEditorialNew-Italic.woff2" });
 
 const shopQuery = gql`
   query Shop {
@@ -17,7 +26,20 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <h1>{data.shop.name}</h1>
+      <nav className={styles.nav}>
+        <Logo />
+        <BuyButton />
+      </nav>
+      <h1 className={clsx(styles.hero, ppRegular.className)}>
+        Precision grinding, now in the{" "}
+        <em className={ppItalic.className}>finest</em> materials.
+      </h1>
+      <div className={styles.img}>
+        <Image src="/hero.png" alt="Hero" fill priority objectFit="contain" />
+      </div>
+      <div className={styles.toggle}>
+        <ToggleGroup />
+      </div>
     </main>
   );
 }
