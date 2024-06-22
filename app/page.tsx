@@ -8,6 +8,7 @@ import clsx from "clsx";
 import BuyButton from "@/components/BuyButton";
 import Image from "next/image";
 import ToggleGroup from "@/components/ToggleGroup";
+import Footer from "@/components/Footer";
 
 const ppRegular = localFont({ src: "../public/PPEditorialNew-Regular.woff2" });
 const ppItalic = localFont({ src: "../public/PPEditorialNew-Italic.woff2" });
@@ -25,21 +26,22 @@ export default async function Home() {
   const { data } = await getClient().query<ShopQuery>({ query: shopQuery });
 
   return (
-    <main className={styles.main}>
-      <nav className={styles.nav}>
-        <Logo />
-        <BuyButton />
-      </nav>
-      <h1 className={clsx(styles.hero, ppRegular.className)}>
-        Precision grinding, now in the{" "}
-        <em className={ppItalic.className}>finest</em> materials.
-      </h1>
-      <div className={styles.img}>
-        <Image src="/hero.png" alt="Hero" fill priority objectFit="contain" />
-      </div>
-      <div className={styles.toggle}>
-        <ToggleGroup />
-      </div>
-    </main>
+    <>
+      <main className={styles.main}>
+        <nav className={styles.nav}>
+          <Logo />
+          <BuyButton />
+        </nav>
+        <h1 className={clsx(styles.hero, ppRegular.className)}>
+          Precision grinding, now in the{" "}
+          <em className={ppItalic.className}>finest</em> materials.
+        </h1>
+        <div className={styles.img} />
+        <div className={styles.toggle}>
+          <ToggleGroup />
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

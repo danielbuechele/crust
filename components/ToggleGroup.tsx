@@ -9,16 +9,20 @@ export default function ToggleGroup() {
   const [value, setValue] = useState("A");
   const ref = useRef<HTMLDivElement>(null);
 
-  const [active, setActive] = useState<DOMRect | null>(null);
+  const [highlight, setHighlight] = useState<{ left: number; width: number }>({
+    left: 4,
+    width: 135,
+  });
 
   useLayoutEffect(() => {
     const { current } = ref;
     if (!current) {
       return;
     }
-    setActive(
-      current.querySelector('[data-state="on"]')?.getBoundingClientRect()
-    );
+    setHighlight({
+      left: current.querySelector('[data-state="on"]')?.offsetLeft ?? 0,
+      width: current.querySelector('[data-state="on"]')?.offsetWidth ?? 0,
+    });
   }, [value]);
 
   return (
@@ -39,10 +43,7 @@ export default function ToggleGroup() {
       <Item className={styles.item} value="B">
         Specs
       </Item>
-      <div
-        className={styles.active}
-        style={{ width: active?.width, left: active?.left }}
-      />
+      <div className={styles.active} style={highlight} />
     </Root>
   );
 }
