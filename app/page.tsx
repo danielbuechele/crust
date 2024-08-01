@@ -9,6 +9,7 @@ import BuyButton from "@/components/BuyButton";
 import Image from "next/image";
 import ToggleGroup from "@/components/ToggleGroup";
 import Footer from "@/components/Footer";
+import Lead from "@/components/Lead";
 
 const ppRegular = localFont({ src: "../public/PPEditorialNew-Regular.woff2" });
 const ppItalic = localFont({ src: "../public/PPEditorialNew-Italic.woff2" });
@@ -41,6 +42,7 @@ export default async function Home() {
           <ToggleGroup />
         </div>
       </main>
+      <Lead />
       <Footer />
     </>
   );

@@ -1,38 +1,56 @@
 .footer {
   border-top: 1px solid #dbdbdb;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  padding-top: 70px;
+  margin-top: 70px;
 }
 
-.footer > * {
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1500px;
+}
+
+.col {
   flex-basis: 0;
   flex-grow: 1;
 }
 
-.footer a {
+.links {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.links a {
   color: #6c6c6c;
 }
 
-.footer a:hover,
-.footer a:focus {
+.links a:hover,
+.links a:focus {
   color: #0e0f12;
 }
 
-.footer ul {
-  display: flex;
+.footer li {
+  margin-bottom: 10px;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
-.footer ul ul {
+.links ul {
   margin-right: 20px;
   flex-direction: column;
 }
 
-.footer li {
-  margin-bottom: 8px;
-  flex-basis: 0;
-  flex-grow: 1;
+.footer h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
 }
 
 .footer h4 {
@@ -41,5 +59,83 @@
 
 .footer small {
   font-size: 12px;
-  font-style: italic;
+  color: #8e8e8e;
+}
+
+.sosumi {
+  font-size: 12px;
+  margin-top: 20px;
+  color: #a1a1a0;
+  padding-bottom: 50px;
+}
+
+.sosumi hr {
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 25px;
+  margin-top: 200px;
+}
+
+.newsletter {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.newsletter p {
+  color: #7d7d7d;
+  line-height: 150%;
+  max-width: 368px;
+}
+
+.form {
+  margin-top: 30px;
+  display: flex;
+  margin-bottom: 8px;
+  position: relative;
+  max-width: 368px;
+}
+
+.form input {
+  border-radius: 999em;
+  background-color: #e3e3e3;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 10px 20px;
+  padding-right: 60px;
+  width: 100%;
+}
+
+.form input::placeholder {
+  color: #0e0f12;
+}
+
+.form button {
+  position: absolute;
+  border-radius: 999em;
+  background-color: white;
+  border: none;
+  color: inhert;
+  font-family: inherit;
+  font-size: inherit;
+  top: 2px;
+  bottom: 2px;
+  right: 2px;
+  cursor: pointer;
+  width: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form button:hover,
+.form button:focus,
+.form button:active {
+  background-color: #0e0f12;
+  color: white;
+}
+
+.logo {
+  color: #eeeeee;
+  margin-top: 40px;
 }
