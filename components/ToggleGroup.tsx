@@ -20,8 +20,12 @@ export default function ToggleGroup() {
       return;
     }
     setHighlight({
-      left: current.querySelector('[data-state="on"]')?.offsetLeft ?? 0,
-      width: current.querySelector('[data-state="on"]')?.offsetWidth ?? 0,
+      left:
+        current.querySelector<HTMLElement>('[data-state="on"]')?.offsetLeft ??
+        0,
+      width:
+        current.querySelector<HTMLElement>('[data-state="on"]')?.offsetWidth ??
+        0,
     });
   }, [value]);
 

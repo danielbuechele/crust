@@ -10,6 +10,7 @@ import Image from "next/image";
 import ToggleGroup from "@/components/ToggleGroup";
 import Footer from "@/components/Footer";
 import Lead from "@/components/Lead";
+import PerfectGrip from "@/components/PerfectGrip";
 
 const ppRegular = localFont({ src: "../public/PPEditorialNew-Regular.woff2" });
 const ppItalic = localFont({ src: "../public/PPEditorialNew-Italic.woff2" });
@@ -23,7 +24,7 @@ const shopQuery = gql`
   }
 `;
 
-export default async function Home() {
+export default async function Home({}: {}) {
   const { data } = await getClient().query<ShopQuery>({ query: shopQuery });
 
   return (
@@ -43,6 +44,7 @@ export default async function Home() {
         </div>
       </main>
       <Lead />
+      <PerfectGrip />
       <Footer />
     </>
   );
