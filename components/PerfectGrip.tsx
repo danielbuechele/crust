@@ -18,7 +18,7 @@ function throttle(fn: () => void, delay: number) {
 }
 
 export default function PerfectGrip() {
-  const windowHeight = window.innerHeight;
+  const windowHeight = typeof window !== "undefined" ? window.innerHeight : 500;
   const length = windowHeight * 3;
   const video = useRef<HTMLVideoElement>(null);
   const [slide, setSlide] = useState(0);
