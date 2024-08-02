@@ -6,7 +6,6 @@ import Logo from "@/components/Logo";
 import localFont from "next/font/local";
 import clsx from "clsx";
 import BuyButton from "@/components/BuyButton";
-import Image from "next/image";
 import ToggleGroup from "@/components/ToggleGroup";
 import Footer from "@/components/Footer";
 import Lead from "@/components/Lead";
@@ -36,7 +35,8 @@ export default async function Home({}: {}) {
         </nav>
         <h1 className={clsx(styles.hero, ppRegular.className)}>
           Precision grinding, now in the{" "}
-          <em className={ppItalic.className}>finest</em> materials.
+          <em className={clsx(styles.finest, ppItalic.className)}>finest</em>{" "}
+          materials.
         </h1>
         <div className={styles.img} />
         <div className={styles.toggle}>
