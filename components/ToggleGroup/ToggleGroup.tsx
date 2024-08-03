@@ -4,9 +4,19 @@ import { Root, Item } from "@radix-ui/react-toggle-group";
 import { useLayoutEffect, useRef, useState } from "react";
 
 import styles from "./ToggleGroup.module.css";
+import clsx from "clsx";
 
-export default function ToggleGroup() {
-  const [value, setValue] = useState("A");
+export default function ToggleGroup({
+  value,
+  values,
+  onValueChange,
+  variant,
+}: {
+  variant?: "light" | "dark";
+  value: string;
+  onValueChange: (value: string) => void;
+  values: string[];
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   const [highlight, setHighlight] = useState<{ left: number; width: number }>({
@@ -33,20 +43,19 @@ export default function ToggleGroup() {
     <Root
       type="single"
       value={value}
-      className={styles.group}
+      className={clsx(styles.group, variant === "dark" && styles.dark)}
       onValueChange={(value) => {
         if (value) {
-          setValue(value);
+          onValueChange(value);
         }
       }}
       ref={ref}
     >
-      <Item className={styles.item} value="A">
-        Overview
-      </Item>
-      <Item className={styles.item} value="B">
-        Specs
-      </Item>
+      {values.map((value) => (
+        <Item key={value} className={styles.item} value={value}>
+          {value}
+        </Item>
+      ))}
       <div className={styles.active} style={highlight} />
     </Root>
   );

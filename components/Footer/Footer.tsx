@@ -1,10 +1,16 @@
-import Logo from "./Logo";
+import Logo from "@/components/Logo";
+import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./Footer.module.css";
+import localFont from "next/font/local";
+
+const medium = localFont({
+  src: "../../public/basiercircle-medium-webfont.woff2",
+});
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <div className={styles.wrapper}>
+      <Wrapper className={styles.wrapper}>
         <div className={styles.col}>
           <ul className={styles.links}>
             <li>
@@ -75,7 +81,7 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.newsletter}>
-          <h3>Crust Newsletter</h3>
+          <h3 className={medium.className}>Crust Newsletter</h3>
           <p>
             Latest news, musings, announcements and updates direct to your
             inbox. No Spam ever.
@@ -105,7 +111,7 @@ export default function Footer() {
             <Logo width="90%" />
           </div>
         </div>
-      </div>
+      </Wrapper>
     </footer>
   );
 }

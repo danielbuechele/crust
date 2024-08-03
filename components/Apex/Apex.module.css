@@ -1,0 +1,40 @@
+.root {
+  color: white;
+  background-color: #0e0f12;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  text-align: center;
+}
+
+.heading {
+  font-size: 64px;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  margin-bottom: 24px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toggle {
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 120px;
+}
+
+.p {
+  max-width: 750px;
+  color: rgba(249, 238, 226, 0.75);
+  font-size: 36px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 135%;
+  letter-spacing: -0.72px;
+  margin-top: 40px;
+}
+
+.p em {
+  color: #f9eee2;
+}

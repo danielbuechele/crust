@@ -1,9 +1,10 @@
 "use client";
 
-import TextPairing from "./TextPairing";
+import TextPairing from "./TextPairing/TextPairing";
 import styles from "./PerfectGrip.module.css";
-import { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useInViewEffect } from "react-hook-inview";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 function throttle(fn: () => void, delay: number) {
   let last = 0;
@@ -18,7 +19,7 @@ function throttle(fn: () => void, delay: number) {
 }
 
 export default function PerfectGrip() {
-  const windowHeight = typeof window !== "undefined" ? window.innerHeight : 500;
+  const windowHeight = useWindowSize().height ?? 1;
   const length = windowHeight * 3;
   const video = useRef<HTMLVideoElement>(null);
   const [slide, setSlide] = useState(0);
@@ -53,7 +54,7 @@ export default function PerfectGrip() {
         src="./crust-p1-animated_converted.mov"
       />
       <div className={styles.content} style={{ top: 80 }}>
-        <TextPairing heading="Perfect Grip">
+        <TextPairing heading="Perfect Grip" align="center">
           The precisely contoured shape fits naturally in your hand, ensuring a
           secure and effortless grip. Every use feels smooth and controlled.
         </TextPairing>
@@ -62,14 +63,14 @@ export default function PerfectGrip() {
         className={styles.content}
         style={{ top: windowHeight, opacity: (slide - 0.7) * 10 }}
       >
-        <TextPairing heading="Easy to Fill">
+        <TextPairing heading="Easy to Fill" align="center">
           Refilling your Crust Mill is effortless. Just lift the knob to reveal
           a wide opening, allowing up to 50g of pepper or dry salt without
           spills.
         </TextPairing>
       </div>
       <div className={styles.content} style={{ bottom: 80 }}>
-        <TextPairing heading="Medical-Grade Stainless Steel">
+        <TextPairing heading="Medical-Grade Stainless Steel" align="center">
           Stainless steel, not aluminum, is chosen for its unmatched durability
           and resistance to rust and corrosion. This ensures your grinder
           performs flawlessly over time, preserving the pure, unaltered flavors
