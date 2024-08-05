@@ -9,14 +9,21 @@ const ppRegular = localFont({
 export default function TextPairing({
   children,
   heading,
+  variant,
   align = "left",
 }: {
   children: React.ReactNode;
   heading: string;
+  variant?: "dark" | "light";
   align?: "left" | "center";
 }) {
   return (
-    <div className={styles.root}>
+    <div
+      className={clsx(
+        styles.root,
+        variant === "dark" ? styles.dark : undefined
+      )}
+    >
       <h3
         className={clsx(
           styles.heading,

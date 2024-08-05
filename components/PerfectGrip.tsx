@@ -13,6 +13,11 @@ export default function PerfectGrip() {
 
   useEffect(() => {
     if (video.current) {
+      console.log(
+        (percent - 0.18) * video.current.duration,
+        percent,
+        video.current.duration
+      );
       video.current.currentTime = (percent - 0.18) * video.current.duration;
     }
   }, [percent, video]);

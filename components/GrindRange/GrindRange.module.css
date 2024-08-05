@@ -1,0 +1,10 @@
+.root {
+  background-color: #0e0f12;
+  padding: 120px 0;
+}
+
+.img {
+  position: relative;
+  aspect-ratio: 3064/980;
+  margin-top: 100px;
+}
