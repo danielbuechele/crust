@@ -14,7 +14,7 @@ export default function ToggleGroup({
 }: {
   variant?: "light" | "dark";
   value: string;
-  onValueChange: (value: string) => void;
+  onValueChange?: (value: string) => void;
   values: string[];
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -45,7 +45,7 @@ export default function ToggleGroup({
       value={value}
       className={clsx(styles.group, variant === "dark" && styles.dark)}
       onValueChange={(value) => {
-        if (value) {
+        if (value && onValueChange) {
           onValueChange(value);
         }
       }}

@@ -2,52 +2,23 @@
 
 import TextPairing from "./TextPairing/TextPairing";
 import styles from "./PerfectGrip.module.css";
-import { useRef, useState } from "react";
-import { useInViewEffect } from "react-hook-inview";
+import { useEffect, useRef } from "react";
+import useScroll from "@/utils/useScroll";
 import { useWindowSize } from "@uidotdev/usehooks";
 
-function throttle(fn: () => void, delay: number) {
-  let last = 0;
-  return () => {
-    const now = Date.now();
-    if (now - last < delay) {
-      return;
-    }
-    last = now;
-    fn();
-  };
-}
-
 export default function PerfectGrip() {
-  const windowHeight = useWindowSize().height ?? 1;
-  const length = windowHeight * 3;
   const video = useRef<HTMLVideoElement>(null);
-  const [slide, setSlide] = useState(0);
+  const windowHeight = useWindowSize().height || 1;
+  const { ref, percent } = useScroll();
 
-  const ref = useInViewEffect(([entry], observer) => {
-    if (entry.isIntersecting) {
-      observer.unobserve(entry.target);
-      const top = entry.target.getBoundingClientRect().top + window.scrollY;
-      document.addEventListener(
-        "scroll",
-        throttle(() => {
-          if (!video.current) {
-            return;
-          }
-          setSlide((window.scrollY - top) / windowHeight);
-          video.current.currentTime =
-            video.current.duration * ((window.scrollY - top) / length);
-        }, 25)
-      );
+  useEffect(() => {
+    if (video.current) {
+      video.current.currentTime = (percent - 0.18) * video.current.duration;
     }
-  });
+  }, [percent, video]);
 
   return (
-    <section
-      className={styles.root}
-      ref={ref}
-      style={{ height: length + windowHeight }}
-    >
+    <section className={styles.root} ref={ref} style={{ height: "300vh" }}>
       <video
         ref={video}
         className={styles.video}
@@ -59,10 +30,7 @@ export default function PerfectGrip() {
           secure and effortless grip. Every use feels smooth and controlled.
         </TextPairing>
       </div>
-      <div
-        className={styles.content}
-        style={{ top: windowHeight, opacity: (slide - 0.7) * 10 }}
-      >
+      <div className={styles.content} style={{ top: "80vh" }}>
         <TextPairing heading="Easy to Fill" align="center">
           Refilling your Crust Mill is effortless. Just lift the knob to reveal
           a wide opening, allowing up to 50g of pepper or dry salt without
