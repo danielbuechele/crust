@@ -9,6 +9,7 @@ export default function GrindRange() {
     <section className={styles.root}>
       <Wrapper>
         <TextPairing
+          className={styles.text}
           heading="Massive Grind&nbsp;Range"
           align="center"
           variant="dark"

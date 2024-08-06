@@ -1,0 +1,35 @@
+.root {
+  background-color: #0e0f12;
+  padding: 120px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 40%;
+  bottom: 25%;
+  mix-blend-mode: lighten;
+}
+
+@media screen and (max-width: 1200px) {
+  .img {
+    left: 0;
+    bottom: 40%;
+  }
+
+  .wrapper {
+    justify-content: center;
+    padding-top: 60%;
+  }
+}

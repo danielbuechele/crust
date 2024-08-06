@@ -11,16 +11,19 @@ export default function TextPairing({
   heading,
   variant,
   align = "left",
+  className,
 }: {
   children: React.ReactNode;
   heading: string;
   variant?: "dark" | "light";
   align?: "left" | "center";
+  className?: string;
 }) {
   return (
     <div
       className={clsx(
         styles.root,
+        className,
         variant === "dark" ? styles.dark : undefined
       )}
     >

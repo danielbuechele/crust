@@ -3,6 +3,8 @@ import PerfectGrip from "@/components/PerfectGrip";
 import ColorTags from "@/components/ColorTags/ColorTags";
 import Apex from "@/components/Apex/Apex";
 import GrindRange from "../GrindRange/GrindRange";
+import MoreOutput from "../MoreOutput/MoreOutput";
+import PreciseAdjustment from "../PreciseAdjustment/PreciseAdjustment";
 
 export default function Homepage() {
   return (
@@ -12,6 +14,8 @@ export default function Homepage() {
       <ColorTags />
       <Apex />
       <GrindRange />
+      <MoreOutput />
+      <PreciseAdjustment />
     </>
   );
 }

@@ -1,13 +1,18 @@
 .lead {
-  max-width: 1000px;
   padding: 300px 20px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .lead p {
-  font-size: 36px;
-  line-height: 1.4;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1008px;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%; /* 64.8px */
+  letter-spacing: -0.96px;
   color: #8e8e8e;
   margin-top: 36px;
 }

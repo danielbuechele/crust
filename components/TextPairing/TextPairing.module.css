@@ -1,14 +1,15 @@
 .root {
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 496px;
 }
 
 .heading {
-  font-size: 64px;
+  font-size: 72px;
   margin-bottom: 1rem;
-  font-weight: normal;
   margin-bottom: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  letter-spacing: -1.44px;
 }
 
 .dark .heading {
@@ -23,6 +24,7 @@
   color: #6c6c6c;
   font-size: 24px;
   line-height: 135%;
+  letter-spacing: -0.48px;
 }
 
 .dark .content {
