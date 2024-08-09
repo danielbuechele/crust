@@ -25,7 +25,7 @@ export default function PerfectGrip() {
           src="/crust-p1-animated_converted.mov"
         />
       </div>
-      <div className={styles.content} style={{ top: 80 }}>
+      <div className={styles.content} style={{ top: 60 }}>
         <TextPairing heading="Perfect Grip" align="center">
           The precisely contoured shape fits naturally in your hand, ensuring a
           secure and effortless grip. Every use feels smooth and controlled.
