@@ -1,19 +1,18 @@
 "use client";
 
-import TextPairing from "./TextPairing/TextPairing";
+import TextPairing from "../TextPairing/TextPairing";
 import styles from "./PerfectGrip.module.css";
 import { useEffect, useRef } from "react";
 import useScroll from "@/utils/useScroll";
-import { useWindowSize } from "@uidotdev/usehooks";
 
 export default function PerfectGrip() {
   const video = useRef<HTMLVideoElement>(null);
-  const windowHeight = useWindowSize().height || 1;
   const { ref, percent } = useScroll();
 
   useEffect(() => {
     if (video.current && !isNaN(video.current.duration)) {
-      video.current.currentTime = (percent - 0.18) * video.current.duration;
+      video.current.currentTime =
+        (percent / 1.5 - 0.18) * video.current.duration;
     }
   }, [percent, video]);
 
@@ -22,7 +21,7 @@ export default function PerfectGrip() {
       <video
         ref={video}
         className={styles.video}
-        src="./crust-p1-animated_converted.mov"
+        src="/crust-p1-animated_converted.mov"
       />
       <div className={styles.content} style={{ top: 80 }}>
         <TextPairing heading="Perfect Grip" align="center">
@@ -30,7 +29,10 @@ export default function PerfectGrip() {
           secure and effortless grip. Every use feels smooth and controlled.
         </TextPairing>
       </div>
-      <div className={styles.content} style={{ top: "80vh" }}>
+      <div
+        className={styles.content}
+        style={{ top: "100vh", opacity: (percent - 0.75) * 20 }}
+      >
         <TextPairing heading="Easy to Fill" align="center">
           Refilling your Crust Mill is effortless. Just lift the knob to reveal
           a wide opening, allowing up to 50g of pepper or dry salt without

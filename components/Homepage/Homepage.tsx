@@ -1,5 +1,5 @@
 import Lead from "@/components/Lead";
-import PerfectGrip from "@/components/PerfectGrip";
+import PerfectGrip from "@/components/PerfectGrip/PerfectGrip";
 import ColorTags from "@/components/ColorTags/ColorTags";
 import Apex from "@/components/Apex/Apex";
 import GrindRange from "../GrindRange/GrindRange";
