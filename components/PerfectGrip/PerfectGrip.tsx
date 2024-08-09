@@ -18,11 +18,13 @@ export default function PerfectGrip() {
 
   return (
     <section className={styles.root} ref={ref} style={{ height: "300vh" }}>
-      <video
-        ref={video}
-        className={styles.video}
-        src="/crust-p1-animated_converted.mov"
-      />
+      <div className={styles.videoContainer}>
+        <video
+          ref={video}
+          className={styles.video}
+          src="/crust-p1-animated_converted.mov"
+        />
+      </div>
       <div className={styles.content} style={{ top: 80 }}>
         <TextPairing heading="Perfect Grip" align="center">
           The precisely contoured shape fits naturally in your hand, ensuring a
