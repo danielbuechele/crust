@@ -2,28 +2,72 @@
 
 import TextPairing from "../TextPairing/TextPairing";
 import styles from "./PerfectGrip.module.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import useScroll from "@/utils/useScroll";
+import { useWindowSize } from "@uidotdev/usehooks";
+import linearInterpolation from "@/utils/linearInterpolation";
+
+const SEQUENCE_LENGTH = 120;
+
+function getFilename(i: number) {
+  return `/crust-p1-animated-scroll/crust-p1-animated0${String(i + 1).padStart(3, "0")}.webp`;
+}
 
 export default function PerfectGrip() {
-  const video = useRef<HTMLVideoElement>(null);
+  const canvas = useRef<HTMLCanvasElement>(null);
+  const { width, height } = useWindowSize();
   const { ref, percent } = useScroll();
 
+  const value = useMemo(
+    () =>
+      linearInterpolation(
+        [-1, 1],
+        [0, 1],
+        [0.26, 14],
+        [1.6, 91],
+        [2, 120],
+        [3, 120]
+      ),
+    []
+  );
+
   useEffect(() => {
-    if (video.current && !isNaN(video.current.duration)) {
-      video.current.currentTime =
-        (percent / 1.5 - 0.18) * video.current.duration;
+    const current = canvas.current;
+    if (!current) {
+      return;
     }
-  }, [percent, video]);
+    const ctx = current.getContext("2d");
+    if (!ctx) {
+      return;
+    }
+
+    const img = new Image();
+    img.src = getFilename(Math.floor(value(percent)));
+    img.onload = () => {
+      requestAnimationFrame(() =>
+        ctx.drawImage(img, 0, 0, ((height ?? 0) / 2343) * 1920, height ?? 0)
+      );
+    };
+  }, [canvas, percent, width, height]);
 
   return (
     <section className={styles.root} ref={ref} style={{ height: "300vh" }}>
       <div className={styles.videoContainer}>
-        <video
-          ref={video}
+        <canvas
           className={styles.video}
-          src="/crust-p1-animated_converted.mov"
+          ref={canvas}
+          width={((height ?? 0) / 2343) * 1920}
+          height={height ?? 0}
         />
+        {new Array(SEQUENCE_LENGTH).fill(0).map((_, i) => (
+          <link
+            key={i}
+            rel="prefetch"
+            href={getFilename(i)}
+            as="image"
+            fetchPriority="low"
+          />
+        ))}
       </div>
       <div className={styles.content} style={{ top: 60 }}>
         <TextPairing heading="Perfect Grip" align="center">

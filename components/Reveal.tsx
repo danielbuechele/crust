@@ -13,6 +13,7 @@ export default function Reveal(props: {
 
   return words.map((word, index) => (
     <span
+      key={index}
       className={
         (index + 1) / total < normalizedProgress ? props.className : undefined
       }
