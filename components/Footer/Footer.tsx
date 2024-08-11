@@ -2,6 +2,7 @@ import Logo from "@/components/Logo";
 import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./Footer.module.css";
 import localFont from "next/font/local";
+import Link from "next/link";
 
 const medium = localFont({
   src: "../../public/basiercircle-medium-webfont.woff2",
@@ -17,13 +18,13 @@ export default function Footer() {
               <h4>Explore Crust</h4>
               <ul>
                 <li>
-                  <a href="">Overview</a>
+                  <Link href="/">Overview</Link>
                 </li>
                 <li>
-                  <a href="">Tech Specs</a>
+                  <Link href="/specs">Tech Specs</Link>
                 </li>
                 <li>
-                  <a href="">Quick Start</a>
+                  <Link href="">Quick Start</Link>
                 </li>
               </ul>
             </li>
