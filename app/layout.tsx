@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ApolloWrapper } from "./ApolloWrapper";
+import Footer from "@/components/Footer/Footer";
+import Head from "@/components/Head/Head";
 
 const basier = localFont({
   src: "../public/basiercircle-regular-webfont.woff2",
@@ -20,7 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={basier.className}>
-        <ApolloWrapper>{children}</ApolloWrapper>
+        <ApolloWrapper>
+          <Head />
+          {children}
+          <Footer />
+        </ApolloWrapper>
       </body>
     </html>
   );

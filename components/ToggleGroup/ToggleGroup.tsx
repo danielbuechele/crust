@@ -19,25 +19,23 @@ export default function ToggleGroup({
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  const [highlight, setHighlight] = useState<{ left: number; width: number }>({
-    left: 4,
-    width: 135,
-  });
+  const [highlight, setHighlight] = useState<{
+    left: number;
+    width: number;
+  } | null>(null);
+
+  const [mounted, setMounted] = useState(false);
 
   useLayoutEffect(() => {
-    const { current } = ref;
-    if (!current) {
+    const el = ref.current?.querySelector<HTMLElement>('[data-state="on"]');
+    if (!el) {
       return;
     }
     setHighlight({
-      left:
-        current.querySelector<HTMLElement>('[data-state="on"]')?.offsetLeft ??
-        0,
-      width:
-        current.querySelector<HTMLElement>('[data-state="on"]')?.offsetWidth ??
-        0,
+      left: el.offsetLeft,
+      width: el.offsetWidth,
     });
-  }, [value]);
+  }, [value, mounted]);
 
   return (
     <Root
@@ -56,7 +54,10 @@ export default function ToggleGroup({
           {value}
         </Item>
       ))}
-      <div className={styles.active} style={highlight} />
+      <div
+        className={styles.active}
+        style={highlight ? { opacity: 1, ...highlight } : { opacity: 0 }}
+      />
     </Root>
   );
 }

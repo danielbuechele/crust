@@ -33,22 +33,19 @@
   padding-top: 70px;
 }
 
-.img {
+.imgContainer {
   position: absolute;
   bottom: 0;
   top: 315px;
-  left: 50%;
   width: 100%;
-  transform: translateX(-50%);
+}
+
+.img {
   text-align: center;
   object-fit: contain;
   object-position: center bottom;
   overflow: hidden;
   pointer-events: none;
-  background-image: url("/hero.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: contain;
 }
 
 .toggle {

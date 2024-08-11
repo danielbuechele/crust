@@ -1,27 +1,25 @@
-import { gql } from "@apollo/client";
-import { getClient } from "./ApolloClient";
-import { ShopQuery } from "@/utils/storefront";
-import Footer from "@/components/Footer/Footer";
-import Homepage from "@/components/Homepage/Homepage";
-import Head from "@/components/Head/Head";
+import Lead from "@/components/Lead";
+import PerfectGrip from "@/components/PerfectGrip/PerfectGrip";
+import ColorTags from "@/components/ColorTags/ColorTags";
+import Apex from "@/components/Apex/Apex";
+import GrindRange from "@/components/GrindRange/GrindRange";
+import MoreOutput from "@/components/MoreOutput/MoreOutput";
+import PreciseAdjustment from "@/components/PreciseAdjustment/PreciseAdjustment";
+import Features from "@/components/Features/Features";
+import TechSpecsLink from "@/components/TechSpecsLink/TechSpecsLink";
 
-const shopQuery = gql`
-  query Shop {
-    shop {
-      name
-      id
-    }
-  }
-`;
-
-export default async function Home({}: {}) {
-  const { data } = await getClient().query<ShopQuery>({ query: shopQuery });
-
+export default function Homepage() {
   return (
     <>
-      <Head />
-      <Homepage />
-      <Footer />
+      <Lead />
+      <PerfectGrip />
+      <ColorTags />
+      <Apex />
+      <GrindRange />
+      <MoreOutput />
+      <PreciseAdjustment />
+      <Features />
+      <TechSpecsLink />
     </>
   );
 }
