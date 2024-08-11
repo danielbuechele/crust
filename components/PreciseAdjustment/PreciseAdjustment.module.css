@@ -9,6 +9,9 @@
 
 .text {
   margin-left: 50%;
+  font-feature-settings:
+    "case" on,
+    "dlig" on;
 }
 
 .img {
