@@ -10,7 +10,11 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  min-width: 128px;
+  width: 128px;
+}
+
+.button.dark {
+  background-color: #4d2210;
 }
 
 .icon {

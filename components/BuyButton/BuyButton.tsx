@@ -1,8 +1,18 @@
+import clsx from "clsx";
 import styles from "./BuyButton.module.css";
 
-export default function BuyButton() {
+export default function BuyButton(props: {
+  className?: string;
+  variant?: "light" | "dark";
+}) {
   return (
-    <a className={styles.button}>
+    <a
+      className={clsx(
+        props.className,
+        styles.button,
+        props.variant === "dark" ? styles.dark : undefined
+      )}
+    >
       Buy
       <div className={styles.icon}>
         <svg
