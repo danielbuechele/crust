@@ -1,0 +1,84 @@
+.grid {
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 30px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+}
+
+.grid hr {
+  grid-column: span 2;
+  margin-bottom: 44px;
+  border: 0;
+  border-top: 1px solid #dbdbdb;
+}
+
+.row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 36px;
+  align-items: center;
+}
+
+.pair {
+  max-width: 368px;
+}
+
+.pair .label {
+  margin-bottom: 8px;
+}
+
+.pair .value {
+  color: #6c6c6c;
+  line-height: 180%;
+  margin-bottom: 36px;
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-bottom: 80px;
+  padding-top: 10px;
+}
+
+.bentoBox {
+  position: relative;
+  display: flex;
+  padding-bottom: 100%;
+  background-color: #f1f1f1;
+}
+
+.bento img {
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+}
+
+.bentoMill img {
+  padding-bottom: 40px;
+}
+
+.bentoGuide img {
+  padding-bottom: 40px;
+}
+
+.bentoContent {
+  padding: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bentoMill {
+  grid-row: span 2;
+}
