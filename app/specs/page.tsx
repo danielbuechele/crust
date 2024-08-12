@@ -4,12 +4,12 @@ import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./page.module.css";
 import clsx from "clsx";
 import localFont from "next/font/local";
-import specs from "./specs.svg";
 import ToggleGroup from "@/components/ToggleGroup/ToggleGroup";
 import { useState } from "react";
 import Image from "next/image";
 
 import pepper from "./pepper.png";
+import specs from "./specs.png";
 import salt from "./salt.png";
 import mill from "./mill.png";
 import guide from "./guide.png";
@@ -52,7 +52,7 @@ export default function Page() {
         <Section title="Size & Weight">
           <ValuePair label="Diameter" value="1.67” (42,4 mm)" />
           <Row
-            left={<img src={specs.src} />}
+            left={<Image alt="" width={150} src={specs} />}
             right={<ValuePair label="Height" value="7.56” (192 mm)" />}
           />
           <Row
