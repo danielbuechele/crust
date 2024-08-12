@@ -4,6 +4,7 @@ import "./globals.css";
 import { ApolloWrapper } from "./ApolloWrapper";
 import Footer from "@/components/Footer/Footer";
 import Head from "@/components/Head/Head";
+import DocslyClient from "@/components/DocslyClient";
 
 const basier = localFont({
   src: "../public/basiercircle-regular-webfont.woff2",
@@ -27,6 +28,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ApolloWrapper>
+        <DocslyClient />
       </body>
     </html>
   );
