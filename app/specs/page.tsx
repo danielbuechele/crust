@@ -11,8 +11,8 @@ import Image from "next/image";
 import pepper from "./pepper.png";
 import specs from "./specs.png";
 import salt from "./salt.png";
-import mill from "./mill.png";
 import guide from "./guide.png";
+import mill from "./mill.png";
 
 const medium = localFont({
   src: "../../public/basiercircle-medium-webfont.woff2",
