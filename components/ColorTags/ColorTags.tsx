@@ -12,9 +12,9 @@ import orange from "./orange.png";
 import midnight from "./midnight.png";
 import ivory from "./ivory.png";
 import charcoal from "./charcoal.png";
-import Image, { getImageProps, ImageProps } from "next/image";
+import Image from "next/image";
 import Wrapper from "@/components/Wrapper/Wrapper";
-import { useInViewEffect } from "react-hook-inview";
+import { useInView } from "react-hook-inview";
 
 const IMAGES = {
   white,
@@ -34,40 +34,26 @@ const medium = localFont({
 export default function ColorTags() {
   const DEFAULT_COLOR = "orange";
   const [color, setColor] = useState<Colors>(DEFAULT_COLOR);
-
-  const imageProps: Omit<ImageProps, "src"> = {
-    alt: "Color Tag",
-    quality: 50,
-    fill: true,
-    style: { objectFit: "contain" },
-    sizes: "90px",
-  };
-
-  useInViewEffect(() => {
-    const images = Object.values(IMAGES);
-    images.forEach((image) => {
-      const { src, ...props } = getImageProps(image);
-      const img = new window.Image();
-      img.src = src;
-    });
-  });
+  const inView = useInView();
 
   return (
     <section className={styles.root}>
       <Wrapper className={styles.wrapper}>
         <div className={styles.preview}>
-          {Object.entries(IMAGES).map(([key, src]) => (
-            <Image
-              key={key}
-              src={src}
-              alt=""
-              style={{ opacity: color === key ? 1 : 0 }}
-              quality={50}
-              fill
-              sizes="960px"
-              loading={color === key ? "eager" : "lazy"}
-            />
-          ))}
+          {Object.entries(IMAGES).map(([key, src]) =>
+            key === color || inView ? (
+              <Image
+                key={key}
+                src={src}
+                alt=""
+                style={{ opacity: color === key ? 1 : 0 }}
+                quality={50}
+                fill
+                sizes="960px"
+                loading={color === key ? "eager" : "lazy"}
+              />
+            ) : null
+          )}
         </div>
         <div className={styles.selector}>
           <TextPairing heading="Color Tags">
