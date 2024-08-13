@@ -90,7 +90,7 @@ export default function Page() {
         <Section title="In the Box">
           <div className={styles.bento}>
             <div className={clsx(styles.bentoBox, styles.bentoMill)}>
-              <Image src={mill} alt="" fill />
+              <Image src={mill} alt="Mill" fill sizes="30vw" />
               <div className={styles.bentoContent}>Mill</div>
             </div>
             <div className={styles.bentoBox}>
@@ -102,10 +102,25 @@ export default function Page() {
                   onValueChange={(e) => setTags(e as any)}
                 />
               </div>
-              <Image src={tags === "Pepper" ? pepper : salt} alt="" fill />
+              <Image
+                className={styles.tags}
+                style={{ opacity: tags === "Pepper" ? 1 : 0 }}
+                sizes="30vw"
+                src={pepper}
+                alt="Pepper tags"
+                fill
+              />
+              <Image
+                className={styles.tags}
+                style={{ opacity: tags === "Salt" ? 1 : 0 }}
+                sizes="30vw"
+                src={salt}
+                alt="Salt tags"
+                fill
+              />
             </div>
             <div className={clsx(styles.bentoGuide, styles.bentoBox)}>
-              <Image src={guide} alt="" fill />
+              <Image src={guide} alt="Quick Start guide" fill sizes="30vw" />
               <div className={styles.bentoContent}>Quick Start</div>
             </div>
           </div>

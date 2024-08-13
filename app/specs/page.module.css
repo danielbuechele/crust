@@ -82,3 +82,7 @@
 .bentoMill {
   grid-row: span 2;
 }
+
+.tags {
+  transition: all 0.3s;
+}
