@@ -46,6 +46,7 @@
   object-position: center bottom;
   overflow: hidden;
   pointer-events: none;
+  transition: opacity 0.5s;
 }
 
 .toggle {

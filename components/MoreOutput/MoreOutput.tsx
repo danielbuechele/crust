@@ -20,6 +20,7 @@ export default function MoreOutput() {
             objectFit="cover"
             objectPosition="bottom left"
             fill
+            sizes="60vw"
           />
         </div>
       </Wrapper>

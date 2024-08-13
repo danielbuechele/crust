@@ -24,6 +24,7 @@ export default function PreciseAdjustment() {
             alt="Precise Adjustment"
             objectFit="contain"
             objectPosition="center right"
+            sizes="40vw"
             fill
           />
         </div>

@@ -6,7 +6,6 @@ import GrindRange from "@/components/GrindRange/GrindRange";
 import MoreOutput from "@/components/MoreOutput/MoreOutput";
 import PreciseAdjustment from "@/components/PreciseAdjustment/PreciseAdjustment";
 import Features from "@/components/Features/Features";
-import TechSpecsLink from "@/components/TechSpecsLink/TechSpecsLink";
 
 export default function Homepage() {
   return (
@@ -19,7 +18,6 @@ export default function Homepage() {
       <MoreOutput />
       <PreciseAdjustment />
       <Features />
-      <TechSpecsLink />
     </>
   );
 }

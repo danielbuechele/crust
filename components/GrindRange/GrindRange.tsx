@@ -18,7 +18,13 @@ export default function GrindRange() {
           and roast beef, and finer than pre-ground pepper.
         </TextPairing>
         <div className={styles.img}>
-          <Image src={range} alt="Grind range" objectFit="contain" fill />
+          <Image
+            src={range}
+            alt="Grind range"
+            objectFit="contain"
+            fill
+            sizes="900px"
+          />
         </div>
       </Wrapper>
     </section>

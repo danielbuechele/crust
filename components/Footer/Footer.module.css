@@ -1,6 +1,32 @@
+.link {
+  display: flex;
+  justify-content: space-between;
+  font-size: 64px;
+}
+
+.root {
+  border-top: 1px solid #dbdbdb;
+  padding: 50px 0;
+}
+
+.button {
+  border-radius: 36px;
+  width: 124px;
+  height: 72px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: 0.2s ease-in-out;
+}
+
+.link:hover .button {
+  background-color: rgba(227, 227, 227, 0.5);
+}
+
 .footer {
   border-top: 1px solid #dbdbdb;
-  margin-top: 70px;
 }
 
 .wrapper {

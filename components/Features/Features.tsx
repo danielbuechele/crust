@@ -20,7 +20,7 @@ export default function Features() {
   return (
     <Wrapper className={styles.wrapper}>
       <div className={clsx(styles.box, styles.elegant)}>
-        <Image src={elegant} alt="" fill objectFit="cover" />
+        <Image src={elegant} alt="" fill objectFit="cover" sizes="30vw" />
         <p>
           <strong>Elegant.</strong> Easy to use with a timeless design that
           looks artful on display when not in use.
@@ -28,7 +28,13 @@ export default function Features() {
       </div>
 
       <div className={clsx(styles.box, styles.compatible)}>
-        <Image src={compatible} alt="" fill className={styles.compatibleImg} />
+        <Image
+          src={compatible}
+          alt=""
+          fill
+          className={styles.compatibleImg}
+          sizes="30vw"
+        />
         <p>
           <strong>Compatible Spices.</strong> Usable for all dry peppers, salt,
           and spices.
@@ -79,6 +85,7 @@ export default function Features() {
             alt=""
             fill
             className={styles.functionalImg}
+            sizes="30vw"
           />
           <p>
             <strong>Functional.</strong> Precise functionality developed with

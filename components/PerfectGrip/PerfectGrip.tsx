@@ -10,7 +10,8 @@ import linearInterpolation from "@/utils/linearInterpolation";
 const SEQUENCE_LENGTH = 120;
 
 function getFilename(i: number) {
-  return `/crust-p1-animated-scroll/crust-p1-animated0${String(i + 1).padStart(3, "0")}.webp`;
+  // find ./ -iname "*.png" -exec magick '{}' -resize 1500x1500^ -gravity center -crop 1500x1500+0+0 +repage -background '#E8EAE7' -alpha remove -alpha off -quality 50 '{}'.avif \;
+  return `/crust-p1-animated-scroll/crust-p1-animated0${String(i).padStart(3, "0")}.avif`;
 }
 
 export default function PerfectGrip() {
@@ -25,11 +26,18 @@ export default function PerfectGrip() {
         [0, 1],
         [0.26, 14],
         [1.6, 91],
-        [2, 120],
-        [3, 120]
+        [2, SEQUENCE_LENGTH],
+        [3, SEQUENCE_LENGTH]
       ),
     []
   );
+
+  useEffect(() => {
+    for (let i = 0; i < SEQUENCE_LENGTH; i++) {
+      const img = new Image();
+      img.src = getFilename(i);
+    }
+  }, []);
 
   useEffect(() => {
     const current = canvas.current;
@@ -42,7 +50,7 @@ export default function PerfectGrip() {
     }
 
     const img = new Image();
-    img.src = getFilename(Math.floor(value(percent)));
+    img.src = getFilename(Math.floor(value(percent) - 1));
     img.onload = () => {
       requestAnimationFrame(() =>
         ctx.drawImage(img, 0, 0, ((height ?? 0) / 2343) * 1920, height ?? 0)
@@ -59,15 +67,6 @@ export default function PerfectGrip() {
           width={((height ?? 0) / 2343) * 1920}
           height={height ?? 0}
         />
-        {new Array(SEQUENCE_LENGTH).fill(0).map((_, i) => (
-          <link
-            key={i}
-            rel="prefetch"
-            href={getFilename(i)}
-            as="image"
-            fetchPriority="low"
-          />
-        ))}
       </div>
       <div className={styles.content} style={{ top: 60 }}>
         <TextPairing heading="Perfect Grip" align="center">

@@ -46,8 +46,20 @@ export default async function Home({}: {}) {
         <Image
           alt=""
           fill
-          src={isSpecs ? specs : home}
+          src={specs}
           className={styles.img}
+          priority={isSpecs}
+          style={{ opacity: isSpecs ? 1 : 0 }}
+          sizes="100vh"
+        />
+        <Image
+          alt=""
+          fill
+          src={home}
+          className={styles.img}
+          style={{ opacity: isSpecs ? 0 : 1 }}
+          priority={!isSpecs}
+          sizes="100vh"
         />
       </div>
       <div className={styles.toggle}>
