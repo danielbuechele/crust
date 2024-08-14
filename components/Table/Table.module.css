@@ -1,0 +1,23 @@
+.grid {
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 30px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: span 2;
+  padding: 36px 0;
+  border: 0;
+  border-top: 1px solid #dbdbdb;
+}
+
+.row:first-child {
+  border-top: 0;
+}

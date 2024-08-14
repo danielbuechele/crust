@@ -1,12 +1,14 @@
 import clsx from "clsx";
 import styles from "./BuyButton.module.css";
+import Link from "next/link";
 
 export default function BuyButton(props: {
   className?: string;
   variant?: "light" | "dark";
 }) {
   return (
-    <a
+    <Link
+      href="/buy"
       className={clsx(
         props.className,
         styles.button,
@@ -28,6 +30,6 @@ export default function BuyButton(props: {
           />
         </svg>
       </div>
-    </a>
+    </Link>
   );
 }

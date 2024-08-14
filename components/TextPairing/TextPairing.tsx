@@ -12,8 +12,10 @@ export default function TextPairing({
   variant,
   align = "left",
   className,
+  left,
 }: {
   children: React.ReactNode;
+  left?: React.ReactNode;
   heading: string;
   variant?: "dark" | "light";
   align?: "left" | "center";
@@ -24,7 +26,8 @@ export default function TextPairing({
       className={clsx(
         styles.root,
         className,
-        variant === "dark" ? styles.dark : undefined
+        variant === "dark" ? styles.dark : undefined,
+        left && styles.wide
       )}
     >
       <h3
@@ -36,7 +39,10 @@ export default function TextPairing({
       >
         {heading}
       </h3>
-      <div className={styles.content}>{children}</div>
+      <div className={styles.content}>
+        {left}
+        {children}
+      </div>
     </div>
   );
 }

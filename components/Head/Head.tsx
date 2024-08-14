@@ -11,6 +11,7 @@ import { usePathname, useRouter } from "next/navigation";
 import home from "./home.png";
 import specs from "./specs.png";
 import Image from "next/image";
+import Wrapper from "../Wrapper/Wrapper";
 
 const ppRegular = localFont({
   src: "../../public/PPEditorialNew-Regular.woff2",
@@ -24,10 +25,6 @@ export default async function Home({}: {}) {
 
   return (
     <main className={styles.main}>
-      <nav className={styles.nav}>
-        <Logo />
-        <BuyButton />
-      </nav>
       <h1 className={clsx(styles.hero, ppRegular.className)}>
         {isSpecs ? (
           <>

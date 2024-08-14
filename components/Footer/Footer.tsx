@@ -78,7 +78,7 @@ export default function Footer() {
                 <h4>Our Company</h4>
                 <ul>
                   <li>
-                    <a href="">About</a>
+                    <Link href="/about">About</Link>
                   </li>
                   <li>
                     <a href="">Contact Us</a>

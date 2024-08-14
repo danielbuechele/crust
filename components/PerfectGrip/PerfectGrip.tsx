@@ -6,6 +6,12 @@ import { useEffect, useMemo, useRef } from "react";
 import useScroll from "@/utils/useScroll";
 import { useWindowSize } from "@uidotdev/usehooks";
 import linearInterpolation from "@/utils/linearInterpolation";
+import localFont from "next/font/local";
+import clsx from "clsx";
+
+const medium = localFont({
+  src: "../../public/basiercircle-medium-webfont.woff2",
+});
 
 const SEQUENCE_LENGTH = 120;
 
@@ -85,7 +91,34 @@ export default function PerfectGrip() {
         </TextPairing>
       </div>
       <div className={styles.content} style={{ bottom: 80 }}>
-        <TextPairing heading="Medical-Grade Stainless Steel" align="center">
+        <TextPairing
+          heading="Medical-Grade Stainless&nbsp;Steel"
+          align="center"
+          left={
+            <div className={styles.table}>
+              <div className={styles.row}>
+                <div className={clsx(styles.label, medium.className)}>Burr</div>
+                <div>
+                  Stainless Steel (P–1)
+                  <br />
+                  Ceramic (S–1)
+                </div>
+              </div>
+              <div className={styles.row}>
+                <div className={clsx(styles.label, medium.className)}>
+                  Color Tags
+                </div>
+                <div>Vegan Leather</div>
+              </div>
+              <div className={styles.row}>
+                <div className={clsx(styles.label, medium.className)}>
+                  Other Parts
+                </div>
+                <div>Stainless Steel</div>
+              </div>
+            </div>
+          }
+        >
           Stainless steel, not aluminum, is chosen for its unmatched durability
           and resistance to rust and corrosion. This ensures your grinder
           performs flawlessly over time, preserving the pure, unaltered flavors

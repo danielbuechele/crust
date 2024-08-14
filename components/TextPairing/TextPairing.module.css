@@ -2,6 +2,10 @@
   max-width: 496px;
 }
 
+.wide {
+  max-width: 752px;
+}
+
 .heading {
   font-size: 72px;
   margin-bottom: 1rem;
@@ -25,6 +29,7 @@
   font-size: 24px;
   line-height: 135%;
   letter-spacing: -0.48px;
+  display: flex;
 }
 
 .dark .content {

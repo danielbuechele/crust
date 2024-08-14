@@ -29,3 +29,35 @@
   transform: translateX(-50%);
   z-index: 2;
 }
+
+.table {
+  font-size: 16px;
+  margin-right: 50px;
+  margin-top: 7px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #dbdbdb;
+  padding: 14px 0;
+}
+
+.row:last-child {
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.label {
+  color: #0e0f12;
+  white-space: nowrap;
+  text-align: left;
+  vertical-align: top;
+  padding-right: 30px;
+}
+
+.row div {
+  white-space: nowrap;
+  text-align: right;
+  line-height: 145%;
+  vertical-align: top;
+}

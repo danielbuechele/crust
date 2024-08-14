@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client";
 import { getClient } from "../ApolloClient";
 import { BuyQuery } from "@/utils/storefront";
+import Wrapper from "@/components/Wrapper/Wrapper";
 
 const shopQuery = gql`
   query Buy {
@@ -21,13 +22,13 @@ export default async function Home() {
   const { data } = await getClient().query<BuyQuery>({ query: shopQuery });
 
   return (
-    <main>
+    <Wrapper>
       <h1>{data.shop.name}</h1>
       <ul>
         {data.products.nodes.map((product) => (
           <li key={product.id}>{product.title}</li>
         ))}
       </ul>
-    </main>
+    </Wrapper>
   );
 }
