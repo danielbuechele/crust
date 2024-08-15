@@ -9,9 +9,10 @@ const medium = localFont({
 export function Row(props: {
   title: string | React.ReactNode;
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <div className={styles.row}>
+    <div className={clsx(props.className, styles.row)}>
       <div className={clsx(medium, styles.sectionTitle)}>{props.title}</div>
       <div>{props.children}</div>
     </div>

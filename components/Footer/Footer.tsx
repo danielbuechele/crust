@@ -61,7 +61,7 @@ export default function Footer() {
                 <h4>Customer Care</h4>
                 <ul>
                   <li>
-                    <a href="">FAQ</a>
+                    <Link href="/faq">FAQ</Link>
                   </li>
                   <li>
                     <a href="">Manual</a>
