@@ -242,12 +242,18 @@ export enum ArticleSortKeys {
   UpdatedAt = 'UPDATED_AT'
 }
 
-/** Represents a generic custom attribute. */
+/** Represents a generic custom attribute, such as whether an order is a customer's first. */
 export type Attribute = {
   __typename?: 'Attribute';
-  /** Key or name of the attribute. */
+  /**
+   * The key or name of the attribute. For example, `"customersFirstOrder"`.
+   *
+   */
   key: Scalars['String']['output'];
-  /** Value of the attribute. */
+  /**
+   * The value of the attribute. For example, `"true"`.
+   *
+   */
   value?: Maybe<Scalars['String']['output']>;
 };
 
@@ -5706,7 +5712,7 @@ export type Order = HasMetafields & Node & {
   currentTotalPrice: MoneyV2;
   /** The total of all taxes applied to the order, excluding taxes for returned line items. */
   currentTotalTax: MoneyV2;
-  /** A list of the custom attributes added to the order. */
+  /** A list of the custom attributes added to the order. For example, whether an order is a customer's first. */
   customAttributes: Array<Attribute>;
   /** The locale code in which this specific order happened. */
   customerLocale?: Maybe<Scalars['String']['output']>;
@@ -6269,7 +6275,11 @@ export type Product = HasMetafields & Node & OnlineStorePublishable & Trackable 
   metafield?: Maybe<Metafield>;
   /** The metafields associated with the resource matching the supplied list of namespaces and keys. */
   metafields: Array<Maybe<Metafield>>;
-  /** The URL used for viewing the resource on the shop's Online Store. Returns `null` if the resource is currently not published to the Online Store sales channel. */
+  /**
+   * The URL used for viewing the resource on the shop's Online Store. Returns
+   * `null` if the resource is currently not published to the Online Store sales channel.
+   *
+   */
   onlineStoreUrl?: Maybe<Scalars['URL']['output']>;
   /** List of product options. */
   options: Array<ProductOption>;
@@ -8077,12 +8087,28 @@ export enum WeightUnit {
   Pounds = 'POUNDS'
 }
 
-export type BuyQueryVariables = Exact<{ [key: string]: never; }>;
+export type AddToCartMutationVariables = Exact<{
+  lines?: InputMaybe<Array<CartLineInput> | CartLineInput>;
+}>;
 
 
-export type BuyQuery = { __typename?: 'QueryRoot', shop: { __typename?: 'Shop', name: string, id: string }, products: { __typename?: 'ProductConnection', nodes: Array<{ __typename?: 'Product', id: string, title: string }> } };
+export type AddToCartMutation = { __typename?: 'Mutation', cartCreate?: { __typename?: 'CartCreatePayload', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', totalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number }> } } | null } | null };
 
-export type ShopQueryVariables = Exact<{ [key: string]: never; }>;
+export type UpdateCartMutationVariables = Exact<{
+  cartId: Scalars['ID']['input'];
+  lines: Array<CartLineUpdateInput> | CartLineUpdateInput;
+}>;
 
 
-export type ShopQuery = { __typename?: 'QueryRoot', shop: { __typename?: 'Shop', name: string, id: string } };
+export type UpdateCartMutation = { __typename?: 'Mutation', cartLinesUpdate?: { __typename?: 'CartLinesUpdatePayload', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', totalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number }> } } | null } | null };
+
+export type CartFragment = { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', totalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number }> } };
+
+export type ProductFragment = { __typename?: 'Product', id: string, title: string, description: string, availableForSale: boolean, variants: { __typename?: 'ProductVariantConnection', nodes: Array<{ __typename?: 'ProductVariant', id: string, availableForSale: boolean, price: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }> } };
+
+export type BuyQueryVariables = Exact<{
+  cartId: Scalars['ID']['input'];
+}>;
+
+
+export type BuyQuery = { __typename?: 'QueryRoot', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', totalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number }> } } | null, pepper?: { __typename?: 'Product', id: string, title: string, description: string, availableForSale: boolean, variants: { __typename?: 'ProductVariantConnection', nodes: Array<{ __typename?: 'ProductVariant', id: string, availableForSale: boolean, price: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }> } } | null, salt?: { __typename?: 'Product', id: string, title: string, description: string, availableForSale: boolean, variants: { __typename?: 'ProductVariantConnection', nodes: Array<{ __typename?: 'ProductVariant', id: string, availableForSale: boolean, price: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }> } } | null };

@@ -1,11 +1,11 @@
 import { HttpLink } from "@apollo/client";
-import { env } from "process";
+import process from "process";
 
 const link = new HttpLink({
-  uri: env.NEXT_PUBLIC_STOREFRONT_API,
+  uri: process.env.NEXT_PUBLIC_STOREFRONT_API,
   headers: {
     "X-Shopify-Storefront-Access-Token":
-      env.NEXT_PUBLIC_STOREFRONT_ACCESS_TOKEN!,
+      process.env.NEXT_PUBLIC_STOREFRONT_ACCESS_TOKEN!,
   },
 });
 

@@ -1,0 +1,15 @@
+.button {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 999em;
+  cursor: pointer;
+  border: 0;
+}
+
+.buttonDisabled {
+  cursor: forbidden;
+}
