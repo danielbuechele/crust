@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BuyButton from "../BuyButton/BuyButton";
+import PrimaryButton from "@/components/PrimaryButton/PrimaryButton";
 import Logo from "../Logo";
 import Wrapper from "../Wrapper/Wrapper";
 import styles from "./Menu.module.css";
@@ -11,7 +11,7 @@ export default function Menu() {
         <Link href="/">
           <Logo />
         </Link>
-        <BuyButton />
+        <PrimaryButton href="/buy">Buy</PrimaryButton>
       </Wrapper>
     </div>
   );

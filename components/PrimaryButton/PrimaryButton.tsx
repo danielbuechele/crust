@@ -1,21 +1,27 @@
 import clsx from "clsx";
-import styles from "./BuyButton.module.css";
+import styles from "./PrimaryButton.module.css";
 import Link from "next/link";
 
-export default function BuyButton(props: {
+export default function PrimaryButton(props: {
+  href: string;
+  disabled?: boolean;
   className?: string;
   variant?: "light" | "dark";
+  width?: number;
+  children: React.ReactNode;
 }) {
   return (
     <Link
-      href="/buy"
+      href={props.disabled ? "" : (props.href ?? "")}
+      style={{ width: props.width ?? 128 }}
       className={clsx(
         props.className,
         styles.button,
-        props.variant === "dark" ? styles.dark : undefined
+        props.variant === "dark" ? styles.dark : undefined,
+        props.disabled ? styles.disabled : undefined
       )}
     >
-      Buy
+      {props.children}
       <div className={styles.icon}>
         <svg
           width="12"

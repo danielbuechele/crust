@@ -8,8 +8,15 @@
   border-radius: 999em;
   cursor: pointer;
   border: 0;
+  transition: all 0.2s;
 }
 
 .buttonDisabled {
-  cursor: forbidden;
+  cursor: not-allowed;
+}
+
+.button:not(.buttonDisabled):hover,
+.button:not(.buttonDisabled):focus {
+  background-color: #0e0f12;
+  color: white;
 }

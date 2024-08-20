@@ -8,7 +8,7 @@ import { ProductFragment } from "./Product";
 import styles from "./page.module.css";
 import Logo from "@/components/Logo";
 import Link from "next/link";
-import CartFragment from "./CartFragment";
+import Gallery from "./Gallery";
 
 const query = gql`
   query Buy {
@@ -37,16 +37,10 @@ export default async function Home() {
         <Link href="/">
           <Logo />
         </Link>
-        <div className={styles.cart}>
-          <Suspense fallback={<div>Loading...</div>}>
-            <h1 className={styles.h1}>
-              Choose your
-              <br />
-              Crust Mill
-            </h1>
-            <Cart salt={data.salt} pepper={data.pepper} />
-          </Suspense>
-        </div>
+        <Gallery />
+        <Suspense>
+          <Cart salt={data.salt} pepper={data.pepper} />
+        </Suspense>
       </Wrapper>
     </div>
   );

@@ -1,10 +1,8 @@
 "use client";
 
 import styles from "./Head.module.css";
-import Logo from "@/components/Logo";
 import localFont from "next/font/local";
 import clsx from "clsx";
-import BuyButton from "@/components/BuyButton/BuyButton";
 import ToggleGroup from "@/components/ToggleGroup/ToggleGroup";
 import { usePathname, useRouter } from "next/navigation";
 

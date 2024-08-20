@@ -9,6 +9,10 @@ export const ProductFragment = gql`
     title
     description
     availableForSale
+    featuredImage {
+      url
+      altText
+    }
     variants(first: 1) {
       nodes {
         id
@@ -35,7 +39,7 @@ export default function Product(
     <li className={styles.product}>
       <div className={styles.titleRow}>
         <h2>{props.title}</h2>
-        {!props.availableForSale ? (
+        {props.availableForSale ? (
           <div className={styles.stepper}>
             <RoundButton
               onClick={props.onDecrease}
@@ -52,11 +56,17 @@ export default function Product(
             </RoundButton>
           </div>
         ) : (
-          <span>Currently unavailable</span>
+          <span className={styles.soon}>Back in Stock Soon</span>
         )}
       </div>
-      <div>
-        <img />
+      <div className={styles.row}>
+        {props.featuredImage && (
+          <img
+            className={styles.featuredImage}
+            alt={props.featuredImage.altText ?? undefined}
+            src={props.featuredImage.url}
+          />
+        )}
         <div>
           {props.subtitle}
           <p className={styles.desc}>{props.description}</p>

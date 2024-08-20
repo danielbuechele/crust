@@ -1,3 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 496px;
+  background-color: white;
+}
+
+.cart {
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow-y: scroll;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 40px;
+}
+
 .checkout {
   border-radius: 20px;
   background: #fc4c02;
@@ -14,4 +34,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: 1px solid #dbdbdb;
+  padding: 24px 40px;
+}
+
+.h1 {
+  font-size: 32px;
+
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.close {
+  margin-left: auto;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.amount {
+  font-size: 32px;
+}
+
+.shipping {
+  color: #8e8e8e;
+  font-size: 14px;
+  margin: 20px 40px;
 }

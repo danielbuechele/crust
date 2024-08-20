@@ -17,7 +17,6 @@
 .question {
   max-width: 624px;
   border-top: 1px solid #e3e3e3;
-  line-height: 135%;
 }
 
 .question:first-child {
@@ -86,5 +85,4 @@
 
 .answer {
   padding-bottom: 20px;
-  line-height: 135%;
 }

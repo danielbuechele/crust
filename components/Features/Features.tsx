@@ -7,7 +7,7 @@ import elegant from "./elegant.png";
 import functional from "./functional.png";
 import compatible from "./compatible.png";
 import Image from "next/image";
-import BuyButton from "../BuyButton/BuyButton";
+import PrimaryButton from "../PrimaryButton/PrimaryButton";
 
 const ppRegular = localFont({
   src: "../../public/PPEditorialNew-Regular.woff2",
@@ -46,7 +46,9 @@ export default function Features() {
           Get your Crust Mill <em className={ppItalic.className}>today.</em>
         </h3>
         <p>Now available for $299.</p>
-        <BuyButton className={styles.buy} variant="dark" />
+        <PrimaryButton className={styles.buy} variant="dark" href="/buy">
+          Buy
+        </PrimaryButton>
         <div className={styles.grow} />
         <p className={styles.shipping}>
           <strong>Free Shipping in the US.</strong> We normally ship within 2-3

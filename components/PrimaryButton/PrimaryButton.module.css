@@ -1,4 +1,5 @@
 .button {
+  position: relative;
   border: 0;
   border-radius: 999em;
   background-color: #fc4c02;
@@ -7,10 +8,8 @@
   padding-left: 20px;
   padding-right: 5px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  width: 128px;
 }
 
 .button.dark {
@@ -18,15 +17,29 @@
 }
 
 .icon {
+  position: absolute;
   width: 30px;
   height: 30px;
   border-radius: 999em;
   display: flex;
   align-items: center;
   justify-content: center;
+  right: 10px;
+  top: 5px;
+  transition: all 0.2s ease-out;
 }
 
-.button:hover .icon,
-.button:focus .icon {
+.button:hover:not(.disabled) .icon,
+.button:focus:not(.disabled) .icon {
+  right: 5px;
   background-color: #fe7b44;
+}
+
+.disabled {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
+.disabled .icon {
+  opacity: 0.5;
 }
