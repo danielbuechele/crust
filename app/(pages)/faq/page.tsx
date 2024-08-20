@@ -14,13 +14,16 @@ const medium = localFont({
 export default function FAQ() {
   return (
     <Wrapper>
-      <PageHeader title="FAQ">
-        Advice and answers from the Crust team.
-      </PageHeader>
-      <p className={styles.lead}>
-        If we haven't addressed your question here,{" "}
-        <Link href="contact">contact us</Link> for more information.
-      </p>
+      <PageHeader
+        title="FAQ"
+        lead="Advice and answers from the Crust team."
+        byline={
+          <>
+            If we haven't addressed your question here,{" "}
+            <Link href="contact">contact us</Link> for more information.
+          </>
+        }
+      />
       <Table className={styles.table}>
         <Row title="Product" className={styles.firstRow}>
           <Questions>

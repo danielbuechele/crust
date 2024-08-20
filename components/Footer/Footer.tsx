@@ -12,16 +12,14 @@ const medium = localFont({
 });
 
 export default function Footer() {
-  const isSpecs = usePathname() === "/specs";
+  const isHome = usePathname() === "/";
 
   return (
     <>
       <section className={styles.root}>
         <Wrapper>
-          <Link href={isSpecs ? "/" : "/specs"} className={styles.link}>
-            <div className={styles.text}>
-              {isSpecs ? "Overview" : "Tech Specs"}
-            </div>
+          <Link href={isHome ? "/specs" : "/"} className={styles.link}>
+            <div>{isHome ? "Tech Specs" : "Overview"}</div>
             <div className={styles.button}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

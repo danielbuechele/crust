@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import { getClient } from "../ApolloClient";
+import { getClient } from "../../ApolloClient";
 import { BuyQuery } from "@/utils/storefront";
 import Wrapper from "@/components/Wrapper/Wrapper";
 import Cart from "./Cart";

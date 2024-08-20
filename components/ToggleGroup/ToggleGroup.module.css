@@ -41,6 +41,14 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
+.item[data-state="off"]:hover {
+  color: rgba(14, 15, 18, 1);
+}
+
+.dark .item[data-state="off"]:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
 .active {
   background-color: white;
   position: absolute;

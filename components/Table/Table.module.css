@@ -1,5 +1,4 @@
 .grid {
-  padding-top: 80px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   column-gap: 30px;
