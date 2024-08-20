@@ -146,7 +146,7 @@ export default function FAQ() {
 
 function Questions({ children }: { children: React.ReactNode }) {
   return (
-    <Accordion.Root type="single" collapsible className={styles.accordion}>
+    <Accordion.Root type="single" collapsible>
       {children}
     </Accordion.Root>
   );

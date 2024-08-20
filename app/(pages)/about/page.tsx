@@ -11,11 +11,12 @@ const medium = localFont({
 export default function About() {
   return (
     <Wrapper>
-      <PageHeader title="About">
-        We are a team of designers and engineers, coming together with a shared
+      <PageHeader
+        title="About"
+        lead="We are a team of designers and engineers, coming together with a shared
         vision: to revolutionize the way people experience spices in their
-        kitchens.
-      </PageHeader>
+        kitchens."
+      />
       <Table className={styles.table}>
         <Row title="Our Story and Values">
           <p className={styles.lead}>
