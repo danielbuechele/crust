@@ -36,7 +36,7 @@ export default function Page() {
   return (
     <Wrapper>
       <Table>
-        <Row title="Size & Weight">
+        <Row title="Size & Weight" noBorderTop>
           <ValuePair label="Diameter" value="1.67” (42,4 mm)" />
           <LeftRight
             left={<Image alt="" width={150} src={specs} />}

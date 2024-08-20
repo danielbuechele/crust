@@ -6,7 +6,12 @@
 }
 
 .sectionTitle {
+  color: #0e0f12;
   font-size: 24px;
+}
+
+.smallTitle {
+  font-size: 18px;
   color: #0e0f12;
 }
 
@@ -19,6 +24,6 @@
   border-top: 1px solid #dbdbdb;
 }
 
-.row:first-child {
+.row.noBorderTop {
   border-top: 0;
 }

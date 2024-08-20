@@ -2,6 +2,11 @@ import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./page.module.css";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import Table, { Row } from "@/components/Table/Table";
+import localFont from "next/font/local";
+
+const medium = localFont({
+  src: "../../../public/basiercircle-medium-webfont.woff2",
+});
 
 export default function About() {
   return (
@@ -11,14 +16,8 @@ export default function About() {
         vision: to revolutionize the way people experience spices in their
         kitchens.
       </PageHeader>
-      <div className={styles.bento}>
-        <div className={styles.bento1}>1</div>
-        <div className={styles.bento2}>2</div>
-        <div className={styles.bento3}>3</div>
-        <div className={styles.bento4}>4</div>
-      </div>
       <Table className={styles.table}>
-        <Row title={<h3>Our Story and Values</h3>}>
+        <Row title="Our Story and Values">
           <p className={styles.lead}>
             Our journey began in a small kitchen, where friends shared a passion
             for cooking. We noticed that while we had access to a myriad of
@@ -35,6 +34,8 @@ export default function About() {
             We believe in creating products that stand the test of time,
             meticulously crafting each grinder with high-quality materials and
             precision engineering for exceptional performance and durability.
+          </p>
+          <p className={styles.lead}>
             Committed to minimizing environmental impact, our refillable,
             long-lasting grinders reduce waste and use sustainably sourced
             materials and eco-friendly manufacturing processes. Designed to be
@@ -49,27 +50,31 @@ export default function About() {
           </p>
         </Row>
 
-        <Row title="Designed in">California</Row>
-        <Row title="Manufactured in">Germany</Row>
-        <Row title="Ecological">
-          <p>
+        <Row title="Designed in" smallTitle>
+          <p className={styles.content}>California</p>
+        </Row>
+        <Row title="Manufactured in" smallTitle>
+          <p className={styles.content}>Germany</p>
+        </Row>
+        <Row title="Ecological" smallTitle>
+          <p className={styles.content}>
             Outstanding green credentials with durable, sustainable stainless
             steel.
           </p>
         </Row>
-        <Row title="Economical">
-          <p>
+        <Row title="Economical" smallTitle>
+          <p className={styles.content}>
             High-quality and durable, made in Germany, and fully repairable.
           </p>
         </Row>
-        <Row title="Functional">
-          <p>
+        <Row title="Functional" smallTitle>
+          <p className={styles.content}>
             Easy to use with a unique grip, offering precise and excellent
             grinding results.
           </p>
         </Row>
-        <Row title="Aesthetical">
-          <p>
+        <Row title="Aesthetical" smallTitle>
+          <p className={styles.content}>
             Timeless, clean design with no fussy details, instantly
             re-cognizable for its high quality.
           </p>

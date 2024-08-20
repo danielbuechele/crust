@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 import { getClient } from "../ApolloClient";
 import { BuyQuery } from "@/utils/storefront";
 import Wrapper from "@/components/Wrapper/Wrapper";
-import Cart, { CF } from "./Cart";
+import Cart from "./Cart";
 import { Suspense } from "react";
 import { ProductFragment } from "./Product";
 import styles from "./page.module.css";

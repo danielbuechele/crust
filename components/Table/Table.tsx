@@ -10,10 +10,26 @@ export function Row(props: {
   title: string | React.ReactNode;
   children: React.ReactNode;
   className?: string;
+  smallTitle?: boolean;
+  noBorderTop?: boolean;
 }) {
   return (
-    <div className={clsx(props.className, styles.row)}>
-      <div className={clsx(medium, styles.sectionTitle)}>{props.title}</div>
+    <div
+      className={clsx(
+        props.className,
+        styles.row,
+        props.noBorderTop && styles.noBorderTop
+      )}
+    >
+      <div
+        className={clsx(
+          !props.smallTitle && medium.className,
+          styles.sectionTitle,
+          props.smallTitle && styles.smallTitle
+        )}
+      >
+        {props.title}
+      </div>
       <div>{props.children}</div>
     </div>
   );
