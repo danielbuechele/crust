@@ -18,7 +18,7 @@ import styles from "./Cart.module.css";
 import RoundButton from "@/components/RoundButton/RoundButton";
 import { useRouter } from "next/navigation";
 import PrimaryButton from "@/components/PrimaryButton/PrimaryButton";
-import { useSessionStorage } from "@uidotdev/usehooks";
+import useSessionStorageState from "use-session-storage-state";
 
 const CartFragment = gql`
   fragment Cart on Cart {
@@ -94,7 +94,9 @@ export default function Cart({
   salt?: ProductFragment | null;
   pepper?: ProductFragment | null;
 }) {
-  const [cartId, setCartId] = useSessionStorage<string | null>("cartId", null);
+  const [cartId, setCartId] = useSessionStorageState<string | null>("cartId", {
+    defaultValue: null,
+  });
 
   const router = useRouter();
 
