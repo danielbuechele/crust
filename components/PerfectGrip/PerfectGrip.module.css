@@ -1,17 +1,14 @@
 .root {
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
-  background-color: #ebecea;
+  background-color: #e8eae7;
 }
 
 .videoContainer {
-  position: sticky;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #e8eae7;
 }
 
 .video {

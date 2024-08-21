@@ -34,7 +34,7 @@ function LeftRight(props: { left: React.ReactNode; right: React.ReactNode }) {
 export default function Page() {
   const [tags, setTags] = useState<"Pepper" | "Salt">("Pepper");
   return (
-    <Wrapper>
+    <Wrapper paddingTop>
       <Table>
         <Row title="Size & Weight" noBorderTop>
           <ValuePair label="Diameter" value="1.67” (42,4 mm)" />
@@ -81,6 +81,7 @@ export default function Page() {
                 <ToggleGroup
                   values={["Pepper", "Salt"]}
                   value={tags}
+                  variant="medium"
                   onValueChange={(e) => setTags(e as any)}
                 />
               </div>

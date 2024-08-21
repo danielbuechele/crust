@@ -16,6 +16,11 @@
   border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
+.group.medium {
+  background-color: #e3e3e3;
+  border: 1px solid #e3e3e3;
+}
+
 .item {
   flex-grow: 1;
   flex-basis: 0;
@@ -27,6 +32,7 @@
   padding-left: 20px;
   padding-right: 20px;
   white-space: nowrap;
+  min-width: 130px;
 }
 
 .dark .item {

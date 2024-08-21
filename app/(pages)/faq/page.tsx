@@ -28,35 +28,42 @@ export default function FAQ() {
         <Row title="Product" className={styles.firstRow}>
           <Questions>
             <Question question="Which pepper and salt can I use?">
-              Pepper Choose whole peppercorns designed for grinding. You can use
-              black, white, red, or dried green pepper varieties. We recommend
-              Kampot, Malabar, and Tellicherry peppercorns. Salt Choose large,
-              non-wet salt crystals. You can use table salt, sea salt, and
-              Himalayan salt intended for grinding. To prevent the salt from
-              clumping, store it in a dry place when not in use.
+              <h4>Pepper</h4>
+              <p>
+                Choose whole peppercorns designed for grinding. You can use
+                black, white, red, or dried green pepper varieties. We recommend
+                Kampot, Malabar, and Tellicherry peppercorns.
+              </p>
+
+              <h4>Salt</h4>
+              <p>
+                Choose large, non-wet salt crystals. You can use table salt, sea
+                salt, and Himalayan salt intended for grinding. To prevent the
+                salt from clumping, store it in a dry place when not in use.
+              </p>
             </Question>
             <Question question="Can I use other spices?">
-              Yes, Crust works best with dry spices in whole seed form, like
-              coriander seeds, fennel seeds, caraway seeds, cumin, mustard
-              seeds, anise, cloves, allspice. Cinnamon sticks and long pepper
-              (break into small pieces). For slightly oily spices like caraway,
-              mustard seeds, cloves, anise, rosemary, juniper berries, chili,
-              and ginger, you can mix them with twice the amount of rice and
-              then grind them 2-3 times from coarse to fine. This produces a
-              spice powder that is full of flavor but less intense, making it
-              much easier to dose.
+              <p>
+                Yes, Crust works best with dry spices in whole seed form, like
+                coriander seeds, fennel seeds, caraway seeds, cumin, mustard
+                seeds, anise, cloves, allspice.
+              </p>
+              <p>Cinnamon sticks and long pepper (break into small pieces).</p>
+              <p>
+                For slightly oily spices like caraway, mustard seeds, cloves,
+                anise, rosemary, juniper berries, chili, and ginger, you can mix
+                them with twice the amount of rice and then grind them 2-3 times
+                from coarse to fine. This produces a spice powder that is full
+                of flavor but less intense, making it much easier to dose.
+              </p>
             </Question>
             <Question question="Can I grind salt in the pepper mill (P–1)?">
               No, we offer specifically the salt mill Crust S–1 with a ceramic
               burr that will avoid Corrosion.
             </Question>
-            <Question question="Why did you choose to make Crust out of stainless steel?">
-              todo
-            </Question>
-            <Question question="Can stainless steel rust?">No</Question>
             <Question question="How do I clean my Crust mill?">
-              Our User Manual provides detailed instructions on how to clean the
-              Crust mills.
+              Our <Link href="/manual">User Manual</Link> provides detailed
+              instructions on how to clean the Crust mills.
             </Question>
             <Question question="Where can I download the user manual?">
               A User Manual is available online on our website here.
@@ -67,6 +74,77 @@ export default function FAQ() {
               environmental impact. By offering a thoughtfully selected product
               range, we maintain a small, closely connected supply chain.
             </Question>
+            <Question question="Why should I choose a manual grinder over an electric one?">
+              <h4>Control Over Grind Size</h4>
+              <p>
+                Manual grinders often allow for more precise control over the
+                grind size, from coarse to fine. This precision can be harder to
+                achieve with electric grinders, which may have preset settings.
+              </p>
+              <h4>Consistency</h4>
+              <p>
+                Manual grinders, especially those with high-quality ceramic or
+                steel burrs, tend to produce a more consistent grind, which is
+                essential for achieving the desired flavor and texture in your
+                dishes.
+              </p>
+              <h4>Durability</h4>
+              <p>
+                Manual grinders generally have fewer moving parts and no
+                electronic components, making them less likely to break down
+                over time. This can result in a longer lifespan compared to
+                electric grinders.
+              </p>
+              <h4>Aesthetic Appeal</h4>
+              <p>
+                Many manual grinders are beautifully crafted, often made from
+                wood, stainless steel, or other attractive materials, making
+                them a stylish addition to your kitchen or dining table.
+              </p>
+            </Question>
+
+            <Question question="Why did you choose to make Crust out of stainless steel?">
+              A stainless steel pepper and salt grinder is highly durable,
+              resistant to rust and corrosion, and easy to clean, making it
+              ideal for frequent kitchen use. Its sleek, modern appearance also
+              adds aesthetic appeal, while its strength ensures consistent
+              grinding performance. Additionally, stainless steel is a
+              low-maintenance and environmentally friendly choice.
+            </Question>
+
+            <Question question="Can stainless steel rust?">
+              <p>
+                Stainless steel is designed to resist rust and corrosion due to
+                its combination of nickel and chromium.
+              </p>
+              <h4>The stainless steel parts</h4>
+              <p>
+                Housing, laser parts, shaft, spring, nut, and adjuster—are made
+                of austenitic stainless steel with about 18% nickel and 10%
+                chromium. This alloy resists rusting under normal conditions,
+                but long-term exposure to salt, moisture, and air can cause
+                surface discoloration. However, the stainless steel itself
+                remains unaffected.
+              </p>
+
+              <h4>The stainless steel used in the hardened parts</h4>
+              <p>
+                Grinding mechanism and ball bearings—are made of martensitic
+                stainless steel with about 13% chromium. Although it’s
+                considered stainless steel, it can develop surface rust (flash
+                rust) when exposed to salt, moisture, and air. This rust is
+                mainly a surface issue and doesn’t lead to deep corrosion. If
+                the stainless steel comes into contact with regular steel or
+                iron, small particles can embed into the surface and cause rust
+                spots. These issues are mostly cosmetic and do not affect
+                hygiene, taste, or functionality.
+              </p>
+              <p>
+                If you maintain and clean your stainless steel spice grinder
+                properly, it should not rust easily.
+              </p>
+            </Question>
+
             <Question question="Do you offer a warranty?">
               Yes, Crust Mills come with a 1-year warranty covering defects in
               materials and craftsmanship.

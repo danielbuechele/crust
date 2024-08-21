@@ -18,9 +18,18 @@
   display: grid;
   grid-template-columns: subgrid;
   grid-column: span 2;
-  padding: 36px 0;
+  padding: 40px 0 60px;
   border: 0;
   border-top: 1px solid #dbdbdb;
+  line-height: 1.45;
+}
+
+.row:first-child {
+  padding-top: 0;
+}
+
+.row:last-child {
+  padding-bottom: 0;
 }
 
 .row.noBorderTop {

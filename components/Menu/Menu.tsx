@@ -8,7 +8,7 @@ export default function Menu() {
   return (
     <div className={styles.root}>
       <Wrapper className={styles.nav}>
-        <Link href="/">
+        <Link href="/" className={styles.logo}>
           <Logo />
         </Link>
         <PrimaryButton href="/buy">Buy</PrimaryButton>

@@ -12,7 +12,7 @@ export default function ToggleGroup({
   onValueChange,
   variant,
 }: {
-  variant?: "light" | "dark";
+  variant?: "light" | "dark" | "medium";
   value: string;
   onValueChange?: (value: string) => void;
   values: string[];
@@ -41,7 +41,11 @@ export default function ToggleGroup({
     <Root
       type="single"
       value={value}
-      className={clsx(styles.group, variant === "dark" && styles.dark)}
+      className={clsx(
+        styles.group,
+        variant === "dark" && styles.dark,
+        variant === "medium" && styles.medium
+      )}
       onValueChange={(value) => {
         if (value && onValueChange) {
           onValueChange(value);

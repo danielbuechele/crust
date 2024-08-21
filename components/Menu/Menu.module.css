@@ -1,5 +1,5 @@
 .root {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -8,11 +8,12 @@
 
 .nav {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 1500px;
   padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+}
+
+.logo {
+  margin-top: 5px;
 }

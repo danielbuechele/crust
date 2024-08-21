@@ -43,3 +43,19 @@
 .disabled .icon {
   opacity: 0.5;
 }
+
+.loading {
+  position: absolute;
+  left: 50%;
+  margin-left: -6px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

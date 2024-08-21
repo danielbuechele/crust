@@ -98,7 +98,7 @@ export default function Cart({
 
   const router = useRouter();
 
-  const { data } = useQuery<CartQueryT>(CartQuery, {
+  const { data, loading: l0 } = useQuery<CartQueryT>(CartQuery, {
     variables: {
       cartId,
     },
@@ -108,18 +108,20 @@ export default function Cart({
 
   const cart = data?.cart;
 
-  const [createCart] = useMutation<
+  const [createCart, { loading: l1 }] = useMutation<
     CreateCartMutation,
     CreateCartMutationVariables
   >(CreateCart);
-  const [updateCart] = useMutation<
+  const [updateCart, { loading: l2 }] = useMutation<
     UpdateCartMutation,
     UpdateCartMutationVariables
   >(UpdateCart);
-  const [addToCart] = useMutation<
+  const [addToCart, { loading: l3 }] = useMutation<
     AddToCartMutation,
     AddToCartMutationVariables
   >(AddToCart);
+
+  const loading = l0 || l1 || l2 || l3;
 
   const onChange = useCallback(
     (variantId: string, modify: -1 | 1) => {
@@ -241,6 +243,7 @@ export default function Cart({
           }).format(cart?.cost.totalAmount.amount ?? 0)}
         </span>
         <PrimaryButton
+          loading={loading}
           href={cart?.checkoutUrl}
           disabled={!cart || cart.totalQuantity < 1}
           width={200}
