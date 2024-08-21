@@ -27,6 +27,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function PerfectGrip() {
   const canvas = useRef<HTMLCanvasElement>(null);
   const container = useRef<HTMLDivElement>(null);
+  const videoContainer = useRef<HTMLDivElement>(null);
   const pin = useRef<HTMLDivElement>(null);
   const text1 = useRef<HTMLDivElement>(null);
   const text2 = useRef<HTMLDivElement>(null);
@@ -45,7 +46,6 @@ export default function PerfectGrip() {
     () => {
       const playhead = { frame: 0 };
       const onUpdate = () => {
-        console.log("onUpdate", playhead.frame);
         const current = canvas.current;
         if (!current) {
           return;
@@ -64,44 +64,36 @@ export default function PerfectGrip() {
 
       onUpdate();
 
-      gsap.to(playhead, {
+      gsap.timeline().to(playhead, {
         frame: SEQUENCE_LENGTH - 1,
         onUpdate,
-        // keyframes: [
-        //   { frame: 0, duration: 1 },
-        //   { frame: 59, duration: 2 },
-        //   { frame: SEQUENCE_LENGTH - 1, duration: 1 },
-        // ],
         scrollTrigger: {
           trigger: container.current,
-          start: "top 80%",
-          end: "bottom 20%",
+          start: "top top",
+          end: "bottom bottom",
           scrub: true,
-          markers: true,
-          pin: pin.current,
+          // markers: true,
+          pin: [videoContainer.current, text2.current],
         },
       });
-
-      // gsap.to(text1.current, {
-      //   opacity: 0,
-
-      //   scrollTrigger: {
-      //     start: "top center",
-      //     end: "bottom center",
-      //     scrub: true,
-      //   },
-      // });
     },
     {
-      dependencies: [container.current, canvas.current, pin.current, height],
+      dependencies: [
+        container.current,
+        canvas.current,
+        pin.current,
+        height,
+        text2.current,
+      ],
       scope: container,
+      revertOnUpdate: true,
     }
   );
 
   return (
     <section ref={container} className={styles.root}>
-      <div ref={pin}>
-        <div className={styles.videoContainer}>
+      <div ref={videoContainer} className={styles.videoContainer}>
+        <div className={styles.videoContainer2}>
           <canvas
             className={styles.video}
             ref={canvas}
@@ -109,60 +101,54 @@ export default function PerfectGrip() {
             height={height ?? 0}
           />
         </div>
-        <div
-          className={styles.content}
-          ref={text1}
-          style={{ top: 160, position: "sticky", opacity: 1 }}
-        >
-          <TextPairing heading="Perfect Grip" align="center">
-            The precisely contoured shape fits naturally in your hand, ensuring
-            a secure and effortless grip. Every use feels smooth and controlled.
-          </TextPairing>
-        </div>
-        <div className={styles.content} ref={text2}>
-          <TextPairing heading="Easy to Fill" align="center">
-            Refilling your Crust Mill is effortless. Just lift the knob to
-            reveal a wide opening, allowing up to 50g of pepper or dry salt
-            without spills.
-          </TextPairing>
-        </div>
-        <div className={styles.content} ref={text3}>
-          <TextPairing
-            heading="Medical-Grade Stainless&nbsp;Steel"
-            align="center"
-            left={
-              <div className={styles.table}>
-                <div className={styles.row}>
-                  <div className={clsx(styles.label, medium.className)}>
-                    Burr
-                  </div>
-                  <div>
-                    Stainless Steel (P–1)
-                    <br />
-                    Ceramic (S–1)
-                  </div>
-                </div>
-                <div className={styles.row}>
-                  <div className={clsx(styles.label, medium.className)}>
-                    Color Tags
-                  </div>
-                  <div>Vegan Leather</div>
-                </div>
-                <div className={styles.row}>
-                  <div className={clsx(styles.label, medium.className)}>
-                    Other Parts
-                  </div>
-                  <div>Stainless Steel</div>
+      </div>
+      <div className={styles.content} ref={text1}>
+        <TextPairing heading="Perfect Grip" align="center">
+          The precisely contoured shape fits naturally in your hand, ensuring a
+          secure and effortless grip. Every use feels smooth and controlled.
+        </TextPairing>
+      </div>
+      <div className={styles.content} ref={text2}>
+        <TextPairing heading="Easy to Fill" align="center">
+          Refilling your Crust Mill is effortless. Just lift the knob to reveal
+          a wide opening, allowing up to 50g of pepper or dry salt without
+          spills.
+        </TextPairing>
+      </div>
+      <div className={styles.content} ref={text3}>
+        <TextPairing
+          heading="Medical-Grade Stainless&nbsp;Steel"
+          align="center"
+          left={
+            <div className={styles.table}>
+              <div className={styles.row}>
+                <div className={clsx(styles.label, medium.className)}>Burr</div>
+                <div>
+                  Stainless Steel (P–1)
+                  <br />
+                  Ceramic (S–1)
                 </div>
               </div>
-            }
-          >
-            Stainless steel, not aluminum, is chosen for its unmatched
-            durability and resistance to rust and corrosion. This ensures your
-            grinder performs flawlessly over time, preserving the pure,
-            unaltered flavors of your spices.
-          </TextPairing>
-        </div>
+              <div className={styles.row}>
+                <div className={clsx(styles.label, medium.className)}>
+                  Color Tags
+                </div>
+                <div>Vegan Leather</div>
+              </div>
+              <div className={styles.row}>
+                <div className={clsx(styles.label, medium.className)}>
+                  Other Parts
+                </div>
+                <div>Stainless Steel</div>
+              </div>
+            </div>
+          }
+        >
+          Stainless steel, not aluminum, is chosen for its unmatched durability
+          and resistance to rust and corrosion. This ensures your grinder
+          performs flawlessly over time, preserving the pure, unaltered flavors
+          of your spices.
+        </TextPairing>
       </div>
     </section>
   );

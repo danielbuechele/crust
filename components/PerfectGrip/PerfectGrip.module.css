@@ -1,14 +1,19 @@
 .root {
-  height: 100vh;
+  height: 200vh;
   position: relative;
   background-color: #e8eae7;
 }
 
 .videoContainer {
+  position: relative;
+}
+
+.videoContainer2 {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  height: 100vh;
 }
 
 .video {

@@ -1,11 +1,15 @@
+.root {
+  background: white;
+  position: relative;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 512px 512px;
   column-gap: 16px;
   row-gap: 16px;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 160px;
 }
 
 .box {
@@ -27,9 +31,6 @@
 .elegant {
   justify-content: flex-end;
   grid-row: span 2;
-}
-
-.compatible {
 }
 
 .compatibleImg {
