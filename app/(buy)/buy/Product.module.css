@@ -9,7 +9,6 @@
   font-size: 18px;
   border-bottom: 1px solid #dbdbdb;
   padding: 10px 0;
-  margin-bottom: 24px;
 }
 
 .stepper {
@@ -28,15 +27,14 @@
   line-height: 145%;
 }
 
+.content {
+  margin-top: 24px;
+}
+
 .row {
   display: flex;
   flex-direction: row;
   gap: 20px;
-}
-
-.featuredImage {
-  width: 128px;
-  flex-shrink: 0;
 }
 
 .soon {

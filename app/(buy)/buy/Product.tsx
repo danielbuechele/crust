@@ -2,17 +2,12 @@ import RoundButton from "@/components/RoundButton/RoundButton";
 import { ProductFragment as ProductFragmentT } from "@/utils/storefront";
 import { gql } from "@apollo/client";
 import styles from "./Product.module.css";
+import Image from "next/image";
 
 export const ProductFragment = gql`
   fragment Product on Product {
     id
-    title
-    description
     availableForSale
-    featuredImage {
-      url
-      altText
-    }
     variants(first: 1) {
       nodes {
         id
@@ -28,9 +23,12 @@ export const ProductFragment = gql`
 
 export default function Product(
   props: {
+    title: string;
+    subtitle: string;
+    description: string;
+    image: any;
     quantity: number;
     available?: boolean;
-    subtitle: string;
     onIncrease: () => void;
     onDecrease: () => void;
   } & ProductFragmentT
@@ -60,14 +58,8 @@ export default function Product(
         )}
       </div>
       <div className={styles.row}>
-        {props.featuredImage && (
-          <img
-            className={styles.featuredImage}
-            alt={props.featuredImage.altText ?? undefined}
-            src={props.featuredImage.url}
-          />
-        )}
-        <div>
+        <Image width={128} alt="Burr" src={props.image} />
+        <div className={styles.content}>
           {props.subtitle}
           <p className={styles.desc}>{props.description}</p>
         </div>

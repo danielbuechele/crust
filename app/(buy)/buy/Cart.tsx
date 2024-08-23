@@ -5,7 +5,6 @@ import Product from "./Product";
 import {
   AddToCartMutation,
   AddToCartMutationVariables,
-  CartFragment as CartFragmentT,
   CartQuery as CartQueryT,
   CreateCartMutation,
   CreateCartMutationVariables,
@@ -13,12 +12,14 @@ import {
   UpdateCartMutation,
   UpdateCartMutationVariables,
 } from "@/utils/storefront";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import styles from "./Cart.module.css";
 import RoundButton from "@/components/RoundButton/RoundButton";
 import { useRouter } from "next/navigation";
 import PrimaryButton from "@/components/PrimaryButton/PrimaryButton";
 import useSessionStorageState from "use-session-storage-state";
+import ceramic from "./ceramic.png";
+import steel from "./steel.png";
 
 const CartFragment = gql`
   fragment Cart on Cart {
@@ -206,7 +207,10 @@ export default function Cart({
         {pepper && (
           <Product
             {...pepper}
+            image={steel}
+            title="P–1 Pepper Mill"
             subtitle="Stainless Steel Grinding Burr"
+            description="Our stainless steel burr grinder is perfect for pepper due to its hardness and durability."
             quantity={
               cart?.lines.nodes.find(
                 (n) => n.merchandise.id === pepper.variants.nodes[0]?.id
@@ -220,7 +224,10 @@ export default function Cart({
         {salt && (
           <Product
             {...salt}
+            image={ceramic}
+            title="S–1 Salt Mill"
             subtitle="Ceramic Grinding Burr"
+            description="Our ceramic burr grinder is perfect for salt because it is non-reactive, keeping the flavor pure."
             quantity={
               cart?.lines.nodes.find(
                 (n) => n.merchandise.id === salt!.variants.nodes[0]?.id
