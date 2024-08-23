@@ -1,7 +1,17 @@
+.spacer {
+  height: 200vh;
+}
+
 .lead {
-  padding: 300px 20px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .lead p {

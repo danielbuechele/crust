@@ -46,7 +46,7 @@ export default function ColorTags() {
                 key={key}
                 src={src}
                 alt=""
-                style={{ opacity: color === key ? 1 : 0 }}
+                style={{ objectFit: "cover", opacity: color === key ? 1 : 0 }}
                 quality={50}
                 fill
                 sizes="960px"

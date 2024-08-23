@@ -1,7 +1,13 @@
 .root {
-  height: 200vh;
+  height: 300vh;
   position: relative;
   background-color: #e8eae7;
+}
+
+.spacer {
+  background-color: #e8eae7;
+  position: relative;
+  height: 160px;
 }
 
 .videoContainer {
@@ -30,6 +36,20 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+}
+
+.content.text1 {
+  top: 0;
+}
+
+.content.text2 {
+  position: fixed;
+  top: 15vh;
+  opacity: 0;
+}
+
+.content.text3 {
+  bottom: 0px;
 }
 
 .table {
