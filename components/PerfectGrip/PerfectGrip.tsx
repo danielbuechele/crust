@@ -90,8 +90,7 @@ export default function PerfectGrip() {
           { frame: 59 },
           {
             frame: SEQUENCE_LENGTH - 1,
-            // onUpdate,
-            duration: 1,
+            duration: 1.5,
           },
           2.5
         )
