@@ -54,6 +54,7 @@ export default function PerfectGrip() {
 
         const img = new Image();
         img.src = getFilename(Math.floor(playhead.frame));
+        console.log(playhead.frame);
         img.onload = () => {
           ctx.drawImage(img, 0, 0, ((height ?? 0) / 2343) * 1920, height ?? 0);
         };
@@ -72,6 +73,7 @@ export default function PerfectGrip() {
             scrub: true,
             // markers: true,
             pin: [videoContainer.current],
+            onUpdate,
           },
         })
         .fromTo(
@@ -79,7 +81,6 @@ export default function PerfectGrip() {
           { frame: 0 },
           {
             frame: 59,
-            onUpdate,
             duration: 1.5,
           },
           0.25
@@ -89,7 +90,7 @@ export default function PerfectGrip() {
           { frame: 59 },
           {
             frame: SEQUENCE_LENGTH - 1,
-            onUpdate,
+            // onUpdate,
             duration: 1,
           },
           2.5
