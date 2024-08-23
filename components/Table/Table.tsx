@@ -18,7 +18,8 @@ export function Row(props: {
       className={clsx(
         props.className,
         styles.row,
-        props.noBorderTop && styles.noBorderTop
+        props.noBorderTop && styles.noBorderTop,
+        props.smallTitle && styles.smallTitleRow
       )}
     >
       <div

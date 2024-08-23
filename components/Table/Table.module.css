@@ -24,8 +24,8 @@
   line-height: 1.45;
 }
 
-.row:first-child {
-  padding-top: 0;
+.row.smallTitleRow {
+  padding: 24px 0;
 }
 
 .row:last-child {
@@ -34,4 +34,5 @@
 
 .row.noBorderTop {
   border-top: 0;
+  padding-top: 0;
 }
