@@ -70,7 +70,7 @@ export default function Settings() {
   );
 }
 
-export function Setting(props: {
+function Setting(props: {
   children: React.ReactNode;
   title: string;
   image: StaticImageData;
