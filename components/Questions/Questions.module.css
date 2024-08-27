@@ -1,0 +1,100 @@
+
+.question {
+    max-width: 496px;
+    border-top: 1px solid #e3e3e3;
+    line-height: 1.45;
+  }
+  
+  .question:first-child {
+    border-top: 0;
+  }
+  
+  .questionText {
+    padding: 16px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .plus {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 999em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .questionText .plus::after {
+    content: "+";
+  }
+  
+  .questionText[data-state="open"] .plus::after {
+    content: "-";
+  }
+  
+  .questionText:hover .plus {
+    background-color: #e5e5e5;
+  }
+  
+  .questionContent {
+    color: #6c6c6c;
+    overflow: hidden;
+  }
+  
+  @keyframes slideDown {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  
+  .questionContent[data-state="open"] {
+    animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  }
+  .questionContent[data-state="closed"] {
+    animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  }
+
+
+.answer {
+    padding-bottom: 20px;
+  }
+  
+  .answer a {
+    color: #0e0f12;
+  }
+  
+  .answer a:hover,
+  .answer a:focus,
+  .answer a:active {
+    text-decoration: underline;
+  }
+  
+  .answer h4 {
+    color: #0e0f12;
+    margin-top: 30px;
+  }
+  
+  .answer h4:first-child {
+    margin-top: 0;
+  }
+  
+  .answer p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  

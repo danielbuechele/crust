@@ -2,14 +2,8 @@ import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./page.module.css";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import Table, { Row } from "@/components/Table/Table";
-import * as Accordion from "@radix-ui/react-accordion";
-import { useId } from "react";
-import localFont from "next/font/local";
 import Link from "next/link";
-
-const medium = localFont({
-  src: "../../../public/basiercircle-medium-webfont.woff2",
-});
+import {Questions, Question} from "@/components/Questions/Questions";
 
 export default function FAQ() {
   return (
@@ -222,27 +216,4 @@ export default function FAQ() {
   );
 }
 
-function Questions({ children }: { children: React.ReactNode }) {
-  return (
-    <Accordion.Root type="single" collapsible>
-      {children}
-    </Accordion.Root>
-  );
-}
 
-function Question(props: { children: React.ReactNode; question: string }) {
-  const id = useId();
-  return (
-    <Accordion.Item className={styles.question} value={id}>
-      <Accordion.Trigger asChild>
-        <Accordion.Header className={styles.questionText}>
-          <span className={medium.className}>{props.question}</span>
-          <span className={styles.plus} />
-        </Accordion.Header>
-      </Accordion.Trigger>
-      <Accordion.Content className={styles.questionContent}>
-        <div className={styles.answer}>{props.children}</div>
-      </Accordion.Content>
-    </Accordion.Item>
-  );
-}

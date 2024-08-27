@@ -62,7 +62,7 @@ export default function Footer() {
                     <Link href="/faq">FAQ</Link>
                   </li>
                   <li>
-                    <a href="">Manual</a>
+                    <a href="/manual">Manual</a>
                   </li>
                   <li>
                     <a href="">Returns Policy</a>

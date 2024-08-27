@@ -25,6 +25,8 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-inview": "^4.5.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "use-session-storage-state": "^19.0.0",
     "usehooks-ts": "^3.1.0"
   },
@@ -37,6 +39,7 @@
     "@types/node": "^22.3.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/react-slick": "^0.23.13",
     "dotenv": "^16.4.5",
     "eslint": "^9.9.0",
     "eslint-config-next": "14.2.5",

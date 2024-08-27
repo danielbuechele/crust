@@ -2,7 +2,7 @@ import clsx from "clsx";
 import styles from "./RoundButton.module.css";
 
 export default function RoundButton(props: {
-  onClick: () => void;
+  onClick?: () => void;
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
