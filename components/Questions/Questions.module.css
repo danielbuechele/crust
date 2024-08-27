@@ -1,6 +1,7 @@
 .question {
   border-top: 1px solid #e3e3e3;
   line-height: 1.45;
+  max-width: 624px;
 }
 
 .question:first-child {
