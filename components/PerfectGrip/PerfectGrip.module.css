@@ -1,11 +1,9 @@
 .root {
   height: 300vh;
   position: relative;
-  background-color: #e8eae7;
 }
 
 .spacer {
-  background-color: #e8eae7;
   position: relative;
   height: 160px;
 }

@@ -1,4 +1,4 @@
-import Lead from "@/components/Lead";
+import Lead from "@/components/Lead/Lead";
 import PerfectGrip from "@/components/PerfectGrip/PerfectGrip";
 import ColorTags from "@/components/ColorTags/ColorTags";
 import Apex from "@/components/Apex/Apex";

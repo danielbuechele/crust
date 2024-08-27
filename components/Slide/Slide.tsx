@@ -32,7 +32,7 @@ export default function Slide({
       revertOnUpdate: true,
       scope: ref,
       dependencies: [ref.current],
-    }
+    },
   );
   return (
     <section ref={ref} className={clsx(styles.slide, className)}>
