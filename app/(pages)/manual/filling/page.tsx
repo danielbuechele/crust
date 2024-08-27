@@ -1,9 +1,10 @@
 import Blockquote from "@/components/Blockquote/Blockquote";
 import { Questions, Question } from "@/components/Questions/Questions";
 import Slideshow from "@/components/Slideshow/Slideshow";
-import ToggleGroup from "@/components/ToggleGroup/ToggleGroup";
 import { Suspense } from "react";
-import Steps from "./Steps";
+import styles from "./page.module.css";
+import filling1 from "./filling1.png";
+import filling2 from "./filling2.png";
 
 export default function Filling() {
   return (
@@ -39,7 +40,7 @@ export default function Filling() {
         </p>
       </Blockquote>
 
-      <Questions>
+      <Questions borders>
         <Question question="Which pepper and salt can I use?">
           <h4>Pepper</h4>
           <p>
@@ -72,7 +73,21 @@ export default function Filling() {
         </Question>
       </Questions>
       <Suspense>
-        <Steps />
+        <Slideshow
+          className={styles.slideshow}
+          height={648}
+          images={[
+            {
+              url: filling1,
+              caption:
+                "1. Carefully disconnect the Knob (A) from the Mill Housing (B).",
+            },
+            {
+              url: filling2,
+              caption: "2. Fill Mill Housing with desired spice.",
+            },
+          ]}
+        />
       </Suspense>
     </>
   );

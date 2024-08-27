@@ -6,7 +6,15 @@
 }
 
 .slide {
-  min-height: 300px;
+  color: #6c6c6c;
+  font-size: 16px;
+  text-align: center;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-bottom: 30px;
 }
 
 .arrow {
@@ -14,13 +22,13 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%) rotate(180deg);
-  left: 10px;
+  left: 40px;
   background: white;
 }
 
 .arrow.right {
   left: auto;
-  right: 10px;
+  right: 40px;
   transform: translateY(-50%) rotate(0deg);
 }
 
@@ -28,8 +36,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 30px;
+  position: static;
   background-color: #f1f1f1;
+  padding-bottom: 50px;
 }
 
 .slideshow :global(.slick-dots) li {
@@ -46,6 +55,7 @@
   background-color: #8e8e8e;
   opacity: 0.3;
   margin: 0 5px;
+  padding: 0;
 }
 
 .slideshow :global(.slick-dots) :global(.slick-active) button,
@@ -59,4 +69,8 @@
 
 .slideshow :global(.slick-dots) .slick-active button {
   opacity: 1;
+}
+
+.caption {
+  padding: 0 40px;
 }

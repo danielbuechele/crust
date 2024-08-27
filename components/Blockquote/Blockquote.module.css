@@ -1,18 +1,29 @@
 .blockquote {
-    border-left: 3px solid #FC7D02;
-    padding-left: 20px;
-    margin-left: 0;
-    color: #B15801;
-    margin-top: 32px;
-    margin-bottom: 32px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+  border-left: 3px solid #fc7d02;
+  padding-left: 20px;
+  margin-left: 0;
+  color: #b15801;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .blockquote h3 {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .blockquote p:not(:first-child) {
-    margin-top: 20px;
+  margin-top: 20px;
+}
+
+.blockquote a {
+  opacity: 0.6;
+  text-decoration: underline;
+}
+
+.blockquote a:hover,
+.blockquote a:active,
+.blockquote a:focus {
+  opacity: 1;
 }

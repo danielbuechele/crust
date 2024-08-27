@@ -15,8 +15,7 @@
   cursor: not-allowed;
 }
 
-.button:not(.buttonDisabled):hover,
-.button:not(.buttonDisabled):focus {
+.button:not(.buttonDisabled):hover {
   background-color: #0e0f12;
   color: white;
 }

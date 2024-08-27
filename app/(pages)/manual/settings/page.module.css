@@ -1,0 +1,52 @@
+.setting:last-child {
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.title {
+  cursor: pointer;
+  border-top: 1px solid #dbdbdb;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 18px;
+  padding-left: 158px;
+}
+
+.content {
+  color: #6c6c6c;
+  line-height: 1.45;
+  overflow: hidden;
+}
+
+.contentInner {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.image {
+  margin-right: 30px;
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.content[data-state="open"] {
+  animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}
+.content[data-state="closed"] {
+  animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+}

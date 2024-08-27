@@ -6,15 +6,20 @@ import RoundButton from "../RoundButton/RoundButton";
 import clsx from "clsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image, { StaticImageData } from "next/image";
 
 function Arrow(props: { direction: "left" | "right" } & CustomArrowProps) {
   return (
     <RoundButton
       onClick={props.onClick}
-      disabled={props.currentSlide === props.slideCount! - 1 && props.direction === "right" || props.currentSlide === 0 && props.direction === "left"}
+      disabled={
+        (props.currentSlide === props.slideCount! - 1 &&
+          props.direction === "right") ||
+        (props.currentSlide === 0 && props.direction === "left")
+      }
       className={clsx(
         styles.arrow,
-        props.direction === "right" && styles.right
+        props.direction === "right" && styles.right,
       )}
     >
       <svg
@@ -33,29 +38,26 @@ function Arrow(props: { direction: "left" | "right" } & CustomArrowProps) {
   );
 }
 
-function Indicator() {
-  return <div className={styles.indicator} />;
-}
-
 export default function Slideshow(props: {
   images: Array<{
-    url: string;
+    url: StaticImageData;
     caption: string;
   }>;
+  height: number;
+  className?: string;
 }) {
   return (
-    <div className={styles.slideshow}>
+    <div className={clsx(styles.slideshow, props.className)}>
       <Slider
         prevArrow={<Arrow direction="left" />}
         nextArrow={<Arrow direction="right" />}
         dots={true}
-        // appendDots={(dots) => <div className={styles.dots}>{dots}</div>}
         infinite={false}
       >
         {props.images.map((image, index) => (
           <div key={index} className={styles.slide}>
-            <img src={image.url} alt="" />
-            <p>{image.caption}</p>
+            <Image src={image.url} alt="" height={props.height} />
+            <p className={styles.caption}>{image.caption}</p>
           </div>
         ))}
       </Slider>

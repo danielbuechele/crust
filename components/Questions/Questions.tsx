@@ -2,6 +2,7 @@ import * as Accordion from "@radix-ui/react-accordion";
 import { useId } from "react";
 import localFont from "next/font/local";
 import styles from "./Questions.module.css";
+import { clsx } from "clsx";
 
 const medium = localFont({
   src: "../../public/basiercircle-medium-webfont.woff2",
@@ -27,9 +28,19 @@ export function Question(props: {
   );
 }
 
-export function Questions({ children }: { children: React.ReactNode }) {
+export function Questions({
+  borders,
+  children,
+}: {
+  children: React.ReactNode;
+  borders?: boolean;
+}) {
   return (
-    <Accordion.Root type="single" collapsible>
+    <Accordion.Root
+      type="single"
+      collapsible
+      className={clsx(borders && styles.borders)}
+    >
       {children}
     </Accordion.Root>
   );

@@ -6,7 +6,7 @@ export default function PrimaryButton(props: {
   href: string;
   disabled?: boolean;
   className?: string;
-  variant?: "light" | "dark";
+  variant?: "light" | "dark" | "secondary";
   width?: number;
   loading?: boolean;
   children: React.ReactNode;
@@ -19,7 +19,7 @@ export default function PrimaryButton(props: {
         props.className,
         styles.button,
         props.variant === "dark" ? styles.dark : undefined,
-        props.disabled ? styles.disabled : undefined
+        props.disabled ? styles.disabled : undefined,
       )}
     >
       {props.loading ? (
