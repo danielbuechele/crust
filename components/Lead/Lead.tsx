@@ -67,36 +67,36 @@ function EngineeredIcon() {
       <path
         d="M3.49219 24.0093C4.28134 25.9145 5.43803 27.6456 6.8962 29.1037C8.35437 30.5619 10.0855 31.7186 11.9907 32.5077C13.8958 33.2969 15.9378 33.7031 18 33.7031C20.0621 33.7031 22.1041 33.2969 24.0093 32.5077C25.9145 31.7186 27.6456 30.5619 29.1038 29.1037C30.5619 27.6456 31.7186 25.9145 32.5078 24.0093"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <circle
         cx="18"
         cy="7.2998"
         r="3"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M16.6602 10L12.0014 27.3867"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
       />
       <path
         d="M19.5 10L24.1587 27.3867"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
       />
       <path
         d="M18 1.43005V3.93005"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
       />
     </svg>
   );
@@ -192,7 +192,7 @@ function TextureIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_3277_1592)">
+      <g clipPath="url(#clip0_3277_1592)">
         <path
           d="M4.90832 30.7426V32.8639H7.02964V30.7426H4.90832Z"
           fill="currentColor"
@@ -392,9 +392,9 @@ function TextureIcon() {
         <path
           d="M31.2604 3.34375H4.73958C4.36939 3.34375 4.01435 3.49081 3.75258 3.75258C3.49081 4.01435 3.34375 4.36939 3.34375 4.73958V31.2604C3.34375 31.6306 3.49081 31.9856 3.75258 32.2474C4.01435 32.5092 4.36939 32.6562 4.73958 32.6562H31.2604C31.6306 32.6562 31.9856 32.5092 32.2474 32.2474C32.5092 31.9856 32.6562 31.6306 32.6562 31.2604V4.73958C32.6562 4.36939 32.5092 4.01435 32.2474 3.75258C31.9856 3.49081 31.6306 3.34375 31.2604 3.34375Z"
           stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>
@@ -418,37 +418,37 @@ function DurabilityIcon() {
       <path
         d="M8.71484 5.14722L18.0502 31.086"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M27.3847 5.14722L18.0508 31.086"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M2.92188 13.2891H33.1738"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M11.7695 13.2891L18.0508 4.91406L24.332 13.2891"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M28.1021 5.75156C27.907 5.49153 27.6541 5.28047 27.3634 5.13511C27.0727 4.98974 26.7521 4.91406 26.4271 4.91406H9.67706C9.35201 4.91406 9.03143 4.98974 8.7407 5.13511C8.44997 5.28047 8.19708 5.49153 8.00206 5.75156L3.34416 11.9644C3.06148 12.3416 2.91432 12.803 2.92648 13.2742C2.93864 13.7453 3.10941 14.1986 3.41116 14.5607L16.4455 30.3336C16.642 30.5682 16.8875 30.757 17.1649 30.8865C17.4422 31.0159 17.7446 31.0831 18.0507 31.0831C18.3567 31.0831 18.6591 31.0159 18.9364 30.8865C19.2138 30.757 19.4594 30.5682 19.6559 30.3336L32.6902 14.5607C32.9919 14.1986 33.1627 13.7453 33.1748 13.2742C33.187 12.803 33.0398 12.3416 32.7572 11.9644L28.1021 5.75156Z"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -466,51 +466,51 @@ function CaliforniaIcon() {
       <path
         d="M20.4925 13.0825L19.4219 33.6864"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M10.9375 33.7032L17.8413 12.2144"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M17.8398 12.2145L29.3918 15.9958C29.5662 16.0543 29.753 16.0659 29.9333 16.0294C30.1137 15.9929 30.2812 15.9096 30.4192 15.7878C30.5571 15.666 30.6605 15.51 30.7191 15.3356C30.7776 15.1611 30.7892 14.9743 30.7527 14.794C30.5862 13.459 30.0156 12.2068 29.1175 11.2052C28.2194 10.2036 27.0367 9.50034 25.7277 9.18972C20.4933 8.14285 18.3996 11.2835 18.3996 11.2835L17.8412 12.2145"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M17.8409 12.2143L7.32471 15.0688C7.15203 15.116 6.97014 15.1182 6.79637 15.0752C6.6226 15.0321 6.46274 14.9453 6.33202 14.823C6.20131 14.7007 6.1041 14.5469 6.04966 14.3764C5.99521 14.2059 5.98535 14.0242 6.021 13.8488C6.17443 12.4945 6.7412 11.2202 7.64425 10.1993C8.54731 9.17833 9.74284 8.46025 11.0683 8.14264C14.114 7.53266 17.0327 8.14264 18.7845 10.8296"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M24.6027 9.02189L28.9298 4.67108C29.0503 4.55305 29.1403 4.40757 29.1922 4.24711C29.2441 4.08665 29.2563 3.916 29.2277 3.7498C29.1992 3.58359 29.1307 3.42679 29.0283 3.29284C28.9258 3.15889 28.7924 3.05179 28.6395 2.98072C27.5061 2.42913 26.2417 2.20359 24.9875 2.3293C23.7333 2.45501 22.5388 2.92703 21.5375 3.6926C19.1646 5.46949 19.4437 9.18939 19.4437 9.18939V10.2628"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M12.8773 7.92903L10.1554 4.97405C10.0292 4.83875 9.94133 4.67237 9.90061 4.49193C9.85989 4.3115 9.86784 4.12348 9.92365 3.94712C9.97945 3.77077 10.0811 3.6124 10.2182 3.48823C10.3553 3.36406 10.5229 3.27854 10.7039 3.24043C11.8585 3.01789 13.0317 2.90664 14.2075 2.90822C15.3526 3.01259 16.4552 3.39393 17.4201 4.01938C18.385 4.64482 19.1833 5.49558 19.7462 6.4983"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M2.29688 33.7031H33.7031"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -528,16 +528,16 @@ function GermanyIcon() {
       <path
         d="M23.2344 14.858L17.6776 22.2671C17.5875 22.387 17.4728 22.4861 17.3411 22.5578C17.2095 22.6296 17.0639 22.6721 16.9144 22.6827C16.7648 22.6933 16.6148 22.6717 16.4743 22.6192C16.3338 22.5668 16.2063 22.4848 16.1003 22.3788L12.7656 19.0455"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M16.2276 3.14416C16.4408 2.87914 16.7108 2.66529 17.0176 2.51836C17.3244 2.37144 17.6602 2.29517 18.0003 2.29517C18.3405 2.29517 18.6763 2.37144 18.9831 2.51836C19.2899 2.66529 19.5598 2.87914 19.773 3.14416L21.8835 5.76973C22.1226 6.0676 22.4328 6.30046 22.7855 6.44684C23.1383 6.59321 23.5222 6.64837 23.9019 6.60723L27.2519 6.24291C27.591 6.20524 27.9343 6.24432 28.2563 6.35727C28.5782 6.47021 28.8707 6.65413 29.1119 6.8954C29.3532 7.13666 29.5371 7.42911 29.6501 7.75108C29.763 8.07305 29.8021 8.41629 29.7644 8.75541L29.4001 12.1054C29.359 12.4851 29.4141 12.869 29.5605 13.2218C29.7069 13.5746 29.9397 13.8848 30.2376 14.1238L32.8632 16.2343C33.1282 16.4475 33.342 16.7174 33.489 17.0242C33.6359 17.331 33.7122 17.6668 33.7122 18.007C33.7122 18.3471 33.6359 18.683 33.489 18.9898C33.342 19.2965 33.1282 19.5665 32.8632 19.7797L30.2292 21.8804C29.9314 22.1198 29.6987 22.4303 29.5523 22.7833C29.406 23.1362 29.3507 23.5203 29.3917 23.9002L29.756 27.2502C29.794 27.5894 29.7551 27.9327 29.6422 28.2548C29.5294 28.5769 29.3455 28.8695 29.1041 29.1108C28.8628 29.3521 28.5703 29.5361 28.2482 29.6489C27.9261 29.7618 27.5827 29.8006 27.2435 29.7627L23.8935 29.3984C23.5138 29.3571 23.1299 29.4122 22.7771 29.5586C22.4243 29.705 22.1141 29.9379 21.8752 30.2359L19.773 32.8517C19.56 33.1169 19.2901 33.331 18.9833 33.4781C18.6765 33.6252 18.3406 33.7015 18.0003 33.7015C17.6601 33.7015 17.3242 33.6252 17.0174 33.4781C16.7106 33.331 16.4407 33.1169 16.2276 32.8517L14.1185 30.2275C13.8792 29.9296 13.5687 29.6968 13.2158 29.5504C12.8628 29.4041 12.4786 29.3489 12.0987 29.39L8.74875 29.7543C8.40952 29.7925 8.06604 29.7538 7.74382 29.6411C7.4216 29.5283 7.12893 29.3444 6.88754 29.103C6.64615 28.8616 6.46225 28.569 6.3495 28.2468C6.23674 27.9245 6.19803 27.5811 6.23625 27.2418L6.60056 23.8918C6.64168 23.5119 6.58652 23.1278 6.44016 22.7748C6.2938 22.4218 6.06094 22.1114 5.76306 21.8721L3.13889 19.763C2.87364 19.5499 2.65958 19.28 2.5125 18.9732C2.36542 18.6664 2.28906 18.3305 2.28906 17.9902C2.28906 17.65 2.36542 17.3141 2.5125 17.0073C2.65958 16.7005 2.87364 16.4306 3.13889 16.2175L5.76306 14.107C6.06103 13.8681 6.29397 13.5579 6.44035 13.2051C6.58673 12.8524 6.64183 12.4684 6.60056 12.0887L6.23625 8.73866C6.1983 8.39949 6.2372 8.05612 6.35005 7.73403C6.4629 7.41194 6.64681 7.11938 6.88814 6.87805C7.12946 6.63672 7.42202 6.45282 7.74411 6.33997C8.06621 6.22712 8.40957 6.18822 8.74875 6.22616L12.0987 6.59048C12.4786 6.63147 12.8627 6.57625 13.2157 6.4299C13.5686 6.28354 13.8791 6.05076 14.1185 5.75298L16.2276 3.14416Z"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -555,23 +555,23 @@ function ExperienceIcon() {
       <path
         d="M18.001 12C17.974 18.9092 21.3328 22.8282 29 23.001C21.8888 22.974 18.3613 26.7867 18.001 34C17.9323 27.1949 14.89 22.9906 7 23.001C14.0592 22.9011 17.974 19.4944 18.001 12Z"
         stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M15.5003 1C15.4917 3.19839 16.5604 4.44534 19 4.50033C16.7373 4.49172 15.615 5.70487 15.5003 8C15.4785 5.83474 14.5105 4.49702 12 4.50033C14.2461 4.46853 15.4917 3.38457 15.5003 1Z"
         stroke="currentColor"
-        stroke-width="0.795455"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="0.795455"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M7.50052 6C7.48699 9.45461 9.1664 11.4141 13 11.5005C9.44439 11.487 7.68064 13.3934 7.50052 17C7.46616 13.5974 5.94501 11.4953 2 11.5005C5.52958 11.4505 7.48699 9.74718 7.50052 6Z"
         stroke="currentColor"
-        stroke-width="1.25"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

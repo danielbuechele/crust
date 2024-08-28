@@ -4,6 +4,11 @@
   left: 0;
   right: 0;
   z-index: 3;
+  transition: background 0.2s;
+}
+
+.scrolled {
+  background: white;
 }
 
 .nav {
