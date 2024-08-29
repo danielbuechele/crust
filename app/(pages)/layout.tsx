@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer/Footer";
 import Menu from "@/components/Menu/Menu";
+import Wrapper from "@/components/Wrapper/Wrapper";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,7 @@ export default function RootLayout({
   return (
     <>
       <Menu />
-      {children}
+      <Wrapper>{children}</Wrapper>
       <Footer />
     </>
   );

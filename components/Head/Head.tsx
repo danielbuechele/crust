@@ -31,8 +31,8 @@ export default async function Home({}: {}) {
           </>
         ) : (
           <>
-            Precision grinding, now in the{" "}
-            <em className={ppItalic.className}>finest</em> materials.
+            The New Way to{" "}
+            <em className={ppItalic.className}>Salt&nbsp;&&nbsp;Pepper</em>.
           </>
         )}
       </h1>

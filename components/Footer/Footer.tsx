@@ -51,7 +51,7 @@ export default function Footer() {
                     <Link href="/specs">Tech Specs</Link>
                   </li>
                   <li>
-                    <Link href="">Quick Start</Link>
+                    <Link href="/manual">Quick Start</Link>
                   </li>
                 </ul>
               </li>
@@ -65,10 +65,10 @@ export default function Footer() {
                     <a href="/manual">Manual</a>
                   </li>
                   <li>
-                    <a href="">Returns Policy</a>
+                    <a href="/returns">Returns Policy</a>
                   </li>
                   <li>
-                    <a href="">Contact Us</a>
+                    <a href="/contact">Contact Us</a>
                   </li>
                 </ul>
               </li>
@@ -79,13 +79,13 @@ export default function Footer() {
                     <Link href="/about">About</Link>
                   </li>
                   <li>
-                    <a href="">Contact Us</a>
+                    <a href="/contact">Contact Us</a>
                   </li>
                   <li>
-                    <a href="">Privacy Policy</a>
+                    <a href="/privacy">Privacy Policy</a>
                   </li>
                   <li>
-                    <a href="">Terms of Service</a>
+                    <a href="/terms">Terms of Service</a>
                   </li>
                   <li>
                     <a href="">Media Kit</a>

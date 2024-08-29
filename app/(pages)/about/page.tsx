@@ -1,16 +1,10 @@
-import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./page.module.css";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import Table, { Row } from "@/components/Table/Table";
-import localFont from "next/font/local";
-
-const medium = localFont({
-  src: "../../../public/basiercircle-medium-webfont.woff2",
-});
 
 export default function About() {
   return (
-    <Wrapper>
+    <>
       <PageHeader
         title="About"
         lead="We are a team of designers and engineers, coming together with a shared
@@ -81,6 +75,6 @@ export default function About() {
           </p>
         </Row>
       </Table>
-    </Wrapper>
+    </>
   );
 }

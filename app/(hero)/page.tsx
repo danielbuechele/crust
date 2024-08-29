@@ -8,48 +8,9 @@ import GrindRange from "@/components/GrindRange/GrindRange";
 import MoreOutput from "@/components/MoreOutput/MoreOutput";
 import PreciseAdjustment from "@/components/PreciseAdjustment/PreciseAdjustment";
 import Features from "@/components/Features/Features";
-import React, {
-  RefObject,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-
-type Position = "below" | "inbetween" | "above";
-
-const useElementPosition = (
-  elementRef: RefObject<HTMLElement>,
-  track: "bottom" | "top",
-) => {
-  const [isAboveViewport, setIsAboveViewport] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (elementRef.current) {
-        const { top, bottom } = elementRef.current.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-
-        const position = track === "top" ? top : bottom;
-
-        if (position < viewportHeight) {
-          setIsAboveViewport(true);
-        } else {
-          setIsAboveViewport(false);
-        }
-      }
-    };
-
-    handleScroll(); // Initial check
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [elementRef, track]);
-
-  return isAboveViewport;
-};
+import { useCallback, useEffect, useRef, useState } from "react";
+import useElementVisibility, { Position } from "@/utils/useElementVisibility";
+import React from "react";
 
 function Slide(props: {
   children: React.ReactNode;
@@ -57,29 +18,22 @@ function Slide(props: {
   onPositionChange: (index: number, value: Position) => void;
 }) {
   const ref = useRef(null);
-  const hasHitBottom = useElementPosition(ref, "bottom");
-  const hasHitTop = useElementPosition(ref, "top");
+  const visibiility = useElementVisibility(ref);
 
   useEffect(() => {
-    if (hasHitBottom) {
-      props.onPositionChange(props.index, "above");
-    } else if (!hasHitBottom && hasHitTop) {
-      props.onPositionChange(props.index, "inbetween");
-    } else {
-      props.onPositionChange(props.index, "below");
-    }
-  }, [hasHitTop, hasHitBottom, props.onPositionChange, props.isFixed]);
+    props.onPositionChange(props.index, visibiility);
+  }, [visibiility, props.onPositionChange]);
 
   return (
     <div
       ref={ref}
-      className="slide"
       style={{
         position: "relative",
+        overflow: "hidden",
         top: 0,
         left: 0,
         right: 0,
-        zIndex: 100 - props.index,
+        zIndex: 99 - props.index,
       }}
     >
       {props.children}
@@ -101,28 +55,27 @@ function Slides(props: { children: React.ReactNode }) {
     [setPositions],
   );
 
-  console.log(positions);
-
   return (
     <div style={{ position: "relative", zIndex: 1 }}>
       {React.Children.map(props.children, (child, index) => (
         <>
-          {index > 0 && positions[index - 1] === "inbetween" && (
+          <Slide index={index} key={index} onPositionChange={onPositionChange}>
+            {child}
+          </Slide>
+          {index > 0 && positions[index - 1] === "leaving" && (
             <div
               style={{
                 position: "fixed",
+                overflow: "hidden",
                 top: 0,
                 left: 0,
                 right: 0,
-                zIndex: 50 - index,
+                zIndex: 99 - index,
               }}
             >
               {child}
             </div>
           )}
-          <Slide index={index} key={index} onPositionChange={onPositionChange}>
-            {child}
-          </Slide>
         </>
       ))}
     </div>

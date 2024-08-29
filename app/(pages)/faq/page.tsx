@@ -1,13 +1,12 @@
-import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./page.module.css";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import Table, { Row } from "@/components/Table/Table";
 import Link from "next/link";
-import {Questions, Question} from "@/components/Questions/Questions";
+import { Questions, Question } from "@/components/Questions/Questions";
 
 export default function FAQ() {
   return (
-    <Wrapper>
+    <>
       <PageHeader
         title="FAQ"
         lead="Advice and answers from the Crust team."
@@ -212,8 +211,6 @@ export default function FAQ() {
           </Questions>
         </Row>
       </Table>
-    </Wrapper>
+    </>
   );
 }
-
-

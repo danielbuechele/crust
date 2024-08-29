@@ -1,12 +1,14 @@
-.link {
-  font-size: 64px;
-  position: relative;
-}
-
 .root {
   border-top: 1px solid #dbdbdb;
   padding: 50px 0;
   margin-top: 160px;
+}
+
+.link {
+  font-size: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .button {
@@ -19,18 +21,13 @@
   align-items: center;
   background-color: transparent;
   transition: 0.2s ease-in-out;
-}
-
-.button {
-  position: absolute;
-  right: 28px;
-  top: 0;
+  transform: translateX(-28px);
   transition: all 0.2s ease-out;
 }
 
 .link:hover .button {
   background-color: rgba(227, 227, 227, 0.5);
-  right: 0;
+  transform: translateX(0px);
 }
 
 .footer {
