@@ -6,6 +6,7 @@ const regular = localFont({
 
 const medium = localFont({
   src: "../public/basiercircle-medium-webfont.woff2",
+  variable: "--medium",
 });
 
 const serif = localFont({

@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import styles from "./page.module.css";
+import { medium } from "@/utils/medium";
 
 export default function Description() {
   return (
