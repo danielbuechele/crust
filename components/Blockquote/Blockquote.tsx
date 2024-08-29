@@ -1,9 +1,5 @@
-import localFont from "next/font/local";
+import { medium } from "@/utils/medium";
 import styles from "./Blockquote.module.css";
-
-const medium = localFont({
-  src: "../../public/basiercircle-medium-webfont.woff2",
-});
 
 export default function Blockquote(props: {
   title: string;

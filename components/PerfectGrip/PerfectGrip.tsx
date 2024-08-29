@@ -4,15 +4,11 @@ import TextPairing from "../TextPairing/TextPairing";
 import styles from "./PerfectGrip.module.css";
 import { useEffect, useRef } from "react";
 import { useWindowSize } from "@uidotdev/usehooks";
-import localFont from "next/font/local";
+import { medium } from "@/utils/medium";
 import clsx from "clsx";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-const medium = localFont({
-  src: "../../public/basiercircle-medium-webfont.woff2",
-});
 
 const SEQUENCE_LENGTH = 120;
 

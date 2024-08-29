@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { ApolloWrapper } from "../components/ApolloWrapper";
-
-const basier = localFont({
-  src: "../public/basiercircle-regular-webfont.woff2",
-});
+import { regular } from "@/utils/medium";
 
 export const metadata: Metadata = {
   title: "Crust",
@@ -19,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={basier.className}>
+      <body className={regular.className}>
         <ApolloWrapper>{children}</ApolloWrapper>
       </body>
     </html>

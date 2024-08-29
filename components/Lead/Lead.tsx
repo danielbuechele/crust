@@ -67,36 +67,36 @@ function EngineeredIcon() {
       <path
         d="M3.49219 24.0093C4.28134 25.9145 5.43803 27.6456 6.8962 29.1037C8.35437 30.5619 10.0855 31.7186 11.9907 32.5077C13.8958 33.2969 15.9378 33.7031 18 33.7031C20.0621 33.7031 22.1041 33.2969 24.0093 32.5077C25.9145 31.7186 27.6456 30.5619 29.1038 29.1037C30.5619 27.6456 31.7186 25.9145 32.5078 24.0093"
         stroke="#FE9467"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <circle
         cx="18"
         cy="7.2998"
         r="3"
         stroke="#FC4C02"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M16.6602 10L12.0014 27.3867"
         stroke="#FC4C02"
-        stroke-width="2.5"
-        stroke-linecap="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
       />
       <path
         d="M19.5 10L24.1587 27.3867"
         stroke="#FC4C02"
-        stroke-width="2.5"
-        stroke-linecap="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
       />
       <path
         d="M18 1.43005V3.93005"
         stroke="#FC4C02"
-        stroke-width="2.5"
-        stroke-linecap="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
       />
     </svg>
   );

@@ -5,7 +5,7 @@ import styles from "./ColorTags.module.css";
 import TextPairing from "@/components/TextPairing/TextPairing";
 import * as Accordion from "@radix-ui/react-accordion";
 import clsx from "clsx";
-import localFont from "next/font/local";
+import { medium } from "@/utils/medium";
 import white from "./white.png";
 import rose from "./rose.png";
 import orange from "./orange.png";
@@ -26,10 +26,6 @@ const IMAGES = {
 };
 
 type Colors = keyof typeof IMAGES;
-
-const medium = localFont({
-  src: "../../public/basiercircle-medium-webfont.woff2",
-});
 
 export default function ColorTags() {
   const DEFAULT_COLOR = "orange";
@@ -52,7 +48,7 @@ export default function ColorTags() {
                 sizes="960px"
                 loading={color === key ? "eager" : "lazy"}
               />
-            ) : null
+            ) : null,
           )}
         </div>
         <div className={styles.selector}>
@@ -144,7 +140,7 @@ function Details(props: {
               <div
                 className={clsx(
                   styles.color,
-                  props.value === item.id && styles.active
+                  props.value === item.id && styles.active,
                 )}
                 style={{ backgroundColor: item.color }}
               />

@@ -1,10 +1,6 @@
 import clsx from "clsx";
 import styles from "./Table.module.css";
-import localFont from "next/font/local";
-
-const medium = localFont({
-  src: "../../public/basiercircle-medium-webfont.woff2",
-});
+import { medium } from "@/utils/medium";
 
 export function Row(props: {
   title: string | React.ReactNode;
@@ -19,14 +15,14 @@ export function Row(props: {
         props.className,
         styles.row,
         props.noBorderTop && styles.noBorderTop,
-        props.smallTitle && styles.smallTitleRow
+        props.smallTitle && styles.smallTitleRow,
       )}
     >
       <div
         className={clsx(
           !props.smallTitle && medium.className,
           styles.sectionTitle,
-          props.smallTitle && styles.smallTitle
+          props.smallTitle && styles.smallTitle,
         )}
       >
         {props.title}

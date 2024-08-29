@@ -1,12 +1,8 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import { useId } from "react";
-import localFont from "next/font/local";
+import { medium } from "@/utils/medium";
 import styles from "./Questions.module.css";
 import { clsx } from "clsx";
-
-const medium = localFont({
-  src: "../../public/basiercircle-medium-webfont.woff2",
-});
 
 export function Question(props: {
   children: React.ReactNode;

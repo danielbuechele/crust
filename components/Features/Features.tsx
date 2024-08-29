@@ -1,6 +1,6 @@
 import Wrapper from "../Wrapper/Wrapper";
 import styles from "./Features.module.css";
-import localFont from "next/font/local";
+import { serif, serifItalic } from "@/utils/medium";
 import clsx from "clsx";
 
 import elegant from "./elegant.png";
@@ -8,13 +8,6 @@ import functional from "./functional.png";
 import compatible from "./compatible.png";
 import Image from "next/image";
 import PrimaryButton from "../PrimaryButton/PrimaryButton";
-
-const ppRegular = localFont({
-  src: "../../public/PPEditorialNew-Regular.woff2",
-});
-const ppItalic = localFont({
-  src: "../../public/PPEditorialNew-Italic.woff2",
-});
 
 export default function Features() {
   return (
@@ -42,8 +35,8 @@ export default function Features() {
       </div>
 
       <div className={clsx(styles.box, styles.today)}>
-        <h3 className={ppRegular.className}>
-          Get your Crust Mill <em className={ppItalic.className}>today.</em>
+        <h3 className={serif.className}>
+          Get your Crust Mill <em className={serifItalic.className}>today.</em>
         </h3>
         <p>Now available for $299.</p>
         <PrimaryButton className={styles.buy} variant="dark" href="/buy">
@@ -71,8 +64,8 @@ export default function Features() {
             />
           </svg>
 
-          <h3 className={ppRegular.className}>
-            Grind with a <em className={ppItalic.className}>Green</em> Touch
+          <h3 className={serif.className}>
+            Grind with a <em className={serifItalic.className}>Green</em> Touch
           </h3>
           <p>
             Made with durable, premium materials without compromising

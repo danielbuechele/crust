@@ -1,10 +1,5 @@
 import { clsx } from "clsx";
 import styles from "./page.module.css";
-import localFont from "next/font/local";
-
-const medium = localFont({
-  src: "../../../../public/basiercircle-medium-webfont.woff2",
-});
 
 export default function Description() {
   return (

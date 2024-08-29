@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Head.module.css";
-import localFont from "next/font/local";
+import { serif, serifItalic } from "@/utils/medium";
 import clsx from "clsx";
 import ToggleGroup from "@/components/ToggleGroup/ToggleGroup";
 import { usePathname, useRouter } from "next/navigation";
@@ -10,11 +10,6 @@ import home from "./home.png";
 import specs from "./specs.png";
 import Image from "next/image";
 
-const ppRegular = localFont({
-  src: "../../public/PPEditorialNew-Regular.woff2",
-});
-const ppItalic = localFont({ src: "../../public/PPEditorialNew-Italic.woff2" });
-
 export default async function Home({}: {}) {
   const pathname = usePathname();
   const router = useRouter();
@@ -22,7 +17,7 @@ export default async function Home({}: {}) {
 
   return (
     <main className={styles.main}>
-      <h1 className={clsx(styles.hero, ppRegular.className)}>
+      <h1 className={clsx(styles.hero, serif.className)}>
         {isSpecs ? (
           <>
             Technical
@@ -32,7 +27,7 @@ export default async function Home({}: {}) {
         ) : (
           <>
             The New Way to{" "}
-            <em className={ppItalic.className}>Salt&nbsp;&&nbsp;Pepper</em>.
+            <em className={serifItalic.className}>Salt&nbsp;&&nbsp;Pepper</em>.
           </>
         )}
       </h1>

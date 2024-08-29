@@ -1,10 +1,6 @@
+import { serif } from "@/utils/medium";
 import styles from "./TextPairing.module.css";
-import localFont from "next/font/local";
 import clsx from "clsx";
-
-const ppRegular = localFont({
-  src: "../../public/PPEditorialNew-Regular.woff2",
-});
 
 export default function TextPairing({
   children,
@@ -27,14 +23,14 @@ export default function TextPairing({
         styles.root,
         className,
         variant === "dark" ? styles.dark : undefined,
-        left && styles.wide
+        left && styles.wide,
       )}
     >
       <h3
         className={clsx(
           styles.heading,
-          ppRegular.className,
-          align === "center" && styles.center
+          serif.className,
+          align === "center" && styles.center,
         )}
       >
         {heading}

@@ -1,11 +1,7 @@
 import Blockquote from "@/components/Blockquote/Blockquote";
-import localFont from "next/font/local";
+import { medium } from "@/utils/medium";
 import Image from "next/image";
 import cleaning from "./cleaning.png";
-
-const medium = localFont({
-  src: "../../../../public/basiercircle-medium-webfont.woff2",
-});
 
 export default function Cleaning() {
   return (

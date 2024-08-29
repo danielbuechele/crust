@@ -3,7 +3,7 @@
 import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./Apex.module.css";
 import ToggleGroup from "@/components/ToggleGroup/ToggleGroup";
-import localFont from "next/font/local";
+import medium, { serif, serifItalic } from "@/utils/medium";
 import clsx from "clsx";
 
 import stainless from "./stainless.png";
@@ -11,20 +11,13 @@ import ceramic from "./ceramic.png";
 import Image from "next/image";
 import { useState } from "react";
 
-const ppRegular = localFont({
-  src: "../../public/PPEditorialNew-Regular.woff2",
-});
-const ppItalic = localFont({
-  src: "../../public/PPEditorialNew-Italic.woff2",
-});
-
 export default function Apex() {
   const [active, setActive] = useState("Stainless Steel");
   return (
     <div className={styles.root}>
       <Wrapper>
-        <h2 className={clsx(styles.heading, ppRegular.className)}>
-          The <em className={ppItalic.className}>Apex</em> of Grinding
+        <h2 className={clsx(styles.heading, serif.className)}>
+          The <em className={serifItalic.className}>Apex</em> of Grinding
           Technology
         </h2>
         <Image

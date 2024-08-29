@@ -3,13 +3,9 @@
 import Logo from "@/components/Logo";
 import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./Footer.module.css";
-import localFont from "next/font/local";
+import { medium } from "@/utils/medium";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const medium = localFont({
-  src: "../../public/basiercircle-medium-webfont.woff2",
-});
 
 export default function Footer() {
   const isHome = usePathname() === "/";

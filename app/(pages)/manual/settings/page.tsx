@@ -3,17 +3,13 @@ import * as Accordion from "@radix-ui/react-accordion";
 import Image, { StaticImageData } from "next/image";
 import { useId } from "react";
 import styles from "./page.module.css";
-import localFont from "next/font/local";
+import { medium } from "@/utils/medium";
 import { clsx } from "clsx";
 import Link from "next/link";
 import setting1 from "./setting1.png";
 import setting2 from "./setting2.png";
 import setting3 from "./setting3.png";
 import setting4 from "./setting4.png";
-
-const medium = localFont({
-  src: "../../../../public/basiercircle-medium-webfont.woff2",
-});
 
 export default function Settings() {
   return (
