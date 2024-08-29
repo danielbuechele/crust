@@ -2,6 +2,7 @@ import Legalese from "@/components/Legalese/Legalese";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import Image from "next/image";
 import Link from "next/link";
+import { medium } from "@/utils/medium";
 import styles from "./page.module.css";
 import image from "./image.png";
 
@@ -26,12 +27,15 @@ export default function Privacy() {
           <ul>
             <li>
               Your item must be in the same condition that you received it,
-              unused, undamaged, in re-sellable condition, and in its original
-              packaging.
+              <strong className={medium.className}>
+                unused, undamaged, in re-sellable condition,
+              </strong>{" "}
+              and in its original packaging.
             </li>
             <li>
-              Your return request is submitted within 30 days of receiving your
-              original order.
+              Your return request is submitted within 
+              <strong className={medium.className}>30 days</strong> of receiving
+              your original order.
             </li>
           </ul>
           <p>
@@ -39,10 +43,10 @@ export default function Privacy() {
             criteria.
           </p>
           <p>
-            To start a return, you may use our online portal to select which
-            product(s) you would like to return and create a shipping label. You
-            can always <Link href="/contact">contact us</Link> for any return
-            questions.
+            To start a return, you may use our 
+            <Link href="">online portal</Link> to select which product(s) you
+            would like to return and create a shipping label. You can always{" "}
+            <Link href="/contact">contact us</Link> for any return questions.
           </p>
           <h3>Damages and Issues</h3>
           <p>
