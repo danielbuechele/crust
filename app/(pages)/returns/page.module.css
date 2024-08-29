@@ -1,0 +1,21 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.content {
+  max-width: 624px;
+}
+
+.img {
+  height: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .root {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

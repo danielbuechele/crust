@@ -3,6 +3,12 @@
   max-width: 752px;
 }
 
+.root hr {
+  border: 0;
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 30spx;
+}
+
 .root p {
   margin-top: 24px;
 }
