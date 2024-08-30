@@ -5,6 +5,7 @@
   right: 0;
   z-index: 3;
   transition: background 0.2s;
+  width: 100vw;
 }
 
 .scrolled {

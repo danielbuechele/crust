@@ -9,6 +9,14 @@
   padding-bottom: 160px;
 }
 
+@media (max-width: 1023px) {
+  .wrapper {
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
 .preview {
   position: relative;
   flex-grow: 1;

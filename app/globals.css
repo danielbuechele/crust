@@ -12,6 +12,13 @@ body {
   line-height: 1.35;
 }
 
+@media (max-width: 1023px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
 h1,
 h2,
 h3,

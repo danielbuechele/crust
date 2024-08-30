@@ -9,6 +9,13 @@
   background-color: white;
 }
 
+@media (max-width: 1023px) {
+  .root {
+    width: 100%;
+    position: relative;
+  }
+}
+
 .cart {
   flex-grow: 1;
   flex-shrink: 1;
@@ -16,6 +23,12 @@
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 40px;
+}
+
+@media (max-width: 1023px) {
+  .cart {
+    padding: 0px;
+  }
 }
 
 .checkout {
@@ -30,6 +43,13 @@
   cursor: pointer;
 }
 
+@media (max-width: 1023px) {
+  .checkout {
+    width: auto;
+    margin-left: 40px;
+  }
+}
+
 .total {
   display: flex;
   justify-content: space-between;
@@ -38,19 +58,38 @@
   padding: 24px 40px;
 }
 
+@media (max-width: 1023px) {
+  .total {
+    padding: 24px 0px;
+  }
+}
+
 .h1 {
   font-size: 32px;
-
   margin-top: 20px;
   margin-left: 40px;
   margin-right: 40px;
   margin-bottom: 20px;
 }
 
+@media (max-width: 1023px) {
+  .h1 {
+    font-size: 24px;
+    margin: 20px 0px 10px;
+  }
+}
+
 .close {
   margin-left: auto;
   margin-top: 20px;
   margin-right: 20px;
+}
+
+@media (max-width: 1023px) {
+  .close {
+    margin-top: -36px;
+    margin-right: 0px;
+  }
 }
 
 .amount {
@@ -61,4 +100,10 @@
   color: #8e8e8e;
   font-size: 14px;
   margin: 20px 40px;
+}
+
+@media (max-width: 1023px) {
+  .shipping {
+    margin: 20px 0px;
+  }
 }

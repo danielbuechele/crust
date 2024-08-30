@@ -16,6 +16,13 @@
   letter-spacing: -1.44px;
 }
 
+@media (max-width: 1023px) {
+  .heading {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+}
+
 .dark .heading {
   color: #fff;
 }
@@ -27,9 +34,16 @@
 .content {
   color: #6c6c6c;
   font-size: 24px;
-
   letter-spacing: -0.48px;
   display: flex;
+}
+
+@media (max-width: 1023px) {
+  .content {
+    font-size: 18px;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
 }
 
 .dark .content {

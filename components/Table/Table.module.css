@@ -4,9 +4,23 @@
   column-gap: 30px;
 }
 
+@media (max-width: 768px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .sectionTitle {
   color: #0e0f12;
   font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
 }
 
 .smallTitle {
@@ -22,6 +36,12 @@
   border: 0;
   border-top: 1px solid #dbdbdb;
   line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .row {
+    padding-bottom: 30px;
+  }
 }
 
 .row.smallTitleRow {

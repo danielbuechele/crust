@@ -3,6 +3,7 @@
 }
 
 .lead {
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,6 +30,18 @@
   letter-spacing: -0.96px;
   color: #c7c7c7;
   margin-top: 36px;
+}
+
+@media (max-width: 1023px) {
+  .lead p {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .lead p {
+    font-size: 24px;
+  }
 }
 
 .highlight {

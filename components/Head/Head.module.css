@@ -23,6 +23,12 @@
   padding-top: 120px;
 }
 
+@media (max-width: 1023px) {
+  .hero {
+    font-size: 52px;
+  }
+}
+
 .imgContainer {
   position: absolute;
   bottom: 0;

@@ -27,7 +27,7 @@ export default async function Home({}: {}) {
         ) : (
           <>
             The New Way to{" "}
-            <em className={serifItalic.className}>Salt&nbsp;&&nbsp;Pepper</em>.
+            <em className={serifItalic.className}>Salt&nbsp;&&nbsp;Pepper</em>
           </>
         )}
       </h1>
