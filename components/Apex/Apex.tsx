@@ -3,7 +3,7 @@
 import Wrapper from "@/components/Wrapper/Wrapper";
 import styles from "./Apex.module.css";
 import ToggleGroup from "@/components/ToggleGroup/ToggleGroup";
-import medium, { serif, serifItalic } from "@/utils/medium";
+import { serif, serifItalic } from "@/utils/medium";
 import clsx from "clsx";
 
 import stainless from "./stainless.png";

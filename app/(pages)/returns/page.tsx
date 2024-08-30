@@ -64,6 +64,14 @@ export default function Privacy() {
             item you have, and once the return is accepted, make a separate
             purchase for the new item.
           </p>
+          <h3>Return Costs</h3>
+          <p>
+            For a small fee at checkout, you can qualify for a return at no
+            additional cost, allowing you to avoid higher return handling and
+            shipping fees. If you choose not to add this fee, you can still
+            return your item, but you’ll need to cover the cost of the return
+            shipping label.
+          </p>
           <h3>Refunds</h3>
           <p>
             We will notify you once we’ve received and inspected your return to
