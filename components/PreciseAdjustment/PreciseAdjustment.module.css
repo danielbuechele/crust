@@ -7,6 +7,11 @@
   position: relative;
 }
 
+@media (max-width: 1023px) {
+  .root {
+  }
+}
+
 .text {
   margin-left: 50%;
   font-feature-settings:
@@ -20,4 +25,19 @@
   left: 0;
   top: 0;
   bottom: 0;
+}
+
+@media (max-width: 1023px) {
+  .text {
+    margin-left: auto;
+  }
+  .img {
+    position: relative;
+    height: 40vh;
+    margin-right: 30%;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }

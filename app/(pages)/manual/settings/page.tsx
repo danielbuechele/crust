@@ -34,8 +34,8 @@ export default function Settings() {
         <Link href="/manual/cleaning">these steps</Link>.
       </Blockquote>
 
-      <Accordion.Root type="single" collapsible>
-        <Setting title="Fine Powder" image={setting1}>
+      <Accordion.Root type="single" collapsible defaultValue="1">
+        <Setting title="Fine Powder" image={setting1} id="1">
           Turn the adjuster half a turn (½×) from the zero position. You get
           powder-fine particles that release their aroma immediately and
           intensely and are not perceived as crumbs when eating. This setting is
@@ -69,11 +69,12 @@ export default function Settings() {
 function Setting(props: {
   children: React.ReactNode;
   title: string;
+  id?: string;
   image: StaticImageData;
 }) {
   const id = useId();
   return (
-    <Accordion.Item className={styles.setting} value={id}>
+    <Accordion.Item className={styles.setting} value={props.id ?? id}>
       <Accordion.Trigger asChild>
         <Accordion.Header className={clsx(styles.title, medium.className)}>
           {props.title}

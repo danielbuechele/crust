@@ -27,6 +27,48 @@ const IMAGES = {
 
 type Colors = keyof typeof IMAGES;
 
+const PEPPER = [
+  {
+    name: "Crust Orange",
+    id: "orange" as const,
+    description: "Classic black for a sleek and modern look.",
+    color: "#FC4C02",
+  },
+  {
+    name: "Ivory Pepper Haze",
+    id: "ivory" as const,
+    description: "A clean and timeless white.",
+    color: "#D9C7A5",
+  },
+  {
+    name: "Malabar Midnight Noir",
+    id: "midnight" as const,
+    description: "A bold red for a pop of color.",
+    color: "#353730",
+  },
+];
+
+const SALT = [
+  {
+    name: "Ocean Mist White",
+    id: "white" as const,
+    description: "Classic black for a sleek and modern look.",
+    color: "#D8D9D9",
+  },
+  {
+    name: "Rosé Quartz White",
+    id: "rose" as const,
+    description: "A clean and timeless white.",
+    color: "#DCC4C2",
+  },
+  {
+    name: "Lunar Charcoal Grey",
+    id: "charcoal" as const,
+    description: "A bold red for a pop of color.",
+    color: "#746F72",
+  },
+];
+
 export default function ColorTags() {
   const DEFAULT_COLOR = "orange";
   const [color, setColor] = useState<Colors>(DEFAULT_COLOR);
@@ -35,6 +77,21 @@ export default function ColorTags() {
   return (
     <section className={styles.root}>
       <Wrapper className={styles.wrapper}>
+        <div className={styles.mobileText}>
+          <h3>{[...PEPPER, ...SALT].find((i) => i.id === color)?.name}</h3>
+          <p>{[...PEPPER, ...SALT].find((i) => i.id === color)?.description}</p>
+        </div>
+        <ul className={styles.mobileSelector}>
+          {[...PEPPER, ...SALT].map((i) => (
+            <li key={i.id}>
+              <button
+                className={clsx(styles.color, color === i.id && styles.active)}
+                style={{ backgroundColor: i.color }}
+                onClick={() => setColor(i.id)}
+              />
+            </li>
+          ))}
+        </ul>
         <div className={styles.preview}>
           {Object.entries(IMAGES).map(([key, src]) =>
             key === color || inView ? (
@@ -42,7 +99,8 @@ export default function ColorTags() {
                 key={key}
                 src={src}
                 alt=""
-                style={{ objectFit: "cover", opacity: color === key ? 1 : 0 }}
+                className={styles.image}
+                style={{ opacity: color === key ? 1 : 0 }}
                 quality={50}
                 fill
                 sizes="960px"
@@ -51,63 +109,20 @@ export default function ColorTags() {
             ) : null,
           )}
         </div>
-        <div className={styles.selector}>
+
+        <div className={styles.text}>
           <TextPairing heading="Color Tags">
             The magnetic Color Tags, essential to the product’s design, offer a
             personalized touch of color and character. Perfect for easy spice
             identification and adding a unique flair to your culinary toolkit.
           </TextPairing>
-          <h2 className={styles.heading}>Pepper Mill</h2>
-          <Details
-            onChange={setColor}
-            value={color}
-            items={[
-              {
-                name: "Crust Orange",
-                id: "orange",
-                description: "Classic black for a sleek and modern look.",
-                color: "#FC4C02",
-              },
-              {
-                name: "Ivory Pepper Haze",
-                id: "ivory",
-                description: "A clean and timeless white.",
-                color: "#D9C7A5",
-              },
-              {
-                name: "Malabar Midnight Noir",
-                id: "midnight",
-                description: "A bold red for a pop of color.",
-                color: "#353730",
-              },
-            ]}
-          />
+          <div className={styles.selector}>
+            <h2 className={styles.heading}>Pepper Mill</h2>
+            <Details onChange={setColor} value={color} items={PEPPER} />
 
-          <h2 className={styles.heading}>Salt Mill</h2>
-          <Details
-            onChange={setColor}
-            value={color}
-            items={[
-              {
-                name: "Ocean Mist White",
-                id: "white",
-                description: "Classic black for a sleek and modern look.",
-                color: "#D8D9D9",
-              },
-              {
-                name: "Rosé Quartz White",
-                id: "rose",
-                description: "A clean and timeless white.",
-                color: "#DCC4C2",
-              },
-              {
-                name: "Lunar Charcoal Grey",
-                id: "charcoal",
-                description: "A bold red for a pop of color.",
-                color: "#746F72",
-              },
-            ]}
-          />
+            <h2 className={styles.heading}>Salt Mill</h2>
+            <Details onChange={setColor} value={color} items={SALT} />
+          </div>
         </div>
       </Wrapper>
     </section>

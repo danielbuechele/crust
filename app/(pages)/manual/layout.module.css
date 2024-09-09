@@ -7,6 +7,12 @@
   position: relative;
 }
 
+@media (max-width: 767px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .sidebar {
   list-style: none;
   padding: 0;
@@ -15,14 +21,23 @@
   position: sticky;
   top: 80px;
   align-self: start;
+  background-color: white;
+  z-index: 2;
 }
 
 .sidebar li {
   margin-bottom: 24px;
 }
 
+@media (max-width: 767px) {
+  .sidebar li {
+    margin-bottom: 12px;
+  }
+}
+
 .sidebar a {
   text-decoration: none;
+  display: block;
   color: #8e8e8e;
 }
 
@@ -31,6 +46,12 @@
 .sidebar a:active,
 a.active {
   color: #0e0f12;
+}
+
+@media (max-width: 767px) {
+  .sidebar a:not(.active) {
+    display: none;
+  }
 }
 
 .content {

@@ -13,7 +13,13 @@ export default function Features() {
   return (
     <Wrapper className={styles.wrapper}>
       <div className={clsx(styles.box, styles.elegant)}>
-        <Image src={elegant} alt="" fill objectFit="cover" sizes="30vw" />
+        <Image
+          src={elegant}
+          alt=""
+          fill
+          objectFit="cover"
+          sizes="(max-width: 767px) 100vw, 30vw"
+        />
         <p>
           <strong>Elegant.</strong> Easy to use with a timeless design that
           looks artful on display when not in use.

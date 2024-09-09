@@ -11,9 +11,14 @@
 
 @media (max-width: 1023px) {
   .wrapper {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+
+  .text {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -22,6 +27,15 @@
   flex-grow: 1;
   pointer-events: none;
   width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .preview {
+    height: 70vh;
+    max-width: 70vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .preview::after,
@@ -45,11 +59,72 @@
   right: 0px;
 }
 
-.selector {
+.image {
+  object-fit: cover;
+}
+
+.container {
   max-width: 500px;
   width: 100%;
   flex-grow: 1;
   padding-right: 40px;
+}
+
+@media (max-width: 1023px) {
+  .container > div {
+    margin-left: auto;
+    right: auto;
+  }
+}
+
+.mobileSelector {
+  display: none;
+}
+
+.mobileText {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .selector {
+    display: none;
+  }
+
+  .mobileSelector {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 999em;
+    margin-bottom: 30px;
+  }
+
+  .mobileSelector li {
+    height: 24px;
+  }
+
+  .mobileSelector .color {
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .mobileText {
+    display: block;
+    width: 274px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobileText h3 {
+    font-size: 18px;
+  }
+
+  .mobileText p {
+    margin-top: 10px;
+    color: #6c6c6c;
+  }
 }
 
 .heading {
@@ -83,6 +158,7 @@
   height: 24px;
   border-radius: 999em;
   position: relative;
+  border: 0;
 }
 
 .header:hover .color::after,

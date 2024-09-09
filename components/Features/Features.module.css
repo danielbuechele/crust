@@ -30,6 +30,7 @@
 @media (max-width: 1023px) {
   .box {
     padding: 20px;
+    min-height: calc(100vw - 40px);
   }
 }
 

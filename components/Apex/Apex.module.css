@@ -35,6 +35,11 @@
   }
 }
 
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
 .p {
   max-width: 750px;
   color: rgba(249, 238, 226, 0.75);

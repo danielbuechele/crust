@@ -21,6 +21,7 @@ export default function Apex() {
           Technology
         </h2>
         <Image
+          className={styles.image}
           src={active === "Ceramic" ? ceramic : stainless}
           alt="Grinder burr"
         />

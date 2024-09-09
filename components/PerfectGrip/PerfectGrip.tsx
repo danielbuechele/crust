@@ -136,7 +136,7 @@ export default function PerfectGrip() {
         <div className={clsx(styles.content, styles.text2)} ref={text2}>
           <TextPairing heading="Easy to Fill" align="center">
             Refilling your Crust Mill is effortless. Just lift the knob to
-            reveal a wide opening, allowing up to 50g of pepper or dry salt
+            reveal a wide opening, allowing up to 45 g of pepper or dry salt
             without spills.
           </TextPairing>
         </div>

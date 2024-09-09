@@ -32,18 +32,6 @@
   margin-top: 36px;
 }
 
-@media (max-width: 1023px) {
-  .lead p {
-    font-size: 32px;
-  }
-}
-
-@media (max-width: 767px) {
-  .lead p {
-    font-size: 24px;
-  }
-}
-
 .highlight {
   color: #0e0f12;
 }
@@ -63,4 +51,26 @@
 .highlight svg {
   color: #fc4c02;
   animation: pop 0.3s linear 1;
+}
+
+@media (max-height: 800px), (max-width: 1023px) {
+  .lead p {
+    font-size: 32px;
+  }
+
+  .lead svg {
+    height: 26px;
+    width: 26px;
+  }
+}
+
+@media (max-width: 767px), (max-height: 600px) {
+  .lead p {
+    font-size: 24px;
+  }
+
+  .lead svg {
+    height: 20px;
+    width: 20px;
+  }
 }

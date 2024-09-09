@@ -100,9 +100,6 @@ export default function Footer() {
                 </ul>
               </li>
             </ul>
-            <div className={styles.sosumi}>
-              <hr />© 2024 Crust Mill LLC. All rights reserved.
-            </div>
           </div>
           <div className={styles.newsletter}>
             <h3 className={medium.className}>Crust Newsletter</h3>
@@ -134,6 +131,11 @@ export default function Footer() {
             <div className={styles.logo}>
               <Logo width="90%" />
             </div>
+          </div>
+        </Wrapper>
+        <Wrapper>
+          <div className={styles.sosumi}>
+            <hr />© 2024 Crust Mill LLC. All rights reserved.
           </div>
         </Wrapper>
       </footer>

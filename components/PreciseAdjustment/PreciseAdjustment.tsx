@@ -10,7 +10,7 @@ import Slide from "../Slide/Slide";
 export default function PreciseAdjustment() {
   return (
     <section className={styles.root}>
-      <Wrapper>
+      <Wrapper className={styles.wrapper}>
         <TextPairing
           className={styles.text}
           heading="Precise Adjustment"

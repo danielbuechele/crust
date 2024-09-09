@@ -37,10 +37,10 @@ export default function Page() {
     <Wrapper paddingTop>
       <Table>
         <Row title="Size & Weight" noBorderTop>
-          <ValuePair label="Diameter" value="1.67” (42,4 mm)" />
+          <ValuePair label="Diameter" value="1.65” (42 mm)" />
           <LeftRight
             left={<Image alt="" width={150} src={specs} />}
-            right={<ValuePair label="Height" value="7.56” (192 mm)" />}
+            right={<ValuePair label="Height" value="7.48” (190 mm)" />}
           />
           <LeftRight
             left={<ValuePair label="Weight (Pepper)" value="25.2 oz (715 g)" />}
@@ -48,9 +48,9 @@ export default function Page() {
           />
         </Row>
         <Row title="Volume & Adjusting">
-          <ValuePair label="Volume (Pepper)" value="1.5 oz (45 g)" />
-          <ValuePair label="Volume (Salt)" value="2.1 oz (60 g)" />
-          <ValuePair label="Rotation" value="12 Steps (0,0166 mm / 16,6 μm)" />
+          <ValuePair label="Volume (Pepper)" value="25.75 oz (730 g)" />
+          <ValuePair label="Volume (Salt)" value="22.58 oz (640 g)" />
+          <ValuePair label="Rotation" value="20 Steps (0,05 mm / 50 μm)" />
         </Row>
         <Row title="Material">
           <ValuePair label="P–1 Pepper 30 mm Burr" value="Stainless Steel" />
@@ -72,7 +72,12 @@ export default function Page() {
         <Row title="In the Box">
           <div className={styles.bento}>
             <div className={clsx(styles.bentoBox, styles.bentoMill)}>
-              <Image src={mill} alt="Mill" fill sizes="30vw" />
+              <Image
+                src={mill}
+                alt="Mill"
+                fill
+                sizes="(max-width: 767px) 100vw, 30vw"
+              />
               <div className={styles.bentoContent}>Mill</div>
             </div>
             <div className={styles.bentoBox}>
@@ -88,7 +93,7 @@ export default function Page() {
               <Image
                 className={styles.tags}
                 style={{ opacity: tags === "Pepper" ? 1 : 0 }}
-                sizes="30vw"
+                sizes="(max-width: 767px) 100vw, 30vw"
                 src={pepper}
                 alt="Pepper tags"
                 fill
@@ -96,14 +101,19 @@ export default function Page() {
               <Image
                 className={styles.tags}
                 style={{ opacity: tags === "Salt" ? 1 : 0 }}
-                sizes="30vw"
+                sizes="(max-width: 767px) 100vw, 30vw"
                 src={salt}
                 alt="Salt tags"
                 fill
               />
             </div>
             <div className={clsx(styles.bentoGuide, styles.bentoBox)}>
-              <Image src={guide} alt="Quick Start guide" fill sizes="30vw" />
+              <Image
+                src={guide}
+                alt="Quick Start guide"
+                fill
+                sizes="(max-width: 767px) 100vw, 30vw"
+              />
               <div className={styles.bentoContent}>Quick Start</div>
             </div>
           </div>
