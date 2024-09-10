@@ -18,7 +18,7 @@ export default function Apex() {
           Technology
         </h2>
         {/* ffmpeg -framerate 30 -start_number 0 -i  burr-ceramic%04d.png -vf "crop=1250:1250:(in_w-1250)/2:(in_h-1250)/2,scale=720:720" -c:v libaom-av1 -b:v 0 -crf 45 -strict experimental -an output.webm */}
-        <video className={styles.image} autoPlay muted loop>
+        <video className={styles.image} autoPlay muted loop playsInline>
           <source
             src="/burr-ceramic.webm"
             type="video/webm; codecs=av01.0.04M.08.0.110.01.01.01.0"
