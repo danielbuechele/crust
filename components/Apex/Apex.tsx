@@ -6,9 +6,6 @@ import ToggleGroup from "@/components/ToggleGroup/ToggleGroup";
 import { serif, serifItalic } from "@/utils/medium";
 import clsx from "clsx";
 
-import stainless from "./stainless.png";
-import ceramic from "./ceramic.png";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function Apex() {
@@ -20,10 +17,13 @@ export default function Apex() {
           The <em className={serifItalic.className}>Apex</em> of Grinding
           Technology
         </h2>
-        <Image
+        {/* ffmpeg -framerate 30 -start_number 0 -i  burr-ceramic%04d.png -vf "crop=1250:1250:(in_w-1250)/2:(in_h-1250)/2,scale=720:720" -c:v libaom-av1 -b:v 0 -crf 45 -strict experimental -an output.webm */}
+        <video
           className={styles.image}
-          src={active === "Ceramic" ? ceramic : stainless}
-          alt="Grinder burr"
+          src="/burr-ceramic.webm"
+          autoPlay
+          muted
+          loop
         />
         <div className={styles.toggle}>
           <ToggleGroup
