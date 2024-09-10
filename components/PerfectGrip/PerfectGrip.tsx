@@ -2,7 +2,7 @@
 
 import TextPairing from "../TextPairing/TextPairing";
 import styles from "./PerfectGrip.module.css";
-import { useEffect, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { medium } from "@/utils/medium";
 import clsx from "clsx";
@@ -40,17 +40,21 @@ export default function PerfectGrip() {
   const text2 = useRef<HTMLDivElement>(null);
   const height = useHeight();
 
-  useEffect(() => {
-    // Preload images
-    for (let i = 0; i < SEQUENCE_LENGTH; i++) {
+  const images = useMemo(() => {
+    if (typeof window === "undefined") {
+      return [];
+    }
+    return new Array(SEQUENCE_LENGTH).fill(null).map((_, i) => {
       const img = new Image();
       img.src = getFilename(i);
-    }
+      return img;
+    });
   }, []);
 
   useGSAP(
     () => {
       const playhead = { frame: 0 };
+
       const onUpdate = () => {
         const current = canvas.current;
         if (!current) {
@@ -63,12 +67,13 @@ export default function PerfectGrip() {
           return;
         }
 
-        const img = new Image();
-        img.src = getFilename(Math.floor(playhead.frame));
-        img.onload = () => {
-          console.log(img.src, playhead.frame);
-          ctx.drawImage(img, 0, 0, (height / 2343) * 1920, height);
-        };
+        ctx.drawImage(
+          images[Math.floor(playhead.frame)],
+          0,
+          0,
+          (height / 2343) * 1920,
+          height,
+        );
       };
 
       onUpdate();
