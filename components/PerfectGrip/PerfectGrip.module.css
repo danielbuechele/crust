@@ -1,11 +1,19 @@
 .root {
   height: 300vh;
   position: relative;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .spacer {
   position: relative;
   height: 160px;
+}
+
+@media (max-width: 1023px) {
+  .spacer {
+    height: 60px;
+  }
 }
 
 .videoContainer {
@@ -58,6 +66,12 @@
   bottom: 0px;
 }
 
+@media (max-width: 1023px) {
+  .content.text3 {
+    /* transform: translateY(100px); */
+  }
+}
+
 .table {
   font-size: 16px;
   margin-right: 50px;
@@ -92,6 +106,6 @@
 .row div {
   white-space: nowrap;
   text-align: right;
-  line-height: 145%;
+  line-height: 1.45;
   vertical-align: top;
 }

@@ -20,12 +20,25 @@ function getFilename(i: number) {
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
+function useHeight() {
+  const { height, width } = useWindowSize();
+  const cachedHeight = useRef(height);
+  if (cachedHeight.current == null) {
+    cachedHeight.current = height;
+  }
+
+  if (cachedHeight.current && screen.width === width) {
+    return cachedHeight.current;
+  }
+  return height ?? 0;
+}
+
 export default function PerfectGrip() {
   const canvas = useRef<HTMLCanvasElement>(null);
   const container = useRef<HTMLDivElement>(null);
   const videoContainer = useRef<HTMLDivElement>(null);
   const text2 = useRef<HTMLDivElement>(null);
-  const { height } = useWindowSize();
+  const height = useHeight();
 
   useEffect(() => {
     // Preload images
@@ -41,17 +54,20 @@ export default function PerfectGrip() {
       const onUpdate = () => {
         const current = canvas.current;
         if (!current) {
+          console.error("Canvas not found");
           return;
         }
         const ctx = current.getContext("2d");
         if (!ctx) {
+          console.error("Canvas context not found");
           return;
         }
 
         const img = new Image();
         img.src = getFilename(Math.floor(playhead.frame));
         img.onload = () => {
-          ctx.drawImage(img, 0, 0, ((height ?? 0) / 2343) * 1920, height ?? 0);
+          console.log(img.src, playhead.frame);
+          ctx.drawImage(img, 0, 0, (height / 2343) * 1920, height);
         };
       };
 
@@ -107,7 +123,7 @@ export default function PerfectGrip() {
         );
     },
     {
-      dependencies: [container.current, canvas.current, height, text2.current],
+      dependencies: [container.current, canvas.current, text2.current],
       scope: container,
       revertOnUpdate: true,
     },
@@ -122,8 +138,8 @@ export default function PerfectGrip() {
             <canvas
               className={styles.video}
               ref={canvas}
-              width={((height ?? 0) / 2343) * 1920}
-              height={height ?? 0}
+              width={(height / 2343) * 1920}
+              height={height}
             />
           </div>
         </div>

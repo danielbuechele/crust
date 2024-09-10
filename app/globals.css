@@ -46,6 +46,7 @@ button,
 textarea {
   font-size: 1em;
   font-family: inherit;
+  color: inherit;
 }
 
 ul,

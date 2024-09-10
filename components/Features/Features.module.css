@@ -22,7 +22,7 @@
   color: #6c6c6c;
   display: flex;
   flex-direction: column;
-  line-height: 145%;
+  line-height: 1.45;
   overflow: hidden;
   font-size: 18px;
 }
