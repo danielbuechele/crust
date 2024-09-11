@@ -161,6 +161,8 @@ export default function PerfectGrip() {
             without spills.
           </TextPairing>
         </div>
+      </section>
+      <div className={styles.spacer}>
         <div className={clsx(styles.content, styles.text3)}>
           <TextPairing
             heading="Medical-Grade Stainless&nbsp;Steel"
@@ -198,8 +200,7 @@ export default function PerfectGrip() {
             unaltered flavors of your spices.
           </TextPairing>
         </div>
-      </section>
-      <div className={styles.spacer} />
+      </div>
     </>
   );
 }

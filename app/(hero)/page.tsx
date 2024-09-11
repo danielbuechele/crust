@@ -16,7 +16,9 @@ export default function Homepage() {
   return (
     <>
       <Lead />
-      <PerfectGrip />
+      <Sentinel variant="white">
+        <PerfectGrip />
+      </Sentinel>
       <Sentinel variant="light1">
         <ColorTags />
       </Sentinel>
@@ -28,7 +30,9 @@ export default function Homepage() {
           <PreciseAdjustment />
         </Slides>
       </Sentinel>
-      <Features />
+      <Sentinel variant="white">
+        <Features />
+      </Sentinel>
     </>
   );
 }

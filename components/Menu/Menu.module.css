@@ -11,6 +11,7 @@
   align-items: center;
   padding: 0 72px;
   color: #0e0f12;
+  backdrop-filter: blur(10px);
 }
 
 @media (max-width: 767px) {
@@ -24,17 +25,17 @@
 }
 
 .white {
-  background: white;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .light1 {
-  background: #f1f1f1;
+  background-color: rgba(241, 241, 241, 0.8);
 }
 .light2 {
-  background: #e3e3e3;
+  background-color: rgba(227, 227, 227, 0.8);
 }
 
 .dark {
-  background: #222326;
+  background-color: rgba(34, 35, 38, 0.8);
   color: white;
 }
 

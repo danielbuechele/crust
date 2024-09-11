@@ -22,6 +22,10 @@
   mix-blend-mode: lighten;
 }
 
+.text {
+  margin-left: 0;
+}
+
 @media screen and (max-width: 1200px) {
   .img {
     left: 0;
@@ -31,5 +35,9 @@
   .wrapper {
     justify-content: center;
     padding-top: 60%;
+  }
+
+  .text {
+    margin-left: auto;
   }
 }
