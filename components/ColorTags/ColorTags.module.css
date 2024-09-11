@@ -9,6 +9,11 @@
   padding-bottom: 160px;
 }
 
+.text {
+  width: 496px;
+  flex-shrink: 0;
+}
+
 @media (max-width: 1023px) {
   .wrapper {
     flex-direction: column-reverse;
@@ -17,6 +22,8 @@
   }
 
   .text {
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     justify-content: center;
   }

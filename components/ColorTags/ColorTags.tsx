@@ -31,19 +31,22 @@ const PEPPER = [
   {
     name: "Crust Orange",
     id: "orange" as const,
-    description: "Classic black for a sleek and modern look.",
+    description:
+      "A lively orange with subtle red hints, mirroring the harmonious blend of fruity and woody notes in Red Kampot pepper.",
     color: "#FC4C02",
   },
   {
     name: "Ivory Pepper Haze",
     id: "ivory" as const,
-    description: "A clean and timeless white.",
+    description:
+      "A light, ethereal ivory with beige nuances, capturing the understated, elegant flavor profile of white peppercorns.",
     color: "#D9C7A5",
   },
   {
     name: "Malabar Midnight Noir",
     id: "midnight" as const,
-    description: "A bold red for a pop of color.",
+    description:
+      "A mysterious, dark black with hints of forest green, capturing the distinctive and aromatic depth of Malabar Black Pepper.",
     color: "#353730",
   },
 ];
@@ -52,19 +55,22 @@ const SALT = [
   {
     name: "Ocean Mist White",
     id: "white" as const,
-    description: "Classic black for a sleek and modern look.",
+    description:
+      "A bright, pure white, reflecting the freshness of ocean mist and the crystalline essence of evaporated salt.",
     color: "#D8D9D9",
   },
   {
     name: "Rosé Quartz White",
     id: "rose" as const,
-    description: "A clean and timeless white.",
+    description:
+      "A serene, pale white infused with a blush of pink, capturing the subtle warmth of Himalayan salt crystals.",
     color: "#DCC4C2",
   },
   {
     name: "Lunar Charcoal Grey",
     id: "charcoal" as const,
-    description: "A bold red for a pop of color.",
+    description:
+      "A deep, intriguing grey with subtle purple undertones, reminiscent of the rich, smoky hues of Kala Namak salt.",
     color: "#746F72",
   },
 ];
