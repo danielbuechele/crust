@@ -10,13 +10,13 @@ import home from "./home.png";
 import specs from "./specs.png";
 import Image from "next/image";
 
-export default async function Home({}: {}) {
+export default function Head({}: {}) {
   const pathname = usePathname();
   const router = useRouter();
   const isSpecs = pathname === "/specs";
 
   return (
-    <main className={styles.main}>
+    <section className={styles.main}>
       <h1 className={clsx(styles.hero, serif.className)}>
         {isSpecs ? (
           <>
@@ -60,6 +60,6 @@ export default async function Home({}: {}) {
           }
         />
       </div>
-    </main>
+    </section>
   );
 }

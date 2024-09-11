@@ -11,14 +11,14 @@ export default function Wrapper({
   paddingTop?: boolean;
 }) {
   return (
-    <section
+    <div
       className={clsx(
         styles.wrapper,
         className,
-        paddingTop && styles.paddingTop
+        paddingTop && styles.paddingTop,
       )}
     >
       {children}
-    </section>
+    </div>
   );
 }

@@ -22,7 +22,7 @@ const query = gql`
   ${ProductFragment}
 `;
 
-export default async function Home() {
+export default async function Buy() {
   const { data } = await getClient().query<BuyQuery>({
     query,
     variables: {
