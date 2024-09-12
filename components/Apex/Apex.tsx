@@ -33,33 +33,33 @@ export default function Apex() {
             onValueChange={(value) => setActive(value)}
           />
         </div>
-        {active === "Stainless Steel" ? (
-          <>
-            <p className={styles.p}>
-              <em>Our stainless steel burr grinder</em> is ideal for pepper due
-              to its exceptional hardness and durability, easily cutting through
-              tough peppercorns. Its high-precision engineering ensures a
-              consistent grind, enhancing flavor release.
-            </p>
-            <p className={styles.p}>
-              Resistant to corrosion, stainless steel burrs maintain performance
-              despite the oils and moisture in pepper.
-            </p>
-          </>
-        ) : (
-          <>
-            <p className={styles.p}>
+        <div className={styles.textContainer}>
+          <p>
+            <em>Our stainless steel burr grinder</em> is ideal for pepper due to
+            its exceptional hardness and durability, easily cutting through
+            tough peppercorns. Its high-precision engineering ensures a
+            consistent grind, enhancing flavor release.
+          </p>
+          <p>
+            Resistant to corrosion, stainless steel burrs maintain performance
+            despite the oils and moisture in pepper.
+          </p>
+          <div
+            className={styles.ceramic}
+            style={{ opacity: active === "Ceramic" ? 1 : 0 }}
+          >
+            <p>
               <em>Our ceramic burr grinder</em> is perfect for salt because it
               is non-reactive, keeping the flavor pure. Its hardness and wear
               resistance ensure a fine, consistent grind.
             </p>
-            <p className={styles.p}>
+            <p>
               Minimal heat generation prevents clumping, maintaining the salt's
               dryness. Additionally, ceramic burrs resist corrosion, ensuring
               long-lasting performance.
             </p>
-          </>
-        )}
+          </div>
+        </div>
       </Wrapper>
     </div>
   );

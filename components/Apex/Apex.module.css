@@ -36,13 +36,20 @@
 }
 
 .image {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
   width: 360px;
   margin-bottom: 100px;
 }
 
-.p {
+@media (max-width: 1023px) {
+  .image {
+    margin-bottom: 30px;
+  }
+}
+
+.textContainer {
+  position: relative;
   max-width: 750px;
   color: rgba(249, 238, 226, 0.75);
   font-size: 36px;
@@ -50,17 +57,34 @@
   margin-left: auto;
   margin-right: auto;
   letter-spacing: -0.72px;
-  margin-top: 40px;
 }
 
 @media (max-width: 1023px) {
-  .p {
-    margin-top: 10px;
+  .textContainer {
     font-size: 24px;
+  }
+}
+
+.ceramic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.5s opacity;
+  background-color: #0e0f12;
+}
+
+.textContainer p {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1023px) {
+  .textContainer p {
     margin-bottom: 12px;
   }
 }
 
-.p em {
+.textContainer em {
   color: #f9eee2;
 }

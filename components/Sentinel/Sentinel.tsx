@@ -15,8 +15,10 @@ export default function Sentinel({
   const { setVariant } = useContext(MenuContext);
   const { ref } = useIntersectionObserver({
     root: null,
-    rootMargin: "-72px 0px -100% 0px",
+    rootMargin: "-64px 0px -80% 0px",
+    // TODO fix
     onChange: (isIntersecting) => {
+      console.log("d");
       if (isIntersecting) {
         setVariant(variant);
       }

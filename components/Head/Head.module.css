@@ -17,7 +17,8 @@
   font-weight: normal;
   text-align: center;
   color: #0e0f12;
-  font-size: 96px;
+  font-size: 10vh;
+  top: 315px;
   width: 930px;
   max-width: 100%;
   padding-top: 120px;
@@ -25,15 +26,20 @@
 
 @media (max-width: 1023px) {
   .hero {
-    font-size: 52px;
+    font-size: 5vh;
   }
 }
 
 .imgContainer {
   position: absolute;
   bottom: 0;
-  top: 315px;
+  top: 36vmin;
   width: 100%;
+  overflow: hidden;
+}
+
+.imgContainerSpecs {
+  top: 25vh;
 }
 
 .img {
