@@ -17,7 +17,7 @@ export default function Apex() {
           The <em className={serifItalic.className}>Apex</em> of Grinding
           Technology
         </h2>
-        {/* ffmpeg -framerate 30 -start_number 0 -i  burr-ceramic%04d.png -vf "crop=1250:1250:(in_w-1250)/2:(in_h-1250)/2,scale=720:720" -c:v libaom-av1 -b:v 0 -crf 45 -strict experimental -an output.webm */}
+        {/* ffmpeg -framerate 30 -start_number 0 -i burr-ceramic%04d.png -vf "crop=1250:1250:(in_w-1250)/2:(in_h-1250)/2,scale=720:720" -c:v libaom-av1 -b:v 0 -crf 45 -profile:v 0 -pix_fmt yuv420p -an burr-ceramic.webm */}
         <video className={styles.image} autoPlay muted loop playsInline>
           <source
             src="/burr-ceramic.webm"
