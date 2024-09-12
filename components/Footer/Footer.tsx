@@ -102,32 +102,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className={styles.newsletter}>
-            <h3 className={medium.className}>Crust Newsletter</h3>
-            <p>
-              Latest news, musings, announcements and updates direct to your
-              inbox. No Spam ever.
-            </p>
-            <form className={styles.form}>
-              <input type="email" placeholder="Your E-Mail Address" />
-              <button type="submit">
-                <svg
-                  width="12"
-                  height="11"
-                  viewBox="0 0 12 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.39205 10.6023L5.36932 9.59091L8.92045 6.03977H0V4.5625H8.92045L5.36932 1.01705L6.39205 0L11.6932 5.30114L6.39205 10.6023Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </button>
-            </form>
-
-            <small>
-              By signing up, I agree with the data protection policy of Crust.
-            </small>
+            {/* <Newsletter /> */}
             <div className={styles.logo}>
               <Logo width="90%" />
             </div>
@@ -140,5 +115,38 @@ export default function Footer() {
         </Wrapper>
       </footer>
     </>
+  );
+}
+
+function Newsletter() {
+  return (
+    <div>
+      <h3 className={medium.className}>Crust Newsletter</h3>
+      <p>
+        Latest news, musings, announcements and updates direct to your inbox. No
+        Spam ever.
+      </p>
+      <form className={styles.form}>
+        <input type="email" placeholder="Your E-Mail Address" />
+        <button type="submit">
+          <svg
+            width="12"
+            height="11"
+            viewBox="0 0 12 11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.39205 10.6023L5.36932 9.59091L8.92045 6.03977H0V4.5625H8.92045L5.36932 1.01705L6.39205 0L11.6932 5.30114L6.39205 10.6023Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+      </form>
+
+      <small>
+        By signing up, I agree with the data protection policy of Crust.
+      </small>
+    </div>
   );
 }

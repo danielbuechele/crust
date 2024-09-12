@@ -11,7 +11,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [variant, setVariant] = useState<Variant>("transparent");
+  const [variant, setVariant] = useState<Variant>("white");
 
   return (
     <MenuContext.Provider value={{ setVariant, variant }}>

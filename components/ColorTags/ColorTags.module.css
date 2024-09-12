@@ -11,6 +11,7 @@
 
 .text {
   width: 496px;
+  max-width: 100%;
   flex-shrink: 0;
 }
 
@@ -215,4 +216,5 @@
 
 .desc {
   padding: 10px 0 26px;
+  max-width: 368px;
 }
