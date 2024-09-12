@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { useIntersectionObserver } from "usehooks-ts";
+import { useIntersectionObserver, useWindowSize } from "usehooks-ts";
 import { Variant } from "@/components/Menu/Menu";
 import MenuContext from "@/components/Menu/MenuContext";
 
@@ -13,10 +13,10 @@ export default function Sentinel({
   variant: Variant;
 }) {
   const { setVariant } = useContext(MenuContext);
+  const { height } = useWindowSize();
   const { ref } = useIntersectionObserver({
     root: null,
-    rootMargin: "-64px 0px -80% 0px",
-    // TODO fix
+    rootMargin: `0px 0px -${height - 64}px 0px`,
     onChange: (isIntersecting) => {
       console.log("d");
       if (isIntersecting) {

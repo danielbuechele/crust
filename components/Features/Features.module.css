@@ -25,6 +25,7 @@
   line-height: 1.45;
   overflow: hidden;
   font-size: 18px;
+  backdrop-filter: opacity(1); /* fix Chrome bug */
 }
 
 @media (max-width: 1023px) {

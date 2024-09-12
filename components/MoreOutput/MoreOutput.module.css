@@ -11,7 +11,6 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  backdrop-filter: opacity(1); /* fix Chrome bug */
 }
 
 .img {

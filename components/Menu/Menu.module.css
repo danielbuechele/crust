@@ -6,18 +6,16 @@
   z-index: 3;
   height: 64px;
   transition: background-color 0.2s;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 72px;
   color: #0e0f12;
   backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: 767px) {
-  .container {
-    padding: 0 30px;
-  }
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .transparent {
