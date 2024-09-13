@@ -8,6 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 import home from "./home.png";
 import Image, { getImageProps } from "next/image";
+import Sentinel from "../Sentinel/Sentinel";
 
 export default function Head({}: {}) {
   const pathname = usePathname();
@@ -34,53 +35,55 @@ export default function Head({}: {}) {
   });
 
   return (
-    <section className={styles.main}>
-      <h1 className={clsx(styles.hero, serif.className)}>
-        {isSpecs ? (
-          <>
-            Technical
-            <br />
-            Specifications
-          </>
-        ) : (
-          <>
-            The New Way
-            <br />
-            to&nbsp;
-            <em className={serifItalic.className}>Salt&nbsp;&&nbsp;Pepper</em>
-          </>
-        )}
-      </h1>
-      <div
-        className={clsx(
-          styles.imgContainer,
-          isSpecs && styles.imgContainerSpecs,
-        )}
-      >
-        <Image
-          alt=""
-          fill
-          src={home}
-          className={styles.img}
-          priority={isSpecs}
-          style={{ opacity: isSpecs ? 0 : 1 }}
-          sizes="100vh"
-        />
-        <picture className={styles.img} style={{ opacity: isSpecs ? 1 : 0 }}>
-          <source media="(max-width: 1023px)" srcSet={mobile} />
-          <source media="(min-width: 1024px)" srcSet={desktop} />
-          <img {...rest} style={{ width: "100%", height: "auto" }} />
-        </picture>
-      </div>
-      <div className={styles.toggle}>
-        <ToggleGroup
-          values={["Overview", "Specs"]}
-          value={isSpecs ? "Specs" : "Overview"}
-          onValueChange={(value) =>
-            router.push(value === "Specs" ? "/specs" : "/")
-          }
-        />
-      </div>
-    </section>
+    <Sentinel variant="light2">
+      <section className={styles.main}>
+        <h1 className={clsx(styles.hero, serif.className)}>
+          {isSpecs ? (
+            <>
+              Technical
+              <br />
+              Specifications
+            </>
+          ) : (
+            <>
+              The New Way
+              <br />
+              to&nbsp;
+              <em className={serifItalic.className}>Salt&nbsp;&&nbsp;Pepper</em>
+            </>
+          )}
+        </h1>
+        <div
+          className={clsx(
+            styles.imgContainer,
+            isSpecs && styles.imgContainerSpecs,
+          )}
+        >
+          <Image
+            alt=""
+            fill
+            src={home}
+            className={styles.img}
+            priority={isSpecs}
+            style={{ opacity: isSpecs ? 0 : 1 }}
+            sizes="100vh"
+          />
+          <picture className={styles.img} style={{ opacity: isSpecs ? 1 : 0 }}>
+            <source media="(max-width: 1023px)" srcSet={mobile} />
+            <source media="(min-width: 1024px)" srcSet={desktop} />
+            <img {...rest} style={{ width: "100%", height: "auto" }} />
+          </picture>
+        </div>
+        <div className={styles.toggle}>
+          <ToggleGroup
+            values={["Overview", "Specs"]}
+            value={isSpecs ? "Specs" : "Overview"}
+            onValueChange={(value) =>
+              router.push(value === "Specs" ? "/specs" : "/")
+            }
+          />
+        </div>
+      </section>
+    </Sentinel>
   );
 }

@@ -12,15 +12,19 @@ export default function Sentinel({
   children: React.ReactNode;
   variant: Variant;
 }) {
-  const { setVariant } = useContext(MenuContext);
+  const { variant: v, setVariant } = useContext(MenuContext);
   const { height } = useWindowSize();
   const { ref } = useIntersectionObserver({
     root: null,
     rootMargin: `0px 0px -${height - 64}px 0px`,
     onChange: (isIntersecting) => {
-      console.log("d");
       if (isIntersecting) {
         setVariant(variant);
+        document
+          .querySelector("meta[name=theme-color]")
+          ?.setAttribute("content", "#ff0000");
+      } else if (v === "light2") {
+        setVariant("white");
       }
     },
   });

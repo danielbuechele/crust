@@ -9,6 +9,7 @@ import clsx from "clsx";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Wrapper from "../Wrapper/Wrapper";
 
 const SEQUENCE_LENGTH = 120;
 
@@ -163,7 +164,7 @@ export default function PerfectGrip() {
         </div>
       </section>
       <div className={styles.spacer}>
-        <div className={clsx(styles.content, styles.text3)}>
+        <Wrapper className={clsx(styles.content, styles.text3)}>
           <TextPairing
             heading="Medical-Grade Stainless&nbsp;Steel"
             align="center"
@@ -199,7 +200,7 @@ export default function PerfectGrip() {
             grinder performs flawlessly over time, preserving the pure,
             unaltered flavors of your spices.
           </TextPairing>
-        </div>
+        </Wrapper>
       </div>
     </>
   );

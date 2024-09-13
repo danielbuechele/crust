@@ -7,6 +7,6 @@ export default createContext<{
   variant: Variant;
   setVariant: (variant: Variant) => void;
 }>({
-  variant: "light1",
+  variant: "light2",
   setVariant: () => {},
 });

@@ -5,13 +5,18 @@ import Menu, { Variant } from "@/components/Menu/Menu";
 import Head from "@/components/Head/Head";
 import { useState } from "react";
 import MenuContext from "@/components/Menu/MenuContext";
+import { Metadata } from "next";
+
+// export const metadata: Metadata = {
+//   themeColor: "#000000",
+// };
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [variant, setVariant] = useState<Variant>("white");
+  const [variant, setVariant] = useState<Variant>("light2");
 
   return (
     <MenuContext.Provider value={{ setVariant, variant }}>

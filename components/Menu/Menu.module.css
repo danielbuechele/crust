@@ -50,6 +50,12 @@
   transition: all 0.2s;
 }
 
+@media (max-width: 767px) {
+  .instagram {
+    display: none;
+  }
+}
+
 .instagram:hover {
   background: #dbdbdb;
   color: #0e0f12;
