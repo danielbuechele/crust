@@ -1,7 +1,7 @@
 .root {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 5fr 1fr 6fr;
+  gap: 16px;
 }
 
 .content {
@@ -9,6 +9,7 @@
 }
 
 .img {
+  grid-column-start: 3;
   height: auto;
   max-width: 100%;
 }

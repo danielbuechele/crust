@@ -48,6 +48,9 @@
   gap: 8px;
   font-size: 14px;
   transition: all 0.2s;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (max-width: 767px) {
