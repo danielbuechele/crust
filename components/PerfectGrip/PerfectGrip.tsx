@@ -40,6 +40,7 @@ export default function PerfectGrip() {
   const videoContainer = useRef<HTMLDivElement>(null);
   const text2 = useRef<HTMLDivElement>(null);
   const height = useHeight();
+  const oldFrame = useRef(-1);
 
   const images = useMemo(() => {
     if (typeof window === "undefined") {
@@ -67,14 +68,12 @@ export default function PerfectGrip() {
           console.error("Canvas context not found");
           return;
         }
-
-        ctx.drawImage(
-          images[Math.floor(playhead.frame)],
-          0,
-          0,
-          (height / 2343) * 1920,
-          height,
-        );
+        const newFrame = Math.floor(playhead.frame);
+        if (newFrame === oldFrame.current) {
+          return;
+        }
+        ctx.drawImage(images[newFrame], 0, 0, (height / 2343) * 1920, height);
+        oldFrame.current = newFrame;
       };
 
       onUpdate();
