@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ApolloWrapper } from "../components/ApolloWrapper";
 import { regular } from "@/utils/medium";
 
 export const metadata: Metadata = {
   title: "Crust",
-  themeColor: "#ff0000",
+};
+
+export const viewport: Viewport = {
+  themeColor: "white",
 };
 
 export default function RootLayout({

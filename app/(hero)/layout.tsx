@@ -5,11 +5,11 @@ import Menu, { Variant } from "@/components/Menu/Menu";
 import Head from "@/components/Head/Head";
 import { useState } from "react";
 import MenuContext from "@/components/Menu/MenuContext";
-import { Metadata } from "next";
+import { Viewport } from "next";
 
-// export const metadata: Metadata = {
-//   themeColor: "#000000",
-// };
+export const viewport: Viewport = {
+  themeColor: "#E3E3E3",
+};
 
 export default function RootLayout({
   children,
