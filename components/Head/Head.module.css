@@ -18,28 +18,36 @@
   text-align: center;
   color: #0e0f12;
   font-size: 10vh;
-  top: 315px;
+  top: 11vh;
   width: 930px;
   max-width: 100%;
-  padding-top: 120px;
+  position: absolute;
 }
 
 @media (max-width: 1023px) {
   .hero {
-    font-size: 5vh;
+    top: 17vh;
+    font-size: 7vh;
   }
 }
 
 .imgContainer {
   position: absolute;
   bottom: 0;
-  top: 36vmin;
+  top: 31vh;
   width: 100%;
   overflow: hidden;
 }
 
 .imgContainerSpecs {
   top: 25vh;
+}
+
+@media (max-width: 1023px) {
+  .imgContainerSpecs {
+    top: 32vh;
+    bottom: 5vh;
+  }
 }
 
 .img {

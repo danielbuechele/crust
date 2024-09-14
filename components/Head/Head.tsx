@@ -20,17 +20,17 @@ export default function Head({}: {}) {
   } = getImageProps({
     alt: "",
     sizes: "100vw",
-    width: 4096,
-    height: 2304,
     src: "/specs.png",
+    objectFit: "contain",
+    fill: true,
   });
   const {
     props: { srcSet: mobile, ...rest },
   } = getImageProps({
     alt: "",
     sizes: "100vw",
-    width: 1690,
-    height: 2600,
+    fill: true,
+    objectFit: "contain",
     src: "/specs-mobile.png",
   });
 
@@ -64,14 +64,14 @@ export default function Head({}: {}) {
             fill
             src={home}
             className={styles.img}
-            priority={isSpecs}
+            priority={!isSpecs}
             style={{ opacity: isSpecs ? 0 : 1 }}
             sizes="100vh"
           />
-          <picture className={styles.img} style={{ opacity: isSpecs ? 1 : 0 }}>
+          <picture style={{ opacity: isSpecs ? 1 : 0 }}>
             <source media="(max-width: 1023px)" srcSet={mobile} />
             <source media="(min-width: 1024px)" srcSet={desktop} />
-            <img {...rest} style={{ width: "100%", height: "auto" }} />
+            <img {...rest} />
           </picture>
         </div>
         <div className={styles.toggle}>
