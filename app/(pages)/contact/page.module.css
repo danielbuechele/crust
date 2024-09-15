@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.left {
+  max-width: 368px;
+  margin-right: 144px;
+}
+
+.right {
+  flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+  .left {
+    margin: 0;
+    margin-bottom: 20px;
+    max-width: none;
+  }
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+.row > * {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.form input,
+.form select,
+.form textarea {
+  background-color: #f1f1f1;
+  border: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  padding: 16px;
+  flex-grow: 1;
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.form input:hover,
+.form select:hover,
+.form textarea:hover,
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  background-color: #e8e8e8;
+  outline: 0;
+}
+
+.form input:invalid,
+.form select:invalid,
+.form textarea:invalid {
+  box-shadow: inset 0 0 0 1px #fc4c02;
+  background: #fff6f2;
+}
+
+.select {
+  position: relative;
+}
+
+.form select {
+  padding-right: 40px;
+  appearance: none;
+}
+
+.select svg {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fineprint {
+  color: #8e8e8e;
+  font-size: 12px;
+  max-width: 368px;
+}
+
+.small {
+  font-style: italic;
+  color: #6c6c6c;
+  font-size: 14px;
+  margin-top: 25px;
+}
+
+.thanks {
+  font-size: 14px;
+}
+
+.thanks a {
+  color: #8e8e8e;
+}
+
+.thanks a:hover {
+  color: #0e0f12;
+}
+
+.thanks svg {
+  margin-bottom: -1px;
+}
+
+.thanks h3 {
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  margin-bottom: 24px;
+}

@@ -18,6 +18,10 @@
   background-color: #4d2210;
 }
 
+.button.black {
+  background-color: #0e0f12;
+}
+
 .icon {
   position: absolute;
   width: 30px;
@@ -35,6 +39,11 @@
 .button:focus:not(.disabled) .icon {
   right: 5px;
   background-color: #fe7b44;
+}
+
+.button:hover:not(.disabled).black .icon,
+.button:focus:not(.disabled).black .icon {
+  background-color: #565759;
 }
 
 .disabled {
