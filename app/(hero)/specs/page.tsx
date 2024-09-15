@@ -43,13 +43,13 @@ export default function Page() {
             right={<ValuePair label="Height" value="7.48” (190 mm)" />}
           />
           <LeftRight
-            left={<ValuePair label="Weight (Pepper)" value="25.2 oz (715 g)" />}
-            right={<ValuePair label="Weight (Salt)" value="22.7 oz (645 g)" />}
+            left={<ValuePair label="Weight (Pepper)" value="25.2 oz (730 g)" />}
+            right={<ValuePair label="Weight (Salt)" value="22.58 oz (640 g)" />}
           />
         </Row>
         <Row title="Volume & Adjusting">
-          <ValuePair label="Volume (Pepper)" value="25.75 oz (730 g)" />
-          <ValuePair label="Volume (Salt)" value="22.58 oz (640 g)" />
+          <ValuePair label="Volume (Pepper)" value="1.5 oz (45 g)" />
+          <ValuePair label="Volume (Salt)" value="2.1 oz (60 g)" />
           <ValuePair label="Rotation" value="20 Steps (0,05 mm / 50 μm)" />
         </Row>
         <Row title="Material">
