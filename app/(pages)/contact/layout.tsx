@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import PageHeader from "@/components/PageHeader/PageHeader";
 import Link from "next/link";
 
-export default function Contact(props: { props: React.ReactNode }) {
+export default function Contact(props: { children: React.ReactNode }) {
   return (
     <>
       <PageHeader
