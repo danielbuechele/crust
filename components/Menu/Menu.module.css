@@ -86,3 +86,26 @@
 .logo {
   margin-top: 5px;
 }
+
+.mobileToggle {
+    display: none;
+}
+
+@media (max-width: 767px) {
+  .buy {
+      display: none !important;
+  }
+
+  .mobileToggle {
+      display: flex;
+      gap: 20px
+  }
+
+  .mobileToggle a {
+      color: #7D7D7D;
+  }
+
+  .mobileToggle .active {
+      color: #0e0f12;
+  }
+}

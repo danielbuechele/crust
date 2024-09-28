@@ -40,19 +40,6 @@ function Arrow(props: { direction: "left" | "right" } & CustomArrowProps) {
   );
 }
 
-function useSuspendedWindowWidth() {
-  const promise = useRef<Promise<number> | null>(null);
-  const { width } = useWindowSize();
-
-  promise.current = new Promise((resolve) => {
-    if (width) {
-      resolve(width);
-    }
-  });
-
-  throw promise.current;
-}
-
 export default function Slideshow(props: {
   images: Array<{
     url: StaticImageData;
@@ -62,14 +49,14 @@ export default function Slideshow(props: {
   mobileHeight?: number;
   className?: string;
 }) {
-  const width = useSuspendedWindowWidth();
-  const isMobile = width < 768;
+  const { width } = useWindowSize();
+
+  if (!width) {
+    return null;
+  }
 
   return (
-    <div
-      className={clsx(styles.slideshow, props.className)}
-      key={isMobile ? "mobile" : "desktop"}
-    >
+    <div className={clsx(styles.slideshow, props.className)}>
       <Slider
         prevArrow={<Arrow direction="left" />}
         nextArrow={<Arrow direction="right" />}
@@ -82,7 +69,7 @@ export default function Slideshow(props: {
             <Image
               className={styles.img}
               height={
-                isMobile && props.mobileHeight
+                width < 768 && props.mobileHeight
                   ? props.mobileHeight
                   : props.height
               }

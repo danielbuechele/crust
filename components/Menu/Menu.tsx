@@ -60,7 +60,22 @@ export default function Menu() {
             Follow us for updates
           </a>
         )}
-        <PrimaryButton href="/buy">Buy</PrimaryButton>
+        <PrimaryButton
+          className={isHome || isSpecs ? styles.buy : undefined}
+          href="/buy"
+        >
+          Buy
+        </PrimaryButton>
+        {(isHome || isSpecs) && (
+          <div className={styles.mobileToggle}>
+            <Link className={isHome ? styles.active : undefined} href="/">
+              Overview
+            </Link>
+            <Link className={isSpecs ? styles.active : undefined} href="/specs">
+              Specs
+            </Link>
+          </div>
+        )}
       </Wrapper>
     </nav>
   );

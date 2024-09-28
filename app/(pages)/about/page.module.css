@@ -16,3 +16,37 @@
 .small {
   font-size: 18px;
 }
+
+.labels {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 767px) {
+  .labels {
+    grid-template-columns: 1fr;
+  }
+}
+
+.label {
+  flex-basis: 0;
+  flex-grow: 1;
+  line-height: 145%;
+  color: #6c6c6c;
+  border-top: 1px solid #dbdbdb;
+  padding: 30px 0;
+}
+
+.label strong {
+  color: #0e0f12;
+  display: block;
+  margin: 16px 0 10px;
+}
+
+.label svg {
+}
+
+.label p {
+  max-width: 368px;
+}

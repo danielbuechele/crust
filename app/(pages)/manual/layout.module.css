@@ -21,23 +21,25 @@
   position: sticky;
   top: 80px;
   align-self: start;
-  background-color: white;
+  background: white;
   z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
 }
 
 .sidebar li {
   margin-bottom: 24px;
 }
 
-@media (max-width: 767px) {
-  .sidebar li {
-    margin-bottom: 12px;
-  }
-}
-
 .sidebar a {
   text-decoration: none;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #8e8e8e;
 }
 
@@ -46,12 +48,6 @@
 .sidebar a:active,
 a.active {
   color: #0e0f12;
-}
-
-@media (max-width: 767px) {
-  .sidebar a:not(.active) {
-    display: none;
-  }
 }
 
 .content {

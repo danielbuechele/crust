@@ -2,7 +2,7 @@
 
 import TextPairing from "../TextPairing/TextPairing";
 import styles from "./PerfectGrip.module.css";
-import { useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef } from "react";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { medium } from "@/utils/medium";
 import clsx from "clsx";
@@ -42,6 +42,32 @@ export default function PerfectGrip() {
   const height = useHeight();
   const oldFrame = useRef(-1);
 
+  const renderFrame = useCallback(
+    (newFrame: number) => {
+      if (newFrame === oldFrame.current) {
+        return;
+      }
+      const current = canvas.current;
+      if (!current) {
+        console.error("Canvas not found");
+        return;
+      }
+      current.addEventListener("contextlost", console.log);
+      current.addEventListener("contextrestored", console.log);
+      const ctx = current.getContext("2d");
+      if (!ctx) {
+        console.error("Canvas context not found");
+        return;
+      }
+      window.requestAnimationFrame(() => {
+        console.log(ctx, images[newFrame]);
+        ctx.drawImage(images[newFrame], 0, 0, (height / 2343) * 1920, height);
+        oldFrame.current = newFrame;
+      });
+    },
+    [oldFrame, canvas, height],
+  );
+
   const images = useMemo(() => {
     if (typeof window === "undefined") {
       return [];
@@ -49,6 +75,9 @@ export default function PerfectGrip() {
     return new Array(SEQUENCE_LENGTH).fill(null).map((_, i) => {
       const img = new Image();
       img.src = getFilename(i);
+      if (i === 0) {
+        img.onload = () => renderFrame(0);
+      }
       return img;
     });
   }, []);
@@ -58,26 +87,8 @@ export default function PerfectGrip() {
       const playhead = { frame: 0 };
 
       const onUpdate = () => {
-        const current = canvas.current;
-        if (!current) {
-          console.error("Canvas not found");
-          return;
-        }
-        current.addEventListener("contextlost", console.log);
-        current.addEventListener("contextrestored", console.log);
-        const ctx = current.getContext("2d");
-        if (!ctx) {
-          console.error("Canvas context not found");
-          return;
-        }
         const newFrame = Math.floor(playhead.frame);
-        if (newFrame === oldFrame.current) {
-          return;
-        }
-        window.requestAnimationFrame(() => {
-          ctx.drawImage(images[newFrame], 0, 0, (height / 2343) * 1920, height);
-          oldFrame.current = newFrame;
-        });
+        renderFrame(newFrame);
       };
       onUpdate();
 
@@ -111,7 +122,7 @@ export default function PerfectGrip() {
             frame: SEQUENCE_LENGTH - 1,
             duration: 1.5,
           },
-          2.5,
+          1.5,
         )
         .to(
           text2.current,
@@ -119,7 +130,7 @@ export default function PerfectGrip() {
             opacity: 1,
             duration: 0.25,
           },
-          1.25,
+          0.75,
         )
         .to(
           text2.current,
@@ -127,11 +138,16 @@ export default function PerfectGrip() {
             opacity: 0,
             duration: 0.25,
           },
-          2.25,
+          1.35,
         );
     },
     {
-      dependencies: [container.current, canvas.current, text2.current],
+      dependencies: [
+        container.current,
+        canvas.current,
+        text2.current,
+        renderFrame,
+      ],
       scope: container,
       revertOnUpdate: true,
     },

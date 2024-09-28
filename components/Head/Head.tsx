@@ -9,6 +9,7 @@ import { usePathname, useRouter } from "next/navigation";
 import home from "./home.png";
 import Image, { getImageProps } from "next/image";
 import Sentinel from "../Sentinel/Sentinel";
+import PrimaryButton from "../PrimaryButton/PrimaryButton";
 
 export default function Head({}: {}) {
   const pathname = usePathname();
@@ -82,6 +83,11 @@ export default function Head({}: {}) {
               router.push(value === "Specs" ? "/specs" : "/")
             }
           />
+        </div>
+        <div className={styles.mobileBuyButton}>
+          <PrimaryButton width={200} href="/buy">
+            Buy
+          </PrimaryButton>
         </div>
       </section>
     </Sentinel>

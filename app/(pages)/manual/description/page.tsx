@@ -44,13 +44,6 @@ export default function Description() {
         mill. The rotary dial for grind adjustment prevents particles from
         falling onto the surface when the mill is set down.
       </p>
-      <p>
-        When grinding, hold the mill at an angle so that the ground material
-        falls through the slot between the mill body and the rotary dial. The
-        slot width changes with the grind setting from narrow (about 0.04" or 1
-        mm) for the finest setting to wide (about 0.12" or 3 mm) for a very
-        coarse setting.
-      </p>
       <hr />
       <button className={styles.button}>
         Download Media Kit

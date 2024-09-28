@@ -11,23 +11,16 @@ function NavLink(props: {
   alternativeHrefs?: string[];
 }) {
   const pathname = usePathname();
+  const isActive =
+    pathname === props.href || props.alternativeHrefs?.includes(pathname);
   return (
-    <Link
-      href={props.href}
-      className={
-        pathname === props.href || props.alternativeHrefs?.includes(pathname)
-          ? styles.active
-          : undefined
-      }
-    >
+    <Link href={props.href} className={isActive ? styles.active : undefined}>
       {props.children}
     </Link>
   );
 }
 
 export default function Manual(props: { children: React.ReactNode }) {
-  const pathname = usePathname();
-
   return (
     <>
       <PageHeader
@@ -52,6 +45,9 @@ export default function Manual(props: { children: React.ReactNode }) {
             <NavLink href="/manual/settings">Grind Settings</NavLink>
           </li>
           <li>
+            <NavLink href="/manual/grinding">Grinding</NavLink>
+          </li>
+          <li>
             <NavLink href="/manual/cleaning">Cleaning</NavLink>
           </li>
           <li>
@@ -61,7 +57,6 @@ export default function Manual(props: { children: React.ReactNode }) {
             <NavLink href="/manual/description">Description</NavLink>
           </li>
         </ul>
-
         <section className={styles.content}>{props.children}</section>
       </div>
     </>

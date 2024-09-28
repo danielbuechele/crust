@@ -9,7 +9,6 @@ import MoreOutput from "@/components/MoreOutput/MoreOutput";
 import PreciseAdjustment from "@/components/PreciseAdjustment/PreciseAdjustment";
 import Features from "@/components/Features/Features";
 import React from "react";
-import Slides from "@/components/Slides/Slides";
 import Sentinel from "@/components/Sentinel/Sentinel";
 
 export default function Homepage() {

@@ -1,5 +1,3 @@
-"use client";
-
 import useElementVisibility, { Position } from "@/utils/useElementVisibility";
 import React, { useRef, useEffect, useState, useCallback } from "react";
 
