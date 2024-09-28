@@ -47,7 +47,7 @@ export default function Footer() {
                     <Link href="/specs">Tech Specs</Link>
                   </li>
                   <li>
-                    <Link href="/manual">Quick Start</Link>
+                    <Link href="/guide">Pepper and Salt Buying Guide</Link>
                   </li>
                 </ul>
               </li>

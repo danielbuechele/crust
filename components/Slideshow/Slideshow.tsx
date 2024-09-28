@@ -7,6 +7,8 @@ import clsx from "clsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image, { StaticImageData } from "next/image";
+import { useWindowSize } from "@uidotdev/usehooks";
+import { useRef } from "react";
 
 function Arrow(props: { direction: "left" | "right" } & CustomArrowProps) {
   return (
@@ -38,25 +40,55 @@ function Arrow(props: { direction: "left" | "right" } & CustomArrowProps) {
   );
 }
 
+function useSuspendedWindowWidth() {
+  const promise = useRef<Promise<number> | null>(null);
+  const { width } = useWindowSize();
+
+  promise.current = new Promise((resolve) => {
+    if (width) {
+      resolve(width);
+    }
+  });
+
+  throw promise.current;
+}
+
 export default function Slideshow(props: {
   images: Array<{
     url: StaticImageData;
     caption: string;
   }>;
   height: number;
+  mobileHeight?: number;
   className?: string;
 }) {
+  const width = useSuspendedWindowWidth();
+  const isMobile = width < 768;
+
   return (
-    <div className={clsx(styles.slideshow, props.className)}>
+    <div
+      className={clsx(styles.slideshow, props.className)}
+      key={isMobile ? "mobile" : "desktop"}
+    >
       <Slider
         prevArrow={<Arrow direction="left" />}
         nextArrow={<Arrow direction="right" />}
         dots={true}
         infinite={false}
+        key={width}
       >
         {props.images.map((image, index) => (
           <div key={index} className={styles.slide}>
-            <Image src={image.url} alt="" height={props.height} />
+            <Image
+              className={styles.img}
+              height={
+                isMobile && props.mobileHeight
+                  ? props.mobileHeight
+                  : props.height
+              }
+              src={image.url}
+              alt=""
+            />
             <p className={styles.caption}>{image.caption}</p>
           </div>
         ))}

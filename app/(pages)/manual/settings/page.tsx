@@ -31,7 +31,7 @@ export default function Settings() {
         completely (After 7–8 turns), as this may cause the grinder cone and
         pressure spring to fall out. If this happens or if you need to
         disassemble the grinder for thorough cleaning, follow{" "}
-        <Link href="/manual/cleaning">these steps</Link>.
+        <Link href="/manual/assembly">these steps</Link>.
       </Blockquote>
 
       <Accordion.Root type="single" collapsible defaultValue="1">

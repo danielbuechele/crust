@@ -9,3 +9,21 @@
 .container > * {
   width: 60%;
 }
+
+@media (max-width: 767px) {
+  .container {
+    padding-top: 30px;
+  }
+
+  .container > * {
+    width: 85%;
+  }
+
+  .slideshow {
+    max-width: calc(100vw - 40px);
+  }
+
+  .slideshow {
+    padding-top: 30px;
+  }
+}

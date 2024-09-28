@@ -13,7 +13,6 @@ function NavLink(props: {
   const pathname = usePathname();
   return (
     <Link
-      scroll={false}
       href={props.href}
       className={
         pathname === props.href || props.alternativeHrefs?.includes(pathname)

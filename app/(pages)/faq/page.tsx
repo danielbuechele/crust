@@ -196,7 +196,8 @@ export default function FAQ() {
             <Question question="What's your return policy?">
               We have a 30-day return policy, which means you have 30 days after
               receiving your item to request a return. You can read more about
-              how to start a return on our Return Policy.
+              how to start a return on our{" "}
+              <Link href="/returns">Return Policy</Link>.
             </Question>
             <Question question="Can I exchange my Crust mill?">
               We are unable to process exchanges. The quickest way to replace a

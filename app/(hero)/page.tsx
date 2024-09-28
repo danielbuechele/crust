@@ -23,12 +23,10 @@ export default function Homepage() {
         <ColorTags />
       </Sentinel>
       <Sentinel variant="dark">
-        <Slides>
-          <Apex />
-          <GrindRange />
-          <MoreOutput />
-          <PreciseAdjustment />
-        </Slides>
+        <Apex />
+        <GrindRange />
+        <MoreOutput />
+        <PreciseAdjustment />
       </Sentinel>
       <Sentinel variant="white">
         <Features />
