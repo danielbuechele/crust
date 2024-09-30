@@ -52,15 +52,12 @@ export default function PerfectGrip() {
         console.error("Canvas not found");
         return;
       }
-      current.addEventListener("contextlost", console.log);
-      current.addEventListener("contextrestored", console.log);
       const ctx = current.getContext("2d");
       if (!ctx) {
         console.error("Canvas context not found");
         return;
       }
       window.requestAnimationFrame(() => {
-        console.log(ctx, images[newFrame]);
         ctx.drawImage(images[newFrame], 0, 0, (height / 2343) * 1920, height);
         oldFrame.current = newFrame;
       });
