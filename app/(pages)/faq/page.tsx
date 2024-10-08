@@ -62,10 +62,11 @@ export default function FAQ() {
               A User Manual is available online on our website here.
             </Question>
             <Question question="Where are Crust mills made?">
-              All Crust mills are designed and manufactured in Germany. We take
-              pride in our responsible approach to production, ensuring minimal
-              environmental impact. By offering a thoughtfully selected product
-              range, we maintain a small, closely connected supply chain.
+              All Crust mills are designed in California and manufactured in
+              Germany. We take pride in our responsible approach to production,
+              ensuring minimal environmental impact. By offering a thoughtfully
+              selected product range, we maintain a small, closely connected
+              supply chain.
             </Question>
             <Question question="Why should I choose a manual grinder over an electric one?">
               <h4>Control Over Grind Size</h4>

@@ -18,13 +18,23 @@ export default function Apex() {
           Technology
         </h2>
         {/* ffmpeg -framerate 30 -start_number 0 -i burr-ceramic%04d.png -vf "crop=1250:1250:(in_w-1250)/2:(in_h-1250)/2,scale=720:720" -c:v libaom-av1 -b:v 0 -crf 45 -profile:v 0 -pix_fmt yuv420p -an burr-ceramic.webm */}
-        <video className={styles.image} autoPlay muted loop playsInline>
+        <video
+          key={active}
+          className={styles.image}
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
           <source
-            src="/burr-ceramic.webm"
+            src={
+              active === "Ceramic" ? "/burr-ceramic.webm" : "/burr-steel.webm"
+            }
             type="video/webm; codecs=av01.0.04M.08.0.110.01.01.01.0"
           />
-          <source src="/burr-ceramic.mp4" type="video/mp4; codecs=hvc1" />
+          {/* <source src="/burr-steel.mp4" type="video/mp4; codecs=hvc1" /> */}
         </video>
+        <link rel="preload" href="/burr-ceramic.webm" as="video" />
         <div className={styles.toggle}>
           <ToggleGroup
             variant="dark"

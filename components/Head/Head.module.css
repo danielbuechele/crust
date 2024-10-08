@@ -15,6 +15,12 @@
   z-index: 2;
 }
 
+@media (max-width: 1023px) {
+  .main {
+    height: calc(100vh - 82px);
+  }
+}
+
 .hero {
   font-weight: normal;
   text-align: center;

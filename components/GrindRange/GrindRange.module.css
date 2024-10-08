@@ -1,19 +1,132 @@
 .root {
   background-color: #0e0f12;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
 }
 
 .text {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 160px;
+  padding-top: 160px;
 }
 
-.img {
+.range {
+  margin-top: 160px;
+  display: flex;
+  font-size: 16px;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .range div {
+    font-size: 12px;
+    max-width: 80px;
+    text-align: center;
+  }
+}
+
+.scale {
+  height: 40px;
+  margin-top: 22px;
+  margin-bottom: 22px;
   position: relative;
-  aspect-ratio: 3064/980;
-  margin-top: 100px;
-  margin-bottom: 160px;
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #323336,
+    #323336 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .scale {
+    background-image: repeating-linear-gradient(
+      90deg,
+      #323336,
+      #323336 0.5px,
+      transparent 0.5px,
+      transparent 10px
+    );
+  }
+}
+
+.indicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #fc4c02;
+}
+
+.indicator::before {
+  content: "";
+  top: 0;
+  left: -4px;
+  position: absolute;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #fc4c02 transparent transparent transparent;
+}
+
+.images {
+  position: relative;
+  overflow: hidden;
+  height: 650px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.images::after,
+.images::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  bottom: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.images::before {
+  left: 0px;
+  background-image: linear-gradient(to right, #0e0f12, transparent);
+}
+
+.images::after {
+  background-image: linear-gradient(to right, transparent, #0e0f12);
+  right: 0px;
+}
+
+.imagesInner {
+  padding-left: 20px;
+  position: absolute;
+  display: flex;
+}
+
+.type {
+  width: 500px;
+  font-size: 14px;
+  color: rgba(249, 238, 226, 0.75);
+  text-align: center;
+  line-height: 145%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #323336,
+    #323336 1px,
+    transparent 1px,
+    transparent 100px
+  );
+}
+
+.type h3 {
+  color: white;
+}
+
+.label {
+  max-width: 182px;
+  margin-top: -50px;
+  margin-left: auto;
+  margin-right: auto;
 }
