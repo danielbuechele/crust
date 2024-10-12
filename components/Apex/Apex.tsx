@@ -32,9 +32,14 @@ export default function Apex() {
             }
             type="video/webm; codecs=av01.0.04M.08.0.110.01.01.01.0"
           />
-          {/* <source src="/burr-steel.mp4" type="video/mp4; codecs=hvc1" /> */}
+          {/* ffmpeg -framerate 30 -start_number 0 -i burr-steel%04d.png -vf "crop=1250:1250:(in_w-1250)/2:(in_h-1250)/2,scale=720:720" -c:v libx265 -crf 25 -b:v 0 -tag:v hvc1 -pix_fmt yuv420p -an burr-steel.mp4 */}
+          <source
+            src={active === "Ceramic" ? "/burr-ceramic.mp4" : "/burr-steel.mp4"}
+            type="video/mp4; codecs=hvc1"
+          />
         </video>
         <link rel="preload" href="/burr-ceramic.webm" as="video" />
+        <link rel="preload" href="/burr-ceramic.mp4" as="video" />
         <div className={styles.toggle}>
           <ToggleGroup
             variant="dark"

@@ -11,10 +11,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Wrapper from "../Wrapper/Wrapper";
 
-const SEQUENCE_LENGTH = 120;
+const SEQUENCE_LENGTH = 150;
 
 function getFilename(i: number) {
-  // find ./ -iname "*.png" -exec magick '{}' -resize 1500x1500^ -gravity center -crop 1500x1500+0+0 +repage -background '#E8EAE7' -alpha remove -alpha off -quality 50 '{}'.avif \;
+  // find ./ -iname "*.png" -exec magick '{}' -resize 1750x1750^ -gravity center -crop 1750x1750+0+0 +repage -background '#ffffff' -alpha remove -alpha off -quality 60 '{}'.avif \;
   return `/crust-p1-animated-scroll/crust-p1-animated0${String(i).padStart(3, "0")}.avif`;
 }
 
