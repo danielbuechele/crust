@@ -16,6 +16,7 @@ import table from "./range-table.png";
 import whole from "./range-whole.png";
 
 import { StaticImageData } from "next/dist/shared/lib/get-img-props";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -24,6 +25,7 @@ export default function GrindRange() {
   const imagesInner = useRef<HTMLDivElement>(null);
   const pin = useRef<HTMLDivElement>(null);
   const indicator = useRef<HTMLDivElement>(null);
+  const { height } = useWindowSize();
 
   useGSAP(
     () => {
@@ -48,14 +50,19 @@ export default function GrindRange() {
           imagesInner.current,
           1,
           {
-            left: width - 500 * 5,
+            left: width + 1 - (height && height < 768 ? 300 : 500) * 5,
             duration: 2.5,
           },
           0,
         );
     },
     {
-      dependencies: [pin.current, indicator.current, imagesInner.current],
+      dependencies: [
+        pin.current,
+        indicator.current,
+        imagesInner.current,
+        height,
+      ],
       scope: pin,
       revertOnUpdate: true,
     },

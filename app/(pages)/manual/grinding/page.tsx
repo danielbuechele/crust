@@ -1,5 +1,5 @@
 import Blockquote from "@/components/Blockquote/Blockquote";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import grinding from "./grinding.jpg";
 
 export default function Grinding() {

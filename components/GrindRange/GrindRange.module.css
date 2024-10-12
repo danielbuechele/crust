@@ -1,5 +1,6 @@
 .root {
   background-color: #0e0f12;
+  padding-bottom: 160px;
 }
 
 .text {
@@ -31,6 +32,7 @@
   margin-bottom: 22px;
   position: relative;
   width: 100%;
+  border-right: 1px solid #323336;
   background-image: repeating-linear-gradient(
     90deg,
     #323336,
@@ -42,6 +44,7 @@
 
 @media (-webkit-min-device-pixel-ratio: 2) {
   .scale {
+    border-right: 0.5px solid #323336;
     background-image: repeating-linear-gradient(
       90deg,
       #323336,
@@ -72,45 +75,38 @@
 
 .images {
   position: relative;
-  overflow: hidden;
-  height: 650px;
   margin-left: -20px;
   margin-right: -20px;
+  height: 550px;
 }
 
-.images::after,
-.images::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 40px;
-  bottom: 0;
-  top: 0;
-  z-index: 2;
-}
-
-.images::before {
-  left: 0px;
-  background-image: linear-gradient(to right, #0e0f12, transparent);
-}
-
-.images::after {
-  background-image: linear-gradient(to right, transparent, #0e0f12);
-  right: 0px;
+@media (max-height: 767px) {
+  .images {
+    height: 370px;
+  }
 }
 
 .imagesInner {
   padding-left: 20px;
   position: absolute;
+  border-right: 1px solid #323336;
   display: flex;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .imagesInner {
+    border-right-width: 0.5px;
+  }
 }
 
 .type {
   width: 500px;
+  height: 500px;
   font-size: 14px;
   color: rgba(249, 238, 226, 0.75);
   text-align: center;
   line-height: 145%;
+  position: relative;
   background-image: repeating-linear-gradient(
     90deg,
     #323336,
@@ -120,13 +116,38 @@
   );
 }
 
+@media (max-height: 767px) {
+  .type {
+    height: 350px;
+    width: 300px;
+  }
+
+  .type img {
+    height: 300px;
+    width: 300px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .type {
+    background-image: repeating-linear-gradient(
+      90deg,
+      #323336,
+      #323336 0.5px,
+      transparent 0.5px,
+      transparent 100px
+    );
+  }
+}
+
 .type h3 {
   color: white;
 }
 
 .label {
   max-width: 182px;
-  margin-top: -50px;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  transform: translateX(-50%);
+  bottom: 0;
+  left: 50%;
 }
