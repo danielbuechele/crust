@@ -1,6 +1,7 @@
 .root {
   background-color: #0e0f12;
   padding-bottom: 160px;
+  overflow: hidden;
 }
 
 .text {
@@ -19,6 +20,10 @@
 }
 
 @media (max-width: 767px) {
+  .range {
+    margin-top: 60px;
+  }
+
   .range div {
     font-size: 12px;
     max-width: 80px;
