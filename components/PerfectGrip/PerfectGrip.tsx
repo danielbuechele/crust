@@ -18,14 +18,12 @@ function getFilename(i: number) {
   return `/crust-p1-animated-scroll/crust-p1-animated0${String(i).padStart(3, "0")}.avif`;
 }
 
+function isTouchDevice() {
+  return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+}
+
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
-
-// iOS has various bugs around scroll positions in combination with ScrollTrigger.
-// That results in jank when you scroll the page quickly and this fixes it.
-ScrollTrigger.normalizeScroll({
-  type: "touch",
-});
 
 function useHeight() {
   const { height, width } = useWindowSize();
@@ -96,6 +94,14 @@ export default function PerfectGrip() {
       onUpdate();
 
       gsap.set(text2.current, { opacity: 0 });
+
+      // iOS has various bugs around scroll positions in combination with ScrollTrigger.
+      // That results in jank when you scroll the page quickly and this fixes it.
+      if (isTouchDevice()) {
+        ScrollTrigger.normalizeScroll({
+          type: "touch",
+        });
+      }
 
       gsap
         .timeline({
