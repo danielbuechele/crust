@@ -21,6 +21,12 @@ function getFilename(i: number) {
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
+// iOS has various bugs around scroll positions in combination with ScrollTrigger.
+// That results in jank when you scroll the page quickly and this fixes it.
+ScrollTrigger.normalizeScroll({
+  type: "touch",
+});
+
 function useHeight() {
   const { height, width } = useWindowSize();
   const cachedHeight = useRef(height);
@@ -57,9 +63,9 @@ export default function PerfectGrip() {
         console.error("Canvas context not found");
         return;
       }
+      oldFrame.current = newFrame;
       window.requestAnimationFrame(() => {
         ctx.drawImage(images[newFrame], 0, 0, (height / 2343) * 1920, height);
-        oldFrame.current = newFrame;
       });
     },
     [oldFrame, canvas, height],
@@ -108,13 +114,13 @@ export default function PerfectGrip() {
           { frame: 0 },
           {
             frame: 59,
-            duration: 1.5,
+            duration: 1.25,
           },
           0.25,
         )
         .fromTo(
           playhead,
-          { frame: 59 },
+          { frame: 60 },
           {
             frame: SEQUENCE_LENGTH - 1,
             duration: 1.5,
@@ -135,7 +141,7 @@ export default function PerfectGrip() {
             opacity: 0,
             duration: 0.25,
           },
-          1.35,
+          1.25,
         );
     },
     {
