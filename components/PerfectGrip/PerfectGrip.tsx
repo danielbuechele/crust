@@ -2,8 +2,7 @@
 
 import TextPairing from "../TextPairing/TextPairing";
 import styles from "./PerfectGrip.module.css";
-import { useCallback, useMemo, useRef } from "react";
-import { useWindowSize } from "@uidotdev/usehooks";
+import { useCallback, useRef } from "react";
 import { medium } from "@/utils/medium";
 import clsx from "clsx";
 import { useGSAP } from "@gsap/react";
@@ -13,11 +12,6 @@ import Wrapper from "../Wrapper/Wrapper";
 
 const SEQUENCE_LENGTH = 150;
 
-function getFilename(i: number) {
-  // find ./ -iname "*.png" -exec magick '{}' -resize 1750x1750^ -gravity center -crop 1750x1750+0+0 +repage -background '#ffffff' -alpha remove -alpha off -quality 60 '{}'.avif \;
-  return `/crust-p1-animated-scroll/crust-p1-animated0${String(i).padStart(3, "0")}.avif`;
-}
-
 function isTouchDevice() {
   return "ontouchstart" in window || navigator.maxTouchPoints > 0;
 }
@@ -25,63 +19,33 @@ function isTouchDevice() {
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-function useHeight() {
-  const { height, width } = useWindowSize();
-  const cachedHeight = useRef(height);
-  if (cachedHeight.current == null) {
-    cachedHeight.current = height;
-  }
-
-  if (cachedHeight.current && screen.width === width) {
-    return cachedHeight.current;
-  }
-  return height ?? 0;
-}
-
 export default function PerfectGrip() {
-  const canvas = useRef<HTMLCanvasElement>(null);
+  const video = useRef<HTMLVideoElement>(null);
   const container = useRef<HTMLDivElement>(null);
   const videoContainer = useRef<HTMLDivElement>(null);
   const text2 = useRef<HTMLDivElement>(null);
-  const height = useHeight();
   const oldFrame = useRef(-1);
+
+  const setVideoTime = useCallback(
+    (newFrame: number) => {
+      const current = video.current;
+      if (current && current.duration > 0) {
+        current.currentTime = newFrame / SEQUENCE_LENGTH * current.duration + 0.001;
+      }
+    },
+    [video],
+  );
 
   const renderFrame = useCallback(
     (newFrame: number) => {
       if (newFrame === oldFrame.current) {
         return;
       }
-      const current = canvas.current;
-      if (!current) {
-        console.error("Canvas not found");
-        return;
-      }
-      const ctx = current.getContext("2d");
-      if (!ctx) {
-        console.error("Canvas context not found");
-        return;
-      }
       oldFrame.current = newFrame;
-      window.requestAnimationFrame(() => {
-        ctx.drawImage(images[newFrame], 0, 0, (height / 2343) * 1920, height);
-      });
+      setVideoTime(newFrame);
     },
-    [oldFrame, canvas, height],
+    [oldFrame, video],
   );
-
-  const images = useMemo(() => {
-    if (typeof window === "undefined") {
-      return [];
-    }
-    return new Array(SEQUENCE_LENGTH).fill(null).map((_, i) => {
-      const img = new Image();
-      img.src = getFilename(i);
-      if (i === 0) {
-        img.onload = () => renderFrame(0);
-      }
-      return img;
-    });
-  }, []);
 
   useGSAP(
     () => {
@@ -153,7 +117,7 @@ export default function PerfectGrip() {
     {
       dependencies: [
         container.current,
-        canvas.current,
+        video.current,
         text2.current,
         renderFrame,
       ],
@@ -163,18 +127,22 @@ export default function PerfectGrip() {
   );
 
   return (
-    <>
-      <div className={styles.spacer} />
+    <div className={styles.overflowHidden}>
       <section ref={container} className={styles.root}>
         <div ref={videoContainer} className={styles.videoContainer}>
-          <div className={styles.videoContainer2}>
-            <canvas
-              className={styles.video}
-              ref={canvas}
-              width={(height / 2343) * 1920}
-              height={height}
-            />
-          </div>
+          <video
+            className={styles.video}
+            ref={video}
+            playsInline
+            muted
+            preload="auto"
+            onLoadedMetadata={() => setVideoTime(oldFrame.current)}
+            onLoadedData={() => setVideoTime(oldFrame.current)}
+          >
+            <source src="/crust-p1-animated-h264.mp4#t=5" type="video/mp4; codecs=avc1.64002A"/>
+            <source src="/crust-p1-animated-h265.mp4#t=5" type="video/mp4; codecs=hvc1.1.6.L120.90"/>
+            <source src="/crust-p1-animated-av1.mp4#t=5" type="video/mp4; codecs=av01.0.05M.08"/>
+          </video>
         </div>
         <div className={clsx(styles.content, styles.text1)}>
           <TextPairing heading="Perfect Grip" align="center">
@@ -203,7 +171,7 @@ export default function PerfectGrip() {
                   </div>
                   <div>
                     Stainless Steel (P–1)
-                    <br />
+                    <br/>
                     Ceramic (S–1)
                   </div>
                 </div>
@@ -229,6 +197,6 @@ export default function PerfectGrip() {
           </TextPairing>
         </Wrapper>
       </div>
-    </>
+    </div>
   );
 }
