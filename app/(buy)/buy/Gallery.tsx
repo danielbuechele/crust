@@ -12,6 +12,7 @@ export default function Gallery() {
         fill
         sizes="60vw"
         style={{ objectFit: "cover" }}
+        quality={90}
       />
     </div>
   );

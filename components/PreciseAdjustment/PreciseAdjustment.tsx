@@ -29,6 +29,7 @@ export default function PreciseAdjustment() {
             objectPosition="center right"
             sizes="40vw"
             fill
+            quality={90}
           />
         </div>
       </Wrapper>

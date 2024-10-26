@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "./ColorTags.module.css";
 import TextPairing from "@/components/TextPairing/TextPairing";
 import * as Accordion from "@radix-ui/react-accordion";
@@ -15,6 +15,12 @@ import charcoal from "./charcoal.png";
 import Image from "next/image";
 import Wrapper from "@/components/Wrapper/Wrapper";
 import { useInView } from "react-hook-inview";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 const IMAGES = {
   white,
@@ -76,13 +82,43 @@ const SALT = [
 ];
 
 export default function ColorTags() {
+  const wrapper = useRef<HTMLDivElement>(null);
+  const pin = useRef<HTMLDivElement>(null);
   const DEFAULT_COLOR = "orange";
   const [color, setColor] = useState<Colors>(DEFAULT_COLOR);
   const inView = useInView();
 
+  useGSAP(
+    () => {
+      (window as any).gsap = gsap;
+      (window as any).wrapper = wrapper.current;
+      (window as any).pin = pin.current;
+      console.log(wrapper);
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: wrapper.current,
+            pin: pin.current,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true,
+          },
+        });
+    },
+    {
+      dependencies: [
+        wrapper.current,
+        pin.current,
+      ],
+      scope: wrapper,
+      revertOnUpdate: true,
+    },
+  );
+
   return (
     <section className={styles.root}>
-      <Wrapper className={styles.wrapper}>
+      <Wrapper ref={wrapper} className={styles.wrapper}>
         <div className={styles.mobileText}>
           <h3>{[...PEPPER, ...SALT].find((i) => i.id === color)?.name}</h3>
           <p>{[...PEPPER, ...SALT].find((i) => i.id === color)?.description}</p>
@@ -98,7 +134,7 @@ export default function ColorTags() {
             </li>
           ))}
         </ul>
-        <div className={styles.preview}>
+        <div ref={pin} className={styles.preview}>
           {Object.entries(IMAGES).map(([key, src]) =>
             key === color || inView ? (
               <Image
@@ -107,7 +143,7 @@ export default function ColorTags() {
                 alt=""
                 className={styles.image}
                 style={{ opacity: color === key ? 1 : 0 }}
-                quality={50}
+                quality={90}
                 fill
                 sizes="960px"
                 loading={color === key ? "eager" : "lazy"}
@@ -115,7 +151,6 @@ export default function ColorTags() {
             ) : null,
           )}
         </div>
-
         <div className={styles.text}>
           <TextPairing heading="Color Tags">
             The magnetic Color Tags, essential to the product’s design, offer a

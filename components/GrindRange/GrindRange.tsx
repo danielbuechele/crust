@@ -124,7 +124,7 @@ export default function GrindRange() {
 function Type(props: { img: StaticImageData; text: string; title: string }) {
   return (
     <div className={styles.type}>
-      <Image width="500" src={props.img} alt={props.title} />
+      <Image width="500" src={props.img} alt={props.title} quality={90} />
       <div className={styles.label}>
         <h3>{props.title}</h3>
         <p>{props.text}</p>

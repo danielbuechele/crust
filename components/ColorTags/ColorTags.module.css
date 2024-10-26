@@ -1,12 +1,12 @@
 .root {
   background-color: #f1f1f1;
+  padding-top: 160px;
+  padding-bottom: 160px;
 }
 
 .wrapper {
   display: flex;
   flex-direction: row;
-  padding-top: 160px;
-  padding-bottom: 160px;
 }
 
 .text {
@@ -35,10 +35,17 @@
   flex-grow: 1;
   pointer-events: none;
   width: 100%;
+  max-height: 90vh;
 }
 
 @media (max-width: 1023px) {
   .preview {
+    /* Override GSAP and effectively disable it */
+    position: relative !important;
+    transform: none !important;
+    left: 0 !important;
+    top: 0 !important;
+
     height: 70vh;
     max-width: 70vh;
     margin-left: auto;

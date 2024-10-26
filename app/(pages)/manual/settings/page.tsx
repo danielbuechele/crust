@@ -87,6 +87,7 @@ function Setting(props: {
             src={props.image}
             alt={props.title}
             className={styles.image}
+            quality={90}
           />
           {props.children}
         </div>

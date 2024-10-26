@@ -1,24 +1,24 @@
 import clsx from "clsx";
+import { forwardRef, ForwardedRef } from "react";
 import styles from "./Wrapper.module.css";
 
-export default function Wrapper({
-  children,
-  className,
-  paddingTop,
-}: {
+type Props = {
   children: React.ReactNode;
   className?: string;
   paddingTop?: boolean;
-}) {
+};
+
+export default forwardRef(function Wrapper(props: Props, ref: ForwardedRef<HTMLDivElement>) {
   return (
     <div
+      ref={ref}
       className={clsx(
         styles.wrapper,
-        className,
-        paddingTop && styles.paddingTop,
+        props.className,
+        props.paddingTop && styles.paddingTop,
       )}
     >
-      {children}
+      {props.children}
     </div>
   );
-}
+});
