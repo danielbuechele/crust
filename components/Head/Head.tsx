@@ -24,6 +24,7 @@ export default function Head({}: {}) {
     src: "/specs.png",
     objectFit: "contain",
     fill: true,
+    quality: 90,
   });
   const {
     props: { srcSet: mobile, ...rest },
@@ -33,6 +34,7 @@ export default function Head({}: {}) {
     fill: true,
     objectFit: "contain",
     src: "/specs-mobile.png",
+    quality: 90,
   });
 
   return (
@@ -47,10 +49,9 @@ export default function Head({}: {}) {
             </>
           ) : (
             <>
-              The New Way
+              Designed to
               <br />
-              to&nbsp;
-              <em className={serifItalic.className}>Salt&nbsp;&&nbsp;Pepper</em>
+              &nbsp;<em className={serifItalic.className}>Salt&nbsp;&&nbsp;Pepper</em>
             </>
           )}
         </h1>
@@ -62,12 +63,12 @@ export default function Head({}: {}) {
         >
           <Image
             alt=""
-            fill
             src={home}
-            className={styles.img}
+            className={styles.imgHero}
             priority={!isSpecs}
             style={{ opacity: isSpecs ? 0 : 1 }}
             sizes="100vh"
+            quality={90}
           />
           <picture style={{ opacity: isSpecs ? 1 : 0 }}>
             <source media="(max-width: 1023px)" srcSet={mobile} />

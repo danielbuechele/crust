@@ -58,7 +58,7 @@ export default function Product(
         )}
       </div>
       <div className={styles.row}>
-        <Image width={128} alt="Burr" src={props.image} />
+        <Image width={128} alt="Burr" src={props.image} quality={90} />
         <div className={styles.content}>
           {props.subtitle}
           <p className={styles.desc}>{props.description}</p>

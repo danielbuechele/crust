@@ -86,7 +86,7 @@ export default function Privacy() {
           </p>
         </Legalese>
 
-        <Image alt="" width={752} src={image} className={styles.img} />
+        <Image alt="" width={752} src={image} className={styles.img} quality={90} />
       </div>
     </>
   );

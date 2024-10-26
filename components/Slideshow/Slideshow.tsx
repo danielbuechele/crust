@@ -75,6 +75,7 @@ export default function Slideshow(props: {
               }
               src={image.url}
               alt=""
+              quality={90}
             />
             <p className={styles.caption}>{image.caption}</p>
           </div>

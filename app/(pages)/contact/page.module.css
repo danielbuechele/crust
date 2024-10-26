@@ -4,7 +4,7 @@
   padding-top: 50px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .container {
     flex-direction: column;
   }
@@ -19,7 +19,7 @@
   flex-grow: 1;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .left {
     margin: 0;
     margin-bottom: 20px;
@@ -30,10 +30,20 @@
 .row {
   display: flex;
   gap: 16px;
+  margin-bottom: 16px;
 }
 .row > * {
   flex-basis: 0;
   flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+  }
+  .reverseWhenSmall {
+    flex-direction: column-reverse;
+  }
 }
 
 .form input,
@@ -41,14 +51,13 @@
 .form textarea {
   background-color: #f1f1f1;
   border: 0;
-  font-size: inherit;
+  font-size: 16px; /* min height to avoid zooming on iOS */
   font-weight: inherit;
   font-family: inherit;
   padding: 16px;
   flex-grow: 1;
   display: block;
   width: 100%;
-  margin-bottom: 16px;
 }
 
 .form input:hover,

@@ -19,6 +19,7 @@ export default function Features() {
           fill
           objectFit="cover"
           sizes="(max-width: 767px) 100vw, 30vw"
+          quality={90}
         />
         <p>
           <strong>Elegant.</strong> Easy to use with a timeless design that
@@ -33,6 +34,7 @@ export default function Features() {
           fill
           className={styles.compatibleImg}
           sizes="30vw"
+          quality={90}
         />
         <p>
           <strong>Compatible Spices.</strong> Usable for all dry peppers, salt,
@@ -87,6 +89,7 @@ export default function Features() {
             fill
             className={styles.functionalImg}
             sizes="30vw"
+            quality={90}
           />
           <p>
             <strong>Functional.</strong> Precise functionality developed with

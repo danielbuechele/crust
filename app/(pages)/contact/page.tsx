@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import styles from "./page.module.css";
 import PrimaryButton from "@/components/PrimaryButton/PrimaryButton";
 
@@ -22,7 +23,7 @@ export default function Contact() {
         <input required type="text" name="name" placeholder="Name" />
         <input required type="email" name="email" placeholder="Email" />
       </div>
-      <div className={styles.select}>
+      <div className={clsx(styles.row, styles.select)}>
         <select required name="reason">
           <option>Product Details and Questions</option>
           <option>Shipping and Order Details</option>
@@ -43,8 +44,8 @@ export default function Contact() {
           />
         </svg>
       </div>
-      <textarea name="message" required rows={10} placeholder="Your message" />
-      <div className={styles.row}>
+      <textarea className={styles.row} name="message" required rows={10} placeholder="Your message" />
+      <div className={clsx(styles.row, styles.reverseWhenSmall)}>
         <div>
           <p className={styles.fineprint}>
             This site is protected by reCAPTCHA and the Google Privacy

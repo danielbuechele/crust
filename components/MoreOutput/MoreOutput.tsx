@@ -27,6 +27,7 @@ export default function MoreOutput() {
             objectPosition="bottom left"
             fill
             sizes="60vw"
+            quality={90}
           />
         </div>
       </Wrapper>

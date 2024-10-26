@@ -77,6 +77,7 @@ export default function Page() {
                 alt="Mill"
                 fill
                 sizes="(max-width: 767px) 100vw, 30vw"
+                quality={90}
               />
               <div className={styles.bentoContent}>Mill</div>
             </div>
@@ -97,6 +98,7 @@ export default function Page() {
                 src={pepper}
                 alt="Pepper tags"
                 fill
+                quality={90}
               />
               <Image
                 className={styles.tags}
@@ -105,6 +107,7 @@ export default function Page() {
                 src={salt}
                 alt="Salt tags"
                 fill
+                quality={90}
               />
             </div>
             <div className={clsx(styles.bentoGuide, styles.bentoBox)}>
@@ -113,6 +116,7 @@ export default function Page() {
                 alt="Quick Start guide"
                 fill
                 sizes="(max-width: 767px) 100vw, 30vw"
+                quality={90}
               />
               <div className={styles.bentoContent}>Quick Start</div>
             </div>

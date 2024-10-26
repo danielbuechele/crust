@@ -26,6 +26,7 @@ export default function Grinding() {
         style={{ width: "100%", height: "auto" }}
         src={grinding}
         alt="Grinding"
+        quality={90}
       />
     </>
   );
