@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image, { StaticImageData } from "next/image";
 import { useWindowSize } from "@uidotdev/usehooks";
-import { useRef } from "react";
 
 function Arrow(props: { direction: "left" | "right" } & CustomArrowProps) {
   return (

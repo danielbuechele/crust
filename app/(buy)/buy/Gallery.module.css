@@ -2,6 +2,94 @@
   position: absolute;
   bottom: 30px;
   top: 80px;
-  right: 530px;
-  left: 30px;
+  right: 497px;
+  left: 0px;
+}
+
+@media (max-width: 1023px) {
+  .root {
+    position: static;
+    height: 50vh;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -54px;
+    background-color: #e3e3e3;
+  }
+}
+
+.slider {
+  height: 100%;
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex !important;
+  justify-content: center;
+}
+
+.dots button {
+  display: block;
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #b8b9b9;
+  color: transparent;
+  border: 0;
+  overflow: hidden;
+  appearance: none;
+  margin-left: 6px;
+  margin-right: 6px;
+  transition: 0.2s all;
+  position: relative;
+}
+
+.dots :global(.slick-active) button {
+  width: 64px;
+}
+
+@keyframes slide {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.dots :global(.slick-active) button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 6px;
+  width: 50%;
+  background: #0e0f12;
+  animation: slide 5s infinite;
+  animation-timing-function: linear;
+}
+
+.slide {
+  width: 100%;
+  height: calc(100vh - 80px - 30px);
+  position: relative;
+}
+
+@media (max-width: 1023px) {
+  .slide {
+    height: 50vh;
+  }
+}
+
+.slideInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

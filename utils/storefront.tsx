@@ -4081,7 +4081,7 @@ export type Language = {
   name: Scalars['String']['output'];
 };
 
-/** ISO 639-1 language codes supported by Shopify. */
+/** Language codes supported by Shopify. */
 export enum LanguageCode {
   /** Afrikaans. */
   Af = 'AF',
@@ -4823,7 +4823,7 @@ export type MenuItem = Node & {
  * The list of possible resources a `MenuItem` can reference.
  *
  */
-export type MenuItemResource = Article | Blog | Collection | Page | Product | ShopPolicy;
+export type MenuItemResource = Article | Blog | Collection | Metaobject | Page | Product | ShopPolicy;
 
 /** A menu item type. */
 export enum MenuItemType {
@@ -4841,6 +4841,8 @@ export enum MenuItemType {
   Frontpage = 'FRONTPAGE',
   /** An http link. */
   Http = 'HTTP',
+  /** A metaobject page link. */
+  Metaobject = 'METAOBJECT',
   /** A page link. */
   Page = 'PAGE',
   /** A product link. */
@@ -6452,6 +6454,8 @@ export type ProductSellingPlanGroupsArgs = {
  *
  */
 export type ProductVariantBySelectedOptionsArgs = {
+  caseInsensitiveMatch?: InputMaybe<Scalars['Boolean']['input']>;
+  ignoreUnknownOptions?: InputMaybe<Scalars['Boolean']['input']>;
   selectedOptions: Array<SelectedOptionInput>;
 };
 
@@ -6693,6 +6697,8 @@ export type ProductVariant = HasMetafields & Node & {
   sku?: Maybe<Scalars['String']['output']>;
   /** The in-store pickup availability of this variant by location. */
   storeAvailability: StoreAvailabilityConnection;
+  /** Whether tax is charged when the product variant is sold. */
+  taxable: Scalars['Boolean']['output'];
   /** The product variant’s title. */
   title: Scalars['String']['output'];
   /** The unit price value for the variant based on the variant's measurement. */
@@ -6890,7 +6896,7 @@ export type QueryRoot = {
   productTags: StringConnection;
   /** List of product types for the shop's products that are published to your app. */
   productTypes: StringConnection;
-  /** List of the shop’s products. For storefront search, use [`search` query](https://shopify.dev/docs/api/storefront/latest/queries/search). */
+  /** Returns a list of the shop's products. For storefront search, use the [`search`](https://shopify.dev/docs/api/storefront/latest/queries/search) query. */
   products: ProductConnection;
   /** The list of public Storefront API versions, including supported, release candidate and unstable versions. */
   publicApiVersions: Array<ApiVersion>;
@@ -7680,7 +7686,7 @@ export type StoreAvailabilityEdge = {
 };
 
 /**
- * An auto-generated type for paginating through a list of Strings.
+ * An auto-generated type for paginating through multiple Strings.
  *
  */
 export type StringConnection = {
@@ -8119,9 +8125,16 @@ export type AddToCartMutationVariables = Exact<{
 
 export type AddToCartMutation = { __typename?: 'Mutation', cartLinesAdd?: { __typename?: 'CartLinesAddPayload', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', totalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } } | null } | null };
 
-export type ProductFragment = { __typename?: 'Product', id: string, title: string, description: string, availableForSale: boolean, featuredImage?: { __typename?: 'Image', url: any, altText?: string | null } | null, variants: { __typename?: 'ProductVariantConnection', nodes: Array<{ __typename?: 'ProductVariant', id: string, availableForSale: boolean, price: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }> } };
+export type GalleryQueryQueryVariables = Exact<{
+  cartId: Scalars['ID']['input'];
+}>;
+
+
+export type GalleryQueryQuery = { __typename?: 'QueryRoot', cart?: { __typename?: 'Cart', lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, merchandise: { __typename?: 'ProductVariant', id: string } }> } } | null };
+
+export type ProductFragment = { __typename?: 'Product', id: string, availableForSale: boolean, variants: { __typename?: 'ProductVariantConnection', nodes: Array<{ __typename?: 'ProductVariant', id: string, availableForSale: boolean, price: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }> } };
 
 export type BuyQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type BuyQuery = { __typename?: 'QueryRoot', pepper?: { __typename?: 'Product', id: string, title: string, description: string, availableForSale: boolean, featuredImage?: { __typename?: 'Image', url: any, altText?: string | null } | null, variants: { __typename?: 'ProductVariantConnection', nodes: Array<{ __typename?: 'ProductVariant', id: string, availableForSale: boolean, price: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }> } } | null, salt?: { __typename?: 'Product', id: string, title: string, description: string, availableForSale: boolean, featuredImage?: { __typename?: 'Image', url: any, altText?: string | null } | null, variants: { __typename?: 'ProductVariantConnection', nodes: Array<{ __typename?: 'ProductVariant', id: string, availableForSale: boolean, price: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }> } } | null };
+export type BuyQuery = { __typename?: 'QueryRoot', pepper?: { __typename?: 'Product', id: string, availableForSale: boolean, variants: { __typename?: 'ProductVariantConnection', nodes: Array<{ __typename?: 'ProductVariant', id: string, availableForSale: boolean, price: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }> } } | null, salt?: { __typename?: 'Product', id: string, availableForSale: boolean, variants: { __typename?: 'ProductVariantConnection', nodes: Array<{ __typename?: 'ProductVariant', id: string, availableForSale: boolean, price: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }> } } | null };

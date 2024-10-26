@@ -37,7 +37,7 @@ export default async function Buy() {
         <Link href="/">
           <Logo />
         </Link>
-        <Gallery />
+        <Gallery salt={data.salt} pepper={data.pepper} />
         <Suspense>
           <Cart salt={data.salt} pepper={data.pepper} />
         </Suspense>
