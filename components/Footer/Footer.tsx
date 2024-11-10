@@ -46,11 +46,11 @@ export default function Footer() {
                   <li>
                     <Link href="/specs">Tech Specs</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="/guide/pepper">
                       Pepper and Salt Buying Guide
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
               <li>

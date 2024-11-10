@@ -43,10 +43,10 @@ export default function Privacy() {
             criteria.
           </p>
           <p>
-            To start a return, you may use our 
-            <Link href="">online portal</Link> to select which product(s) you
-            would like to return and create a shipping label. You can always{" "}
-            <Link href="/contact">contact us</Link> for any return questions.
+            To initiate a return, email{" "}
+            <a href="mailto:returns@crustmill.com">returns@crustmill.com</a>{" "}
+            with your order number and the reason for the return. For any
+            questions about returns, feel free to contact us at any time.
           </p>
           <h3>Damages and Issues</h3>
           <p>
@@ -86,7 +86,13 @@ export default function Privacy() {
           </p>
         </Legalese>
 
-        <Image alt="" width={752} src={image} className={styles.img} quality={90} />
+        <Image
+          alt=""
+          width={752}
+          src={image}
+          className={styles.img}
+          quality={90}
+        />
       </div>
     </>
   );
