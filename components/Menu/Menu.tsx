@@ -33,7 +33,7 @@ export default function Menu() {
     <nav
       className={clsx(
         styles.container,
-        styles.white && isHome && scrolled && styles[variant],
+        styles.white && isHome && scrolled && styles[variant]
       )}
     >
       <Wrapper className={styles.wrapper}>
@@ -61,12 +61,14 @@ export default function Menu() {
           </a>
         )}
         <PrimaryButton
-          className={isHome || isSpecs ? styles.buy : undefined}
+          className={
+            (isHome || isSpecs) && variant === "light2" ? styles.buy : undefined
+          }
           href="/buy"
         >
           Buy
         </PrimaryButton>
-        {(isHome || isSpecs) && (
+        {(isHome || isSpecs) && variant === "light2" && (
           <div className={styles.mobileToggle}>
             <Link className={isHome ? styles.active : undefined} href="/">
               Overview

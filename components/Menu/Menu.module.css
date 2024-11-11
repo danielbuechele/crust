@@ -13,13 +13,13 @@
 }
 
 .wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .transparent {
-  background-color: transparent);
+  background-color: transparent;
 }
 
 .white {
@@ -88,24 +88,24 @@
 }
 
 .mobileToggle {
-    display: none;
+  display: none;
 }
 
 @media (max-width: 767px) {
   .buy {
-      display: none !important;
+    display: none !important;
   }
 
   .mobileToggle {
-      display: flex;
-      gap: 20px
+    display: flex;
+    gap: 20px;
   }
 
   .mobileToggle a {
-      color: #7D7D7D;
+    color: #7d7d7d;
   }
 
   .mobileToggle .active {
-      color: #0e0f12;
+    color: #0e0f12;
   }
 }
