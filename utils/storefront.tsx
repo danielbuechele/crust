@@ -8093,21 +8093,21 @@ export enum WeightUnit {
   Pounds = 'POUNDS'
 }
 
-export type CartFragment = { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', totalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } };
+export type CartFragment = { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', subtotalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } };
 
 export type CartQueryVariables = Exact<{
   cartId: Scalars['ID']['input'];
 }>;
 
 
-export type CartQuery = { __typename?: 'QueryRoot', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', totalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } } | null };
+export type CartQuery = { __typename?: 'QueryRoot', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', subtotalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } } | null };
 
 export type CreateCartMutationVariables = Exact<{
   lines?: InputMaybe<Array<CartLineInput> | CartLineInput>;
 }>;
 
 
-export type CreateCartMutation = { __typename?: 'Mutation', cartCreate?: { __typename?: 'CartCreatePayload', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', totalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } } | null } | null };
+export type CreateCartMutation = { __typename?: 'Mutation', cartCreate?: { __typename?: 'CartCreatePayload', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', subtotalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } } | null } | null };
 
 export type UpdateCartMutationVariables = Exact<{
   cartId: Scalars['ID']['input'];
@@ -8115,7 +8115,7 @@ export type UpdateCartMutationVariables = Exact<{
 }>;
 
 
-export type UpdateCartMutation = { __typename?: 'Mutation', cartLinesUpdate?: { __typename?: 'CartLinesUpdatePayload', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', totalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } } | null } | null };
+export type UpdateCartMutation = { __typename?: 'Mutation', cartLinesUpdate?: { __typename?: 'CartLinesUpdatePayload', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', subtotalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } } | null } | null };
 
 export type AddToCartMutationVariables = Exact<{
   cartId: Scalars['ID']['input'];
@@ -8123,7 +8123,7 @@ export type AddToCartMutationVariables = Exact<{
 }>;
 
 
-export type AddToCartMutation = { __typename?: 'Mutation', cartLinesAdd?: { __typename?: 'CartLinesAddPayload', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', totalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } } | null } | null };
+export type AddToCartMutation = { __typename?: 'Mutation', cartLinesAdd?: { __typename?: 'CartLinesAddPayload', cart?: { __typename?: 'Cart', id: string, checkoutUrl: any, totalQuantity: number, cost: { __typename?: 'CartCost', subtotalAmount: { __typename?: 'MoneyV2', amount: any, currencyCode: CurrencyCode } }, lines: { __typename?: 'BaseCartLineConnection', nodes: Array<{ __typename?: 'CartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } } | { __typename?: 'ComponentizableCartLine', id: string, quantity: number, merchandise: { __typename?: 'ProductVariant', id: string } }> } } | null } | null };
 
 export type GalleryQueryQueryVariables = Exact<{
   cartId: Scalars['ID']['input'];

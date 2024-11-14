@@ -27,7 +27,7 @@ const CartFragment = gql`
     checkoutUrl
     totalQuantity
     cost {
-      totalAmount {
+      subtotalAmount {
         amount
         currencyCode
       }
@@ -135,7 +135,7 @@ export default function Cart({
               {
                 quantity:
                   (cart?.lines?.nodes.find(
-                    (n) => n.merchandise.id === variantId
+                    (n) => n.merchandise.id === variantId,
                   )?.quantity || 0) + modify,
                 merchandiseId: variantId,
               },
@@ -157,7 +157,7 @@ export default function Cart({
                     ?.quantity || 0) + modify,
                 merchandiseId: variantId,
                 id: cart?.lines.nodes.find(
-                  (n) => n.merchandise.id === variantId
+                  (n) => n.merchandise.id === variantId,
                 )!.id,
               },
             ],
@@ -179,7 +179,7 @@ export default function Cart({
         });
       }
     },
-    [cart, cartId, setCartId]
+    [cart, cartId, setCartId],
   );
 
   return (
@@ -213,7 +213,7 @@ export default function Cart({
             description="Our stainless steel burr grinder is perfect for pepper due to its hardness and durability."
             quantity={
               cart?.lines.nodes.find(
-                (n) => n.merchandise.id === pepper.variants.nodes[0]?.id
+                (n) => n.merchandise.id === pepper.variants.nodes[0]?.id,
               )?.quantity || 0
             }
             onDecrease={() => onChange(pepper.variants.nodes[0].id, -1)}
@@ -230,7 +230,7 @@ export default function Cart({
             description="Our ceramic burr grinder is perfect for salt because it is non-reactive, keeping the flavor pure."
             quantity={
               cart?.lines.nodes.find(
-                (n) => n.merchandise.id === salt!.variants.nodes[0]?.id
+                (n) => n.merchandise.id === salt!.variants.nodes[0]?.id,
               )?.quantity || 0
             }
             onDecrease={() => onChange(salt.variants.nodes[0].id, -1)}
@@ -245,11 +245,11 @@ export default function Cart({
         <span className={styles.amount}>
           {Intl.NumberFormat("en-US", {
             currency:
-              cart?.cost.totalAmount.currencyCode === "XXX"
+              cart?.cost.subtotalAmount.currencyCode === "XXX"
                 ? "USD"
-                : (cart?.cost.totalAmount.currencyCode ?? "USD"),
+                : (cart?.cost.subtotalAmount.currencyCode ?? "USD"),
             style: "currency",
-          }).format(cart?.cost.totalAmount.amount ?? 0)}
+          }).format(cart?.cost.subtotalAmount.amount ?? 0)}
         </span>
         <PrimaryButton
           loading={loading}
