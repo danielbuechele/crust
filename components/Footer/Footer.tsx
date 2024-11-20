@@ -94,7 +94,7 @@ export default function Footer() {
                 <h4>Socials</h4>
                 <ul>
                   <li>
-                    <a href="">Instagram</a>
+                    <a href="https://instagram.com/crust.mill">Instagram</a>
                   </li>
                   <li>
                     <a href="">X (Twitter)</a>

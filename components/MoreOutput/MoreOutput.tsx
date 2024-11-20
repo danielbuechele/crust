@@ -11,7 +11,7 @@ export default function MoreOutput() {
     <section className={styles.root}>
       <Wrapper className={styles.wrapper}>
         <TextPairing
-          heading="Fewer Cranks, more&nbsp;Output"
+          heading="Less Effort, Greater&nbsp;Output"
           variant="dark"
           className={styles.text}
         >

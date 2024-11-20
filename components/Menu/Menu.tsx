@@ -33,7 +33,7 @@ export default function Menu() {
     <nav
       className={clsx(
         styles.container,
-        styles.white && isHome && scrolled && styles[variant]
+        styles.white && isHome && scrolled && styles[variant],
       )}
     >
       <Wrapper className={styles.wrapper}>
@@ -43,7 +43,7 @@ export default function Menu() {
         {(isHome || isSpecs) && (
           <a
             className={styles.instagram}
-            href="https://instagram.com/crustmill"
+            href="https://instagram.com/crust.mill"
           >
             <svg
               width="16"
