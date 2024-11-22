@@ -97,7 +97,7 @@ export default function Footer() {
                     <a href="https://instagram.com/crust.mill">Instagram</a>
                   </li>
                   <li>
-                    <a href="">X (Twitter)</a>
+                    <a href="https://x.com/crust_mill">X (Twitter)</a>
                   </li>
                 </ul>
               </li>
