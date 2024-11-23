@@ -127,9 +127,9 @@ export default function Cart({
   const loading = l0 || l1 || l2 || l3;
 
   const onChange = useCallback(
-    (variantId: string, modify: -1 | 1) => {
+    async (variantId: string, modify: -1 | 1) => {
       if (!cartId) {
-        createCart({
+        return createCart({
           variables: {
             lines: [
               {
@@ -147,7 +147,7 @@ export default function Cart({
       } else if (
         cart?.lines.nodes.some((n) => n.merchandise.id === variantId)
       ) {
-        updateCart({
+        return updateCart({
           variables: {
             cartId,
             lines: [
@@ -164,7 +164,7 @@ export default function Cart({
           },
         });
       } else {
-        addToCart({
+        return addToCart({
           variables: {
             cartId,
             lines: [

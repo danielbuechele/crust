@@ -20,3 +20,7 @@
   background-color: #0e0f12;
   color: white;
 }
+
+.loading {
+  cursor: wait;
+}
