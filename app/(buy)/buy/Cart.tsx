@@ -8,6 +8,7 @@ import {
   CartQuery as CartQueryT,
   CreateCartMutation,
   CreateCartMutationVariables,
+  CurrencyCode,
   ProductFragment,
   UpdateCartMutation,
   UpdateCartMutationVariables,
@@ -105,7 +106,6 @@ export default function Cart({
     variables: {
       cartId,
     },
-    // fetchPolicy: "cache-only",
     skip: !cartId,
   });
 
@@ -129,7 +129,58 @@ export default function Cart({
   const onChange = useCallback(
     async (variantId: string, modify: -1 | 1) => {
       if (!cartId) {
+        const variant =
+          salt?.variants.nodes.find((n) => n.id === variantId) ??
+          pepper?.variants.nodes.find((n) => n.id === variantId);
+
+        const optimisticCart = {
+          __typename: "Cart" as const,
+          id: "optimistic-cart",
+          totalQuantity: 1,
+          checkoutUrl: "",
+          cost: {
+            subtotalAmount: {
+              amount: variant?.price.amount,
+              currencyCode: variant?.price.currencyCode as CurrencyCode,
+            },
+          },
+          lines: {
+            __typename: "BaseCartLineConnection" as const,
+            nodes: [
+              {
+                __typename: "CartLine" as const,
+                id: "optimistic-line",
+                quantity: 1,
+                merchandise: {
+                  __typename: "ProductVariant" as const,
+                  id: variantId,
+                },
+              },
+            ],
+          },
+        };
+
         return createCart({
+          optimisticResponse: () => {
+            return {
+              cartCreate: {
+                __typename: "CartCreatePayload",
+                cart: optimisticCart,
+              },
+            };
+          },
+          update: (cache, res) => {
+            cache.writeQuery<CartQueryT>({
+              query: CartQuery,
+              data: {
+                cart: res.data?.cartCreate?.cart,
+              },
+              variables: {
+                cartId: res.data?.cartCreate?.cart?.id,
+              },
+            });
+            setCartId(res.data?.cartCreate?.cart?.id ?? null);
+          },
           variables: {
             lines: [
               {
@@ -141,13 +192,41 @@ export default function Cart({
               },
             ],
           },
-        }).then((res) => {
-          setCartId(res.data?.cartCreate?.cart?.id ?? null);
         });
       } else if (
         cart?.lines.nodes.some((n) => n.merchandise.id === variantId)
       ) {
+        const variant =
+          salt?.variants.nodes.find((n) => n.id === variantId) ??
+          pepper?.variants.nodes.find((n) => n.id === variantId);
+
         return updateCart({
+          optimisticResponse: {
+            cartLinesUpdate: {
+              cart: {
+                ...cart,
+                totalQuantity: cart.totalQuantity + modify,
+                lines: {
+                  nodes: cart.lines.nodes.map((n) =>
+                    n.merchandise.id === variantId
+                      ? {
+                          ...n,
+                          quantity: n.quantity + modify,
+                        }
+                      : n,
+                  ),
+                },
+                cost: {
+                  subtotalAmount: {
+                    amount:
+                      parseFloat(cart.cost.subtotalAmount.amount) +
+                      modify * parseFloat(variant?.price.amount),
+                    currencyCode: CurrencyCode.Usd,
+                  },
+                },
+              },
+            },
+          },
           variables: {
             cartId,
             lines: [
@@ -164,7 +243,40 @@ export default function Cart({
           },
         });
       } else {
+        const variant =
+          salt?.variants.nodes.find((n) => n.id === variantId) ??
+          pepper?.variants.nodes.find((n) => n.id === variantId);
+
         return addToCart({
+          optimisticResponse: {
+            cartLinesAdd: {
+              cart: {
+                ...cart!,
+                totalQuantity: cart!.totalQuantity + modify,
+                lines: {
+                  nodes: [
+                    ...cart!.lines.nodes,
+                    {
+                      id: "optimistic",
+                      quantity: 1,
+                      merchandise: {
+                        __typename: "ProductVariant",
+                        id: variantId,
+                      },
+                    },
+                  ],
+                },
+                cost: {
+                  subtotalAmount: {
+                    amount:
+                      parseFloat(cart!.cost.subtotalAmount.amount) +
+                      parseFloat(variant?.price.amount!) * modify,
+                    currencyCode: CurrencyCode.Usd,
+                  },
+                },
+              },
+            },
+          },
           variables: {
             cartId,
             lines: [
