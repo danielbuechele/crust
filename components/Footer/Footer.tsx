@@ -94,10 +94,14 @@ export default function Footer() {
                 <h4>Socials</h4>
                 <ul>
                   <li>
-                    <a href="https://instagram.com/crust.mill">Instagram</a>
+                    <a target="_blank" href="https://instagram.com/crust.mill">
+                      Instagram
+                    </a>
                   </li>
                   <li>
-                    <a href="https://x.com/crust_mill">X (Twitter)</a>
+                    <a target="_blank" href="https://x.com/crust_mill">
+                      X (Twitter)
+                    </a>
                   </li>
                 </ul>
               </li>
