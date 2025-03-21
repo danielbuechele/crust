@@ -35,7 +35,9 @@ export default function MoreOutput() {
                   playsInline
                   controls={playing}
                   onClick={() => {
-                    ref.current?.play();
+                    if (!playing) {
+                      ref.current?.play();
+                    }
                   }}
                 />
                 <svg
