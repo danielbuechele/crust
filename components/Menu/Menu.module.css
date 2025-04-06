@@ -118,6 +118,10 @@
   color: #0e0f12;
 }
 
+.dark .menuButton:hover:not(.menuButtonOpen) {
+  color: white;
+}
+
 @media (max-width: 767px) {
   .buy {
     display: none !important;
@@ -142,15 +146,20 @@
   top: -6px;
   right: 6px;
   background-color: white;
-  padding: 40px;
-  padding-top: 112px;
   border-radius: 6px;
   z-index: 2;
   opacity: 0;
-  transition: 0.2s opacity;
+  height: 0;
+  overflow: hidden;
+  transition: 0.4s all ease-out;
   width: 411px;
   max-width: 100%;
   pointer-events: none;
+}
+
+.menuInner {
+  padding: 40px;
+  padding-top: 112px;
 }
 
 .backdrop {
@@ -166,6 +175,10 @@
   pointer-events: none;
 }
 
+.menu.open {
+  height: 440px;
+}
+
 @media (max-width: 767px) {
   .menu {
     left: 0;
@@ -174,8 +187,11 @@
     padding-top: 80px;
     top: -15px;
     right: 0;
-    height: 100dvh;
     border-radius: 0;
+  }
+
+  .menu.open {
+    height: 100dvh;
   }
 
   .backdrop {
@@ -192,10 +208,37 @@
   font-size: 24px;
   border-bottom: 1px solid #e6e6e6;
   padding: 11px 0 9px;
+  transform: translateY(10px);
+  transition: 0.3s all;
+  opacity: 0;
+}
+.menu li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.menu li:nth-child(2) {
+  transition-delay: 0.25s;
+}
+.menu li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.menu li:nth-child(4) {
+  transition-delay: 0.35s;
+}
+.menu li:nth-child(5) {
+  transition-delay: 0.4s;
+}
+.menu li:nth-child(6) {
+  transition-delay: 0.45s;
+}
+
+.menu.open li {
+  opacity: 1;
+  transform: none;
 }
 
 .menu li a {
   display: block;
+  color: #0e0f12;
 }
 
 .menu li a:hover {
