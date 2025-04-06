@@ -213,12 +213,12 @@ export default function Menu() {
               </div>
             </div>
           </div>
+          <div
+            className={clsx(styles.backdrop, menuOpen && styles.open)}
+            onClick={() => setMenuOpen(false)}
+          />
         </Wrapper>
       </nav>
-      <div
-        className={clsx(styles.backdrop, menuOpen && styles.open)}
-        onClick={() => setMenuOpen(false)}
-      />
     </>
   );
 }
