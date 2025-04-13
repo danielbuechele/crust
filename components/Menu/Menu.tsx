@@ -141,13 +141,13 @@ export default function Menu() {
             <div className={clsx(styles.menuInner)}>
               <ul>
                 <li>
-                  <Link onClick={() => setMenuOpen(false)} href="/specs">
-                    Tech Specs
+                  <Link onClick={() => setMenuOpen(false)} href="/about">
+                    About
                   </Link>
                 </li>
                 <li>
-                  <Link onClick={() => setMenuOpen(false)} href="/about">
-                    About
+                  <Link onClick={() => setMenuOpen(false)} href="/specs">
+                    Tech Specs
                   </Link>
                 </li>
                 {/* <li>
