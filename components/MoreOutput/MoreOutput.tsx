@@ -11,19 +11,29 @@ import clsx from "clsx";
 
 export default function MoreOutput() {
   const ref = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
+
+  useEffect(() => {
+    if (ref.current) {
+      if (fullscreen) {
+        ref.current.play();
+      } else {
+        ref.current.pause();
+      }
+    }
+  }, [fullscreen]);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key == "Escape") {
-        ref.current?.pause();
+        setFullscreen(false);
       }
     };
     document.addEventListener("keydown", handler);
     return () => {
       document.removeEventListener("keydown", handler);
     };
-  }, [ref]);
+  }, [ref, setFullscreen]);
 
   return (
     <section className={styles.root}>
@@ -38,21 +48,22 @@ export default function MoreOutput() {
             top-rated competitors – get your desired amount in just 5 easy
             cranks instead of 50.
             <div className={styles.placeholder}>
-              <div className={clsx(styles.video, playing && styles.playing)}>
+              <div
+                className={clsx(styles.video, fullscreen && styles.fullscreen)}
+                onClick={() => {
+                  if (!fullscreen) {
+                    setFullscreen(true);
+                  }
+                }}
+              >
                 <video
                   ref={ref}
-                  onPlay={() => setPlaying(true)}
-                  onPause={() => setPlaying(false)}
                   src="/video.mov"
                   poster={thumbnail.src}
                   playsInline
-                  controls={playing}
+                  controls={false}
                   controlsList="nofullscreen"
-                  onClick={() => {
-                    if (!playing) {
-                      ref.current?.play();
-                    }
-                  }}
+                  loop
                 />
                 <svg
                   width="32"
@@ -60,6 +71,7 @@ export default function MoreOutput() {
                   viewBox="0 0 32 33"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className={styles.playButton}
                 >
                   <g clip-path="url(#clip0_408_304)">
                     <path
@@ -78,6 +90,27 @@ export default function MoreOutput() {
                       <rect width="32" height="32.011" fill="white" />
                     </clipPath>
                   </defs>
+                </svg>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={styles.closeButton}
+                  onClick={() => setFullscreen(false)}
+                >
+                  <circle
+                    cx="16"
+                    cy="16"
+                    r="16"
+                    fill="#F5F5F5"
+                    fillOpacity="0.15"
+                  />
+                  <path
+                    d="M12 21.2386L10.892 20.1307L19.6136 11.4375L20.7216 12.5455L12 21.2386ZM19.6136 21.2386L10.892 12.5455L12 11.4375L20.7216 20.1307L19.6136 21.2386Z"
+                    fill="white"
+                  />
                 </svg>
               </div>
             </div>
