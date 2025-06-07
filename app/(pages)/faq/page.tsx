@@ -59,7 +59,8 @@ export default function FAQ() {
               instructions on how to clean the Crust mills.
             </Question>
             <Question question="Where can I download the user manual?">
-              A User Manual is available online on our website here.
+              A <Link href="/manual">User Manual</Link> is available online on
+              our website here.
             </Question>
             <Question question="Where are Crust mills made?">
               All Crust mills are designed in California and manufactured in

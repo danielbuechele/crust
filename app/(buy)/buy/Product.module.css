@@ -2,13 +2,29 @@
   margin-bottom: 50px;
 }
 
+.productSale {
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 1023px) {
+  .product {
+    margin-bottom: 0px;
+  }
+}
+
 .titleRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
   border-bottom: 1px solid #dbdbdb;
   padding: 10px 0;
+}
+
+.productSale .titleRow {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .stepper {
@@ -32,6 +48,7 @@
 }
 
 .row {
+  font-size: 16px;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -40,4 +57,27 @@
 .soon {
   color: #8e8e8e;
   font-size: 14px;
+}
+
+.price {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.compareAtPrice {
+  text-decoration-line: line-through;
+  color: #c9bb9d;
+}
+
+.savings {
+  border-radius: 6px;
+  background: #c9bb9d;
+  display: inline-flex;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
 }

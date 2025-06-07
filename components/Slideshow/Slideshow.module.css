@@ -1,5 +1,6 @@
 .slideshow {
   width: 100%;
+  max-width: calc(100dvw - 40px);
   background-color: #f1f1f1;
   position: relative;
   overflow: hidden;

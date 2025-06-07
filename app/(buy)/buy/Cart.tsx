@@ -310,49 +310,47 @@ export default function Cart({
           />
         </svg>
       </RoundButton>
-      <h1 className={styles.h1}>
-        Choose your
-        <br />
-        Crust Mill
-      </h1>
-      <ul className={styles.cart}>
-        {pepper && (
-          <Product
-            {...pepper}
-            image={steel}
-            title="P–1 Pepper Mill"
-            subtitle="Stainless Steel Grinding Burr"
-            description="Our stainless steel burr grinder is perfect for pepper due to its hardness and durability."
-            quantity={
-              cart?.lines.nodes.find(
-                (n) => n.merchandise.id === pepper.variants.nodes[0]?.id,
-              )?.quantity || 0
-            }
-            onDecrease={() => onChange(pepper.variants.nodes[0].id, -1)}
-            onIncrease={() => onChange(pepper.variants.nodes[0].id, 1)}
-          />
-        )}
+      <h1 className={styles.h1}>Choose your Crust Mill</h1>
+      <div className={styles.cart}>
+        <ul>
+          {pepper && (
+            <Product
+              {...pepper}
+              image={steel}
+              title="P–1 Pepper Mill"
+              subtitle="Stainless Steel Grinding Burr"
+              description="Our stainless steel burr grinder is perfect for pepper due to its hardness and durability."
+              quantity={
+                cart?.lines.nodes.find(
+                  (n) => n.merchandise.id === pepper.variants.nodes[0]?.id,
+                )?.quantity || 0
+              }
+              onDecrease={() => onChange(pepper.variants.nodes[0].id, -1)}
+              onIncrease={() => onChange(pepper.variants.nodes[0].id, 1)}
+            />
+          )}
 
-        {salt && (
-          <Product
-            {...salt}
-            image={ceramic}
-            title="S–1 Salt Mill"
-            subtitle="Ceramic Grinding Burr"
-            description="Our ceramic burr grinder is perfect for salt because it is non-reactive, keeping the flavor pure."
-            quantity={
-              cart?.lines.nodes.find(
-                (n) => n.merchandise.id === salt!.variants.nodes[0]?.id,
-              )?.quantity || 0
-            }
-            onDecrease={() => onChange(salt.variants.nodes[0].id, -1)}
-            onIncrease={() => onChange(salt.variants.nodes[0].id, 1)}
-          />
-        )}
-      </ul>
-      <p className={styles.shipping}>
-        Free shipping in the US. Taxes are calculated at next step.
-      </p>
+          {salt && (
+            <Product
+              {...salt}
+              image={ceramic}
+              title="S–1 Salt Mill"
+              subtitle="Ceramic Grinding Burr"
+              description="Our ceramic burr grinder is perfect for salt because it is non-reactive, keeping the flavor pure."
+              quantity={
+                cart?.lines.nodes.find(
+                  (n) => n.merchandise.id === salt!.variants.nodes[0]?.id,
+                )?.quantity || 0
+              }
+              onDecrease={() => onChange(salt.variants.nodes[0].id, -1)}
+              onIncrease={() => onChange(salt.variants.nodes[0].id, 1)}
+            />
+          )}
+        </ul>
+        <p className={styles.shipping}>
+          Free shipping in the US. Taxes are calculated at next step.
+        </p>
+      </div>
       <div className={styles.total}>
         <span className={styles.amount}>
           {Intl.NumberFormat("en-US", {

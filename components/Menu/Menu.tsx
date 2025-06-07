@@ -10,7 +10,6 @@ import MenuContext from "./MenuContext";
 import throttle from "lodash.throttle";
 import { usePathname } from "next/navigation";
 import Wrapper from "../Wrapper/Wrapper";
-import RoundButton from "../RoundButton/RoundButton";
 
 export type Variant = "transparent" | "white" | "light1" | "light2" | "dark";
 
