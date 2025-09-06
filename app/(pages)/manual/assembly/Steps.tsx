@@ -102,7 +102,7 @@ export default function Steps() {
         <Slideshow
           className={styles.slideshow}
           height={672}
-          mobileHeight={200}
+          mobileHeight={240}
           key={value}
           images={value === "Assembly" ? ASSEMBLY : DISASSEMBLY}
         />

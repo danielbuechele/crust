@@ -86,7 +86,7 @@ export default function Footer() {
                     <a href="/terms">Terms of Service</a>
                   </li>
                   <li>
-                    <a href="">Media Kit</a>
+                    <a href="/brand">Media Kit</a>
                   </li>
                 </ul>
               </li>

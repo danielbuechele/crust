@@ -50,7 +50,16 @@ export default function Cleaning() {
           well-ventilated area or in the sun.
         </p>
       </Blockquote>
-      <Image src={cleaning} alt="Cleaning" height={774} quality={90} />
+      <Image
+        style={{
+          maxWidth: "100%",
+          height: "auto",
+        }}
+        src={cleaning}
+        alt="Cleaning"
+        height={774}
+        quality={90}
+      />
     </>
   );
 }

@@ -32,6 +32,18 @@ export default function Menu() {
 
   return (
     <>
+      <div className={styles.ticker}>
+        <ul>
+          <li>Free shipping in the US</li>
+          <li>&middot;</li>
+          <li>Get our set and save $99</li>
+          <li>&middot;</li>
+          <li>Free shipping in the US</li>
+          <li>&middot;</li>
+          <li>Get our set and save $99</li>
+          <li>&middot;</li>
+        </ul>
+      </div>
       <nav
         className={clsx(
           styles.container,

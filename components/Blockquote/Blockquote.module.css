@@ -1,12 +1,19 @@
 .blockquote {
-  border-left: 3px solid #fc7d02;
+  border-left-width: 3px;
+  border-left-style: solid;
   padding-left: 20px;
   margin-left: 0;
-  color: #b15801;
   margin-top: 32px;
   margin-bottom: 32px;
   padding-top: 4px;
   padding-bottom: 4px;
+  border-left-color: #fc7d02;
+  color: #b15801;
+}
+
+.blockquote.info {
+  color: #6c6c6c;
+  border-left-color: #dbdbdb;
 }
 
 .blockquote h3 {

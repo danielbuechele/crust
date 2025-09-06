@@ -76,7 +76,7 @@ export default function Filling() {
         <Slideshow
           className={styles.slideshow}
           height={648}
-          mobileHeight={200}
+          mobileHeight={240}
           images={[
             {
               url: filling1,
