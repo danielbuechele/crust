@@ -1,6 +1,6 @@
 .container {
   position: fixed;
-  top: 24px;
+  top: 0px;
   left: 0px;
   right: 0px;
   z-index: 4;
@@ -10,6 +10,10 @@
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
+}
+
+.ticker + .container {
+  top: 24px;
 }
 
 .wrapper {
